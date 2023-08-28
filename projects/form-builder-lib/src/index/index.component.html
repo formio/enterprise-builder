@@ -1,0 +1,25 @@
+<h2 class="mb-2 mt-5">Welcome to Enterprise Form Builder</h2>
+<div class="mb-3">This application allows embed the Form Builder</div>
+<div class="nav-item" *ngIf="service.currentTenant; else checkTenantMessage">
+    <h3>Tenant: {{service.currentTenant.title}}</h3>
+    <div class="card-deck">
+      <div class="card" routerLink="builder" (click)="navigateTo('builder')" style="max-width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Create Form</h5>
+            <p class="card-text">Creating a new form using Form Builder</p>
+          </div>
+      </div>
+      <div class="card" routerLink="forms" (click)="navigateTo('forms')" style="max-width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Forms</h5>
+            <p class="card-text">Displaying a list of forms and editing existing forms</p>
+          </div>
+      </div>
+  </div>
+</div>
+
+<ng-template #checkTenantMessage>
+  <div class="alert alert-warning" role="alert">
+    Current Tenant was not found. Please check yor project plan and tenant configuration.
+  </div>
+</ng-template>

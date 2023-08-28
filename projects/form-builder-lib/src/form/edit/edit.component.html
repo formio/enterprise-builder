@@ -1,0 +1,6 @@
+<div *ngIf="service.currentForm || ready">
+    <h3>{{service.currentForm?.title || form?.title}} Form</h3>
+    <formio-alerts [alerts]="alerts"></formio-alerts>
+    <form-builder [form]="form" [options]="service.getBuilderOptions()" (change)="onChange($event)"></form-builder>
+    <a type="button" class="btn btn-success float-right" (click)="onSaveForm()">Save Form</a>
+</div>
