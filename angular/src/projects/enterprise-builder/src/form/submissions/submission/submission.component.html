@@ -1,0 +1,10 @@
+<div class="p-3">
+    <div class="d-flex align-items-start justify-content-between mb-3">
+        <a *ngIf="service.app.user && !isChildRoute('')" routerLink="./" routerLinkActive="border-secondary bg-light" class="py-1 px-2 border border-1 rounded-circle me-1" style="width: 2em; height: 2em;"><i class="bi bi-eye text-muted m-0"></i></a>
+        <a *ngIf="service.app.user && !isChildRoute('edit')" routerLink="./edit" routerLinkActive="border-secondary bg-light" class="py-1 px-2 border border-1 rounded-circle me-1" style="width: 2em; height: 2em;"><i class="bi bi-pencil text-muted m-0"></i></a>
+        <a *ngIf="service.app.user && pdfDownload" [href]="pdfDownload" target="_blank" class="py-1 px-2 border border-1 rounded-circle me-auto" style="width: 2em; height: 2em;"><i class="bi bi-file-pdf-fill text-muted m-0"></i></a>
+        <a *ngIf="service.app.user" routerLink="./delete" routerLinkActive="border-secondary bg-light" class="py-1 px-2 border border-1 rounded-circle me-1" style="width: 2em; height: 2em;"><i class="bi bi-trash text-muted m-0"></i></a>
+    </div>
+    <router-outlet></router-outlet>
+</div>
+  

@@ -1,0 +1,21 @@
+<div class="container d-flex flex-column justify-content-center p-5">
+    <div class="bg-body py-5 rounded">
+        <div class="container d-flex flex-column">
+            <div class="mx-auto text-center">
+                <h2 class="text-3xl font-bold text-gray-300">Enterprise Form Builder</h2>
+            </div>
+            <div class="d-flex w-100 pt-5 justify-content-center">
+                <button routerLink="login" routerLinkActive="btn-outline-info" class="btn col-2">
+                    Login <i class="bi bi-box-arrow-in-right"></i>
+                </button>
+                <button routerLink="settings" routerLinkActive="btn-outline-info" class="btn col-2">
+                    <i class="bi bi-gear"></i> Configure
+                </button>
+                <a class="btn col-2">
+                    <i class="bi bi-book"></i> Documentation 
+                </a>
+            </div>
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

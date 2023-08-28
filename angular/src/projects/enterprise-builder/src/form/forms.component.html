@@ -1,0 +1,54 @@
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h5 class="my-2 d-flex gap-2 align-items-center" style="font-size: 16px;">
+        <i class="bi bi-list-check fs-5"></i>
+        Forms
+    </h5>
+    <a routerLink="build" class="btn btn-primary">Create Form</a>
+</div>
+<div class="bg-body p-2 mb-3">
+    <formio [form]="searchForm" [submission]="search" (ready)="enableSearch($event)"></formio>
+</div>
+<div class="form-list-header list-group-flush d-flex flex-row justify-content-between align-items-center mb-2">
+    <div class="col-8 ps-3 fw-3 text-muted">Title</div>
+    <div class="col-2 ps-3 fw-3 text-muted">Actions</div>
+    <div class="col-2 ps-3 fw-3 text-muted">Tags</div>
+</div>
+<hr />
+<loader *ngIf="service.formsLoading"></loader>
+<ul *ngIf="!service.formsLoading" class="list-group list-group-flush list-group-light">
+    <a class="list-group-item list-group-item-action d-flex flex-row  align-items-center py-4 mb-2 rounded shadow-sm"
+        *ngFor="let form of (service.forms | async)">
+        <!-- <i class="bi bi-file-medical fs-4 text-muted"></i> -->
+        <div class="col-8 ms-3 mr-auto d-flex flex-row gap-4 justify-content-start align-items-center cursor-pointer"
+            routerLink="{{ form._id }}/view">
+            <div class="ms-3 me-auto">
+                <div class="fs-4 fw-3 text-muted">{{ form.title }}</div>
+                <div class="fs-6 fw-lighter text-muted">created {{ form.created | date: 'short' }}</div>
+                <div class="fs-6 fw-lighter text-muted">modified {{ form.modified | date: 'short' }}</div>
+            </div>
+        </div>
+        <div class="col-2 form-actions d-flex flex-row  align-items-start gap-2 text-center ml-auto">
+            <a routerLink="{{ form._id }}/edit" class="btn btn-outline-secondary btn-icon btn-xs rounded-circle">
+                <i class="bi bi-pencil fs-xs"></i>
+            </a>
+            <a routerLink="{{ form._id }}/submission"
+                class="btn btn-outline-secondary btn-icon btn-xs rounded-circle">
+                <i class="bi bi-table fs-xs"></i>
+            </a>
+        </div>
+        <div class="col-2 form-tags d-flex flex-row align-items-center">
+            <span class="badge text-bg-secondary me-1" *ngFor="let tag of form.tags">{{tag}}</span>
+        </div>
+    </a>
+</ul>
+<div *ngIf="!service.formsLoading" class="d-flex justify-content-center">
+    <nav aria-label="Forms Navigation">
+        <ul class="pagination" *ngIf="!service.formsLoading">
+            <li class="page-item"><button class="page-link" (click)="service.prevPage()"><i class="bi bi-chevron-left"></i></button></li>
+            <li class="page-item" *ngFor="let i of pageNumbers;">
+                <button class="page-link" [attr.aria-current]="i===service.page" [ngClass]="{active: (i === service.page)}" (click)="service.goto(i)">{{ i }}</button>
+            </li>
+            <li class="page-item"><button class="page-link" (click)="service.nextPage()"><i class="bi bi-chevron-right"></i></button></li>
+        </ul>
+    </nav>
+</div>
