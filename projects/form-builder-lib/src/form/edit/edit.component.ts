@@ -16,9 +16,6 @@ export class FormEditComponent implements OnInit {
   private isChanged: Boolean = false;
   private tenantName: String = '';
   public updatedForm: Object = {components: []};
-  public ready: Promise<boolean>;
-  public readyResolve: any;
-  public readyReject: any;
   public options: any = {};
 
   constructor(
@@ -28,10 +25,6 @@ export class FormEditComponent implements OnInit {
     public alerts: FormioAlerts
   ) {
     this.alerts = new FormioAlerts();
-    this.ready = new Promise((resolve: any, reject: any) => {
-      this.readyResolve = resolve;
-      this.readyReject = reject;
-    });
   }
 
   onChange(event) {
@@ -43,15 +36,11 @@ export class FormEditComponent implements OnInit {
   async ngOnInit(): Promise<void> {
     const currentForm = this.service.currentForm;
     if (!currentForm) {
-      this.service.onTenant.subscribe((tenant) => {
-        const formio = new Formio(`${this.config.apiUrl}/${tenant.name}/form/${this.router.url.split('/')[2]}`);
-        this.tenantName = tenant.name;
-        formio.loadForm().then((form) => {
-          this.form = form;
-          this.readyResolve(true)
-        })
+      this.tenantName = this.service.currentTenant.name;
+      const formio = new Formio(`${this.config.apiUrl}/${this.tenantName}/form/${this.router.url.split('/')[2]}`);
+      formio.loadForm().then((form) => {
+        this.form = form;
       })
-      await this.ready
     } else {
       this.form = currentForm;
       this.tenantName = currentForm.tenant.name;
@@ -59,7 +48,6 @@ export class FormEditComponent implements OnInit {
   }
 
   onSaveForm() {
-    console.log('editForm')
     if (this.isChanged) {
       const formio = new Formio(`${this.config.apiUrl}/${this.tenantName}/${this.form.name}`);
       formio.saveForm(this.updatedForm).then((newForm) => {

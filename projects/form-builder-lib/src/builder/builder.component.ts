@@ -16,7 +16,7 @@ export class FormBuilderNewBuilderComponent implements OnInit{
   @ViewChild('title', {static: false}) formTitle: ElementRef;
   public form: any = {};
   public newForm: any = {components: []};
-  public updatedForm: Object = {components: []};
+  public updatedForm: {components} = {components: []};
   private tenantName: String = '';
   public options: any = {};
 
@@ -45,8 +45,9 @@ export class FormBuilderNewBuilderComponent implements OnInit{
 
   onSaveForm() {
     this.newForm.title = this.formTitle.nativeElement.value;
-    this.newForm.name = _.camelCase(this.form.title).toLowerCase();
+    this.newForm.name = _.camelCase(this.newForm.title ).toLowerCase();
     this.newForm.path = this.newForm.name;
+    this.newForm.components = this.updatedForm.components;
     const formio = new Formio(`${this.config.apiUrl}/${this.tenantName}`);
     formio.saveForm(this.newForm).then((newForm) => {
       this.toastr.success('Successfully created form!');
