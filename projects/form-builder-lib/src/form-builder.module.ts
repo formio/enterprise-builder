@@ -7,6 +7,7 @@ import { extendRouter, FormioAppConfig , FormioModule} from '@formio/angular';
 import { FormBuilderNewBuilderComponent } from './builder/builder.component';
 import { FormioFormsComponent } from './forms/forms.component';
 import { ToastrModule } from 'ngx-toastr';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ToastrModule } from 'ngx-toastr';
     BrowserAnimationsModule,
     FormioModule,
     ToastrModule.forRoot(),
+    PaginationModule.forRoot()
   ]
 })
 export class FormBuilderModule { 

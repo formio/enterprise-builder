@@ -3,6 +3,7 @@ import { FormioAppConfig } from '@formio/angular';
 import { FormBuilderService } from '../form-builder.service';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Formio } from 'formiojs';
+import { PageChangedEvent } from 'ngx-bootstrap/pagination';
 
 @Component({
   selector: 'app-forms',
@@ -12,6 +13,9 @@ import { Formio } from 'formiojs';
 export class FormioFormsComponent implements AfterViewInit{
   public _forms: BehaviorSubject<Array<any>> = new BehaviorSubject([]);
   public forms: Observable<Array<any>> = this._forms.asObservable();
+  public totalItems:Number = 0;
+  public currentPage = 1;
+  public limit = 10;
   constructor( 
     public service: FormBuilderService,
     public config: FormioAppConfig
@@ -34,7 +38,13 @@ export class FormioFormsComponent implements AfterViewInit{
       const tenant = tenants[i];
       const formio = new Formio(`${this.config.apiUrl}/${tenant.name}`);
       try {
-        const tenantForms = await formio.loadForms({params: {limit: 1000}});
+        const params = {
+          limit: this.limit,
+          skip: (this.currentPage * this.limit - 10),
+          type: 'form'
+        }
+        const tenantForms = await formio.loadForms({params});
+        this.totalItems = tenantForms.serverCount;
         forms = forms.concat(tenantForms.map((form)=> {
           form.tenant = tenant;
           return form;
@@ -53,5 +63,10 @@ export class FormioFormsComponent implements AfterViewInit{
       query['_id'] = tenant._id;
     }
     this.service.loadTenants({params: query}).then(async (tenants) => this.setForms(tenants))
+  }
+  
+  pageChanged(event: PageChangedEvent): void {
+    this.currentPage = event.page;
+    this.loadForms(this.service.currentTenant);
   }
 }

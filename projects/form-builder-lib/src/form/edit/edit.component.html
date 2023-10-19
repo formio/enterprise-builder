@@ -1,6 +1,10 @@
+
 <div *ngIf="service.currentForm || form">
-    <h3>{{service.currentForm?.title || form?.title}} Form</h3>
+    <h4>Editing {{service.currentForm?.title || form?.title}} Form</h4>
     <formio-alerts [alerts]="alerts"></formio-alerts>
-    <form-builder [form]="form" [options]="service.getBuilderOptions()" (change)="onChange($event)"></form-builder>
-    <a type="button" class="btn btn-success float-right" (click)="onSaveForm()">Save Form</a>
+
+    <div class="p-3 pb-5 shadow builder-card mt-3">
+        <form-builder [form]="form" [options]="service.getBuilderOptions()" (change)="onChange($event)"></form-builder>
+        <a type="button" class="btn btn-success float-right" (click)="onSaveForm()">Save Form</a>
+    </div>
 </div>

@@ -11,7 +11,9 @@ export class FormBuilderIndexComponent {
   constructor( 
     public service: FormBuilderService,
     private router: Router,
-    ) { };
+    ) { 
+      service.init()
+    };
 
   navigateTo(path) {
     this.router.navigate([`/${path}`]);

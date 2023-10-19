@@ -1,10 +1,11 @@
 <div *ngIf="service.currentTenant; else checkTenantMessage">
-    <h3>Tenant: {{service.currentTenant.title}}</h3>
-    <router-outlet></router-outlet>
+  <h2>Tenant › {{service.currentTenant.title}}</h2>
+  <div class="dropdown-divider"></div>
+  <router-outlet></router-outlet>
 </div>
 
 <ng-template #checkTenantMessage>
-    <div class="alert alert-warning" role="alert">
-      Current Tenant was not found. Please check yor project plan and tenant configuration.
-    </div>
+  <div class="alert alert-warning" role="alert">
+    Current Tenant was not found. Please check yor project plan and tenant configuration.
+  </div>
 </ng-template>

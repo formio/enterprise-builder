@@ -3,8 +3,8 @@ import {
     CanActivateChild,
     Router,
   } from '@angular/router';
-  import { Injectable } from '@angular/core';
-  import { FormioAuthService } from '@formio/angular/auth';
+import { Injectable } from '@angular/core';
+import { FormioAuthService } from '@formio/angular/auth';
 
 @Injectable({
   providedIn: 'root'

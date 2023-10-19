@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { FormioAppConfig , Formio} from "@formio/angular";
+import { FormioAuthService } from '@formio/angular/auth';
 import { Subject } from 'rxjs';
 import { Router } from '@angular/router';
 import { FormBuilderConfig } from "./form-builder.config";
@@ -17,14 +18,27 @@ export class FormBuilderService {
     constructor(
         public config: FormioAppConfig,
         public router: Router,
-        public builderConfig: FormBuilderConfig
+        public builderConfig: FormBuilderConfig,
+        private auth: FormioAuthService,
         ) {
         this.formio = new Formio(config.apiUrl);
         this.builderConfig = builderConfig;
-        this.loadTenants({params: {type: 'tenant'}}).then((tenants) => {
-            this.currentTenant = tenants[0];
-            this.setTenant(tenants[0])
-        })
+        this.init();
+    }
+
+    async init() {
+        const auth = await this.auth.ready.then(() => {
+            if (this.auth.authenticated) {
+                this.loadTenants({params: {type: 'tenant'}}).then((tenants) => {
+                    this.currentTenant = tenants[0];
+                    this.setTenant(tenants[0])
+                })
+                return true;
+            } else {
+                this.router.navigate(['/auth/login']);
+                return false;
+            }
+        });
     }
 
     loadTenants(...args) {
