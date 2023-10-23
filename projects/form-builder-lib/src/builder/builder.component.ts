@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { FormioAppConfig, FormBuilderComponent, FormioAlerts } from '@formio/angular';
+import { FormioAppConfig, FormioAlerts } from '@formio/angular';
 import { Router } from '@angular/router';
 import { FormBuilderService } from '../form-builder.service';
 import { Formio } from 'formiojs';
@@ -12,7 +12,6 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./builder.component.scss']
 })
 export class FormBuilderNewBuilderComponent implements OnInit{
-  @ViewChild(FormBuilderComponent, {static: false}) builder: FormBuilderComponent;
   @ViewChild('title', {static: false}) formTitle: ElementRef;
   public form: any = {};
   public newForm: any = {components: []};
@@ -40,6 +39,10 @@ export class FormBuilderNewBuilderComponent implements OnInit{
       this.form = currentTenant;
       this.tenantName = currentTenant.name;
     }
+  }
+
+  titleChange() {
+    this.alerts.setAlerts([]);
   }
 
   onChange(event) {
