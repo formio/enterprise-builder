@@ -32,18 +32,17 @@ export class FormioFormsComponent implements AfterViewInit{
     
   }
 
-  async setForms(tenants) {
+  async setForms(tenants): Promise<void> {
     let forms = [];
     for (let i = 0; i < tenants.length; i++) {
       const tenant = tenants[i];
-      const formio = new Formio(`${this.config.apiUrl}/${tenant.name}`);
       try {
         const params = {
           limit: this.limit,
           skip: (this.currentPage * this.limit - 10),
           type: 'form'
         }
-        const tenantForms = await formio.loadForms({params});
+        const tenantForms = await this.service.formio.loadForms({params});
         this.totalItems = tenantForms.serverCount;
         forms = forms.concat(tenantForms.map((form)=> {
           form.tenant = tenant;
@@ -52,12 +51,11 @@ export class FormioFormsComponent implements AfterViewInit{
       } catch (error) {
         console.warn(error);
       }
-      
     }
     this._forms.next(forms);
   }
 
-  loadForms(tenant = null) {
+  loadForms(tenant = null): void {
     const query = {type: 'tenant'};
     if (tenant) {
       query['_id'] = tenant._id;

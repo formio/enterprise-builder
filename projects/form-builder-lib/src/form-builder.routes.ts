@@ -3,6 +3,8 @@ import { FormBuilderNewBuilderComponent } from './builder/builder.component';
 import { FormioFormsComponent } from './forms/forms.component';
 import { FormBuilderIndexComponent } from './index/index.component';
 import { AppGuard } from './app.guard';
+import { FormioReportsComponent } from './reports/reports.component';
+import { FormioReportComponent } from './report/report.component';
 
 export function FormBuilderRoutes(): Routes {
   return [
@@ -24,6 +26,16 @@ export function FormBuilderRoutes(): Routes {
     {
       path: 'forms',
       component: FormioFormsComponent,
+      canActivate: [AppGuard]
+    },
+    {
+      path: 'reports',
+      component: FormioReportsComponent,
+      canActivate: [AppGuard]
+    },
+    {
+      path: 'reports/:id',
+      component: FormioReportComponent,
       canActivate: [AppGuard]
     }
   ];

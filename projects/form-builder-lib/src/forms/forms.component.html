@@ -1,7 +1,7 @@
 <div *ngIf="service.currentTenant; else checkTenantMessage">
-    <h2 class="mb-3">Tenant › {{service.currentTenant.title}}</h2>
+    <h4 class="mb-3 font-weight-light">Tenant › {{service.currentTenant.title}}</h4>
     <div class="dropdown-divider"></div>
-    <h4 class="mb-3 mt-3">Your Forms</h4>
+    <h3 class="mb-3 mt-3"><img src="assets/icon.png" style="height: 1.2em;" /> Your Forms</h3>
     <ul class="list-group">
         <li class="mb-2 card" *ngFor="let form of (forms | async)">
             <div class="col-md-8 p-2 pl-3">

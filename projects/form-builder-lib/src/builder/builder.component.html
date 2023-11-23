@@ -1,11 +1,7 @@
-<div *ngIf="service.currentTenant">
-  <h2>Tenant › {{service.currentTenant.title}}</h2>
+<div *ngIf="service.currentTenant" class="p-3 pb-5 shadow builder-card mt-3">
+  <h3 class="mb-3 mt-3 font-weight-normal"><img src="assets/icon.png" style="height: 1.2em;" /> Create New Form</h3>
   <div class="dropdown-divider"></div>
-  <h4 class="mb-3 mt-3">Creating a New Form</h4>
-</div>
-
-<div class="p-3 pb-5 shadow builder-card mt-3">
-  <div class="form-inline mb-3">
+  <div class="form-inline mt-3 mb-3">
     <div class="form-group ">
         <label for="formTitle">Title</label>
         <input type="text" class="form-control mx-sm-3" id="formTitle" placeholder="Enter a Title" (change)="titleChange()" #title>

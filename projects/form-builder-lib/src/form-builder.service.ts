@@ -4,7 +4,7 @@ import { FormioAuthService } from '@formio/angular/auth';
 import { Subject } from 'rxjs';
 import { Router } from '@angular/router';
 import { FormBuilderConfig } from "./form-builder.config";
-import { Components} from 'formiojs';
+import { Components } from 'formiojs';
 import _ from 'lodash';
 
 @Injectable({
@@ -15,13 +15,14 @@ export class FormBuilderService {
     public onTenant: Subject<any> = new Subject();
     public currentForm: any;
     public currentTenant: any;
+    public currentReport: any;
+
     constructor(
         public config: FormioAppConfig,
         public router: Router,
         public builderConfig: FormBuilderConfig,
         private auth: FormioAuthService,
         ) {
-        this.formio = new Formio(config.apiUrl);
         this.builderConfig = builderConfig;
         this.init();
     }
@@ -54,12 +55,18 @@ export class FormBuilderService {
     }
 
     setTenant(tenant) {
+        this.formio = new Formio(`${this.config.apiUrl}/${tenant.name}`)
         this.onTenant.next(tenant)
     }
 
     setForm(form, mode) {
         this.currentForm = form;
+        this.formio = new Formio(`${this.config.apiUrl}/${this.currentTenant.name}/form/${form._id}`)
         this.router.navigate([`/form/${form._id}/${mode}`]);
+    }
+
+    setReport(report) {
+        this.currentReport = report;
     }
 
     getBuilderOptions() {

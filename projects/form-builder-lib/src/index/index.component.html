@@ -1,20 +1,29 @@
-<h2 class="mb-2 mt-5">Welcome to Enterprise Form Builder</h2>
-<div class="mb-3">This application allows to embed the Form Builder</div>
-<div class="nav-item" *ngIf="service.currentTenant; else checkTenantMessage">
-    <h3>Tenant › {{service.currentTenant.title}}</h3>
-    <div class="card-deck">
-      <div class="card" routerLink="builder" (click)="navigateTo('builder')" style="max-width: 18rem;">
+<div class="container text-center">
+  <h1 class="mb-2 mt-5">Welcome to Enterprise Form Builder</h1>
+  <h3> using <img src="assets/angular-logo.png" style="height: 2em;" /> Angular </h3>
+  <div class="mb-3">This application allows to embed the Form Builder</div>
+  <div class="nav-item" *ngIf="service.currentTenant; else checkTenantMessage">
+      <h3>Tenant › {{service.currentTenant.title}}</h3>
+      <div class="card-deck text-left">
+        <div class="card" routerLink="builder" (click)="navigateTo('builder')" style="max-width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title"><i class="fa fa-plus" aria-hidden="true"></i> Create Form</h5>
+              <p class="card-text">Creating a new form using Form Builder</p>
+            </div>
+        </div>
+        <div class="card" routerLink="forms" (click)="navigateTo('forms')" style="max-width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title"><i class="fa fa-list" aria-hidden="true"></i> Forms</h5>
+              <p class="card-text">Displaying a list of forms, editing forms, viewing data.</p>
+            </div>
+        </div>
+        <div class="card" routerLink="reports" (click)="navigateTo('reports')" style="max-width: 18rem;">
           <div class="card-body">
-            <h5 class="card-title"><i class="fa fa-plus" aria-hidden="true"></i> Create Form</h5>
-            <p class="card-text">Creating a new form using Form Builder</p>
+            <h5 class="card-title"><i class="fa fa-table" aria-hidden="true"></i> Reports</h5>
+            <p class="card-text">Displaying a list of existing reports.</p>
           </div>
       </div>
-      <div class="card" routerLink="forms" (click)="navigateTo('forms')" style="max-width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title"><i class="fa fa-list" aria-hidden="true"></i> Forms</h5>
-            <p class="card-text">Displaying a list of forms and editing existing forms</p>
-          </div>
-      </div>
+    </div>
   </div>
 </div>
 

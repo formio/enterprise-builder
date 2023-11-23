@@ -1,10 +1,8 @@
 
-<div *ngIf="service.currentForm || form">
-    <h4>Editing {{service.currentForm?.title || form?.title}} Form</h4>
+<div *ngIf="service.currentForm || form" class="p-3 pb-5 shadow card border-top-0">
+    <h4>{{form?.title}} › Edit Form</h4>
+    <div class="dropdown-divider mb-3 mt-3"></div>
     <formio-alerts [alerts]="alerts"></formio-alerts>
-
-    <div class="p-3 pb-5 shadow builder-card mt-3">
-        <form-builder [form]="form" [options]="service.getBuilderOptions()" (change)="onChange($event)"></form-builder>
-        <a type="button" class="btn btn-success float-right" (click)="onSaveForm()">Save Form</a>
-    </div>
+    <form-builder [form]="form" [options]="service.getBuilderOptions()" (change)="onChange($event)"></form-builder>
+    <a type="button" class="btn btn-success align-self-end" (click)="onSaveForm()">Save Form</a>
 </div>
