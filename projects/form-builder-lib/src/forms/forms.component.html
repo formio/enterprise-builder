@@ -1,0 +1,21 @@
+<div *ngIf="service.currentTenant; else checkTenantMessage">
+    <h4 class="mb-3 font-weight-light">Tenant › {{service.currentTenant.title}}</h4>
+    <div class="dropdown-divider"></div>
+    <h3 class="mb-3 mt-3"><img src="assets/icon.png" style="height: 1.2em;" /> Your Forms</h3>
+    <ul class="list-group">
+        <li class="mb-2 card" *ngFor="let form of (forms | async)">
+            <div class="col-md-8 p-2 pl-3">
+                <span class="card-title" (click)="service.setForm(form, 'edit')">{{form.title}}</span>
+                <br/>
+                <span class="small text-muted">{{config.apiUrl}}/{{form.tenant.name}}/{{form.path}}</span>
+            </div>
+        </li>
+    </ul>
+    <pagination [totalItems]="totalItems" [(ngModel)]="currentPage" (pageChanged)="pageChanged($event)" class="justify-content-center"></pagination>
+</div>
+
+<ng-template #checkTenantMessage>
+    <div class="alert alert-light" role="alert">
+      Current Tenant was not found. Please check yor project plan and tenant configuration.
+    </div>
+</ng-template>

@@ -1,0 +1,20 @@
+<div *ngIf="service.currentTenant; else checkTenantMessage" class="p-3 pb-5 shadow builder-card mt-3">
+  <h3 class="mb-3 mt-3 font-weight-normal"><img src="assets/icon.png" style="height: 1.2em;" /> Create New Form</h3>
+  <div class="dropdown-divider"></div>
+  <div class="form-inline mt-3 mb-3">
+    <div class="form-group ">
+        <label for="formTitle">Title</label>
+        <input type="text" class="form-control mx-sm-3" id="formTitle" placeholder="Enter a Title" (change)="titleChange()" #title>
+    </div>
+  </div>
+
+  <formio-alerts [alerts]="alerts"></formio-alerts>
+  <form-builder [form]="form" [options]="service.getBuilderOptions()" (change)="onChange($event)"></form-builder>
+  <a type="button" class="btn btn-success float-right" (click)="onSaveForm()">Save Form</a>
+</div>
+
+<ng-template #checkTenantMessage>
+  <div class="alert alert-light" role="alert">
+    Current Tenant was not found. Please check your license and tenant configuration.
+  </div>
+</ng-template>
