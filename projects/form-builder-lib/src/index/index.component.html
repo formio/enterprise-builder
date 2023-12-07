@@ -4,7 +4,7 @@
   <div class="mb-3">This application allows to embed the Form Builder</div>
   <div class="nav-item" *ngIf="service.currentTenant; else checkTenantMessage">
       <h3>Tenant › {{service.currentTenant.title}}</h3>
-      <div class="card-deck text-left">
+      <div class="card-deck text-left justify-content-between">
         <div class="card" routerLink="builder" (click)="navigateTo('builder')" style="max-width: 18rem;">
             <div class="card-body">
               <h5 class="card-title"><i class="fa fa-plus" aria-hidden="true"></i> Create Form</h5>
@@ -29,6 +29,6 @@
 
 <ng-template #checkTenantMessage>
   <div class="alert alert-light" role="alert">
-    Current Tenant was not found. Please check yor project plan and tenant configuration.
+    Current Tenant was not found. Please check your license and tenant configuration.
   </div>
 </ng-template>

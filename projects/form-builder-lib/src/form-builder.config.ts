@@ -7,6 +7,7 @@ export class FormBuilderConfig {
         hiddenFields: {}
     };
     public formBuilderOptions = {};
+    public license = '';
 }
 
 export const DefaulConfiguration = new FormBuilderConfig();
