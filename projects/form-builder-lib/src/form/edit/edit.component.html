@@ -3,6 +3,6 @@
     <h4>{{form?.title}} › Edit Form</h4>
     <div class="dropdown-divider mb-3 mt-3"></div>
     <formio-alerts [alerts]="alerts"></formio-alerts>
-    <form-builder [form]="form" [options]="service.getBuilderOptions()" (change)="onChange($event)"></form-builder>
+    <form-builder [form]="form" [options]="options" (change)="onChange($event)"></form-builder>
     <a type="button" class="btn btn-success align-self-end" (click)="onSaveForm()">Save Form</a>
 </div>

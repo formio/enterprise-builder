@@ -35,7 +35,6 @@ export class FormBuilderService {
             const auth = await this.auth.ready.then(() => {
                 if (this.auth.authenticated) {
                     this.loadTenants({params: {type: 'tenant'}}).then((tenants) => {
-                        this.currentTenant = tenants[0];
                         this.setTenant(tenants[0])
                     })
                     return true;
@@ -102,8 +101,17 @@ export class FormBuilderService {
     }
 
     setTenant(tenant) {
-        this.formio = new Formio(`${this.config.apiUrl}/${tenant.name}`)
-        this.onTenant.next(tenant)
+        this.formio = new Formio(`${this.config.apiUrl}/${tenant.name}`);
+        this.formio.loadProject().then((projectTenant) => {
+            if (projectTenant.public?.custom?.js) {
+                const element = document.createElement('script');
+                element.setAttribute('type','text/javascript');
+                element.setAttribute('src', projectTenant.public.custom.js);
+                document.head.appendChild(element);
+                this.currentTenant = projectTenant;
+            }
+            this.onTenant.next(projectTenant);
+        })
     }
 
     setForm(form, mode) {
@@ -117,26 +125,27 @@ export class FormBuilderService {
     }
 
     getBuilderOptions() {
-        const options: {builder?: Object, editForm?:Object} = {}
-        const {formBuilderOptions, editFormOptions} = this.builderConfig;
-        if (formBuilderOptions) {
-            options.builder = formBuilderOptions;
+        const options: {builder?: Object, editForm?:Object} = {};
+        const {builder, editForm} = this.currentTenant.builderConfig;
+        if (builder) {
+            options.builder = builder;
         }
-        if (editFormOptions) {
+        if (editForm && (editForm.hiddenFields || editForm.hiddenTabs)) {
             const customTabs: any = {};
-            const hiddenTabs = _.difference(['Display', 'Data', 'Validation', 'Conditional', 'API', 'Logic', 'Layout'],editFormOptions.showTabs)
-            const hiddenFields = editFormOptions.hiddenFields;
+            const {hiddenTabs, hiddenFields} = editForm;
             Object.keys(Components.components).forEach((componentKey) => {
                 const settingsTab = [];
                 hiddenTabs.forEach((tab) => {
                 settingsTab.push({ key: tab.toLowerCase(), ignore: true})
                 })
                 Object.keys(hiddenFields).forEach((tab) => {
-                settingsTab.push({ key : tab, components: hiddenFields[tab].map((field) => {return { key: field, ignore: true}})})
+                    settingsTab.push({ key : tab, components: hiddenFields[tab].map((field) => ({ key: field, ignore: true}))})
                 })
                 customTabs[componentKey] = settingsTab;
             });
             options.editForm = customTabs;
+        } else if (editForm) {
+            options.editForm = editForm;
         }
         return options;
     }
