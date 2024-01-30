@@ -16,7 +16,7 @@ export class FormBuilderNewBuilderComponent implements OnInit{
   public newForm: any = {components: []};
   public updatedForm: {components} = {components: []};
   public tenantName: String = '';
-  public options: any = {};
+  public options: any = null;
 
   constructor(
     public service: FormBuilderService,
@@ -32,11 +32,17 @@ export class FormBuilderNewBuilderComponent implements OnInit{
     if (!currentTenant) {
       this.service.onTenant.subscribe((tenant) => {
         this.tenantName = tenant.name;
+        this.getOptions();
       })
     } else {
       this.form = currentTenant;
       this.tenantName = currentTenant.name;
+      this.getOptions();
     }
+  }
+
+  getOptions(): void {
+      this.options = this.service.getBuilderOptions();
   }
 
   titleChange() {

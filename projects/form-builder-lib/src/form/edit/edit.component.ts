@@ -58,6 +58,7 @@ export class FormEditComponent implements OnInit {
     } else {
       this.form = currentForm;
     }
+    this.options = this.service.getBuilderOptions();
   }
 
   onSaveForm() {
