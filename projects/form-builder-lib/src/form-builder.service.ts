@@ -1,12 +1,16 @@
 import { Injectable } from "@angular/core";
+import { Router } from '@angular/router';
+
 import { FormioAppConfig , Formio} from "@formio/angular";
 import { FormioAuthService } from '@formio/angular/auth';
-import { OfflineLibraryLicense } from '@formio/license/library';
+
 import { Subject } from 'rxjs';
-import { Router } from '@angular/router';
-import { FormBuilderConfig } from "./form-builder.config";
+
 import { Components } from 'formiojs';
+
 import _ from 'lodash';
+
+import { checkLicense, checkEndpointAllowed } from './licenseCheck';
 
 @Injectable({
     providedIn: 'root'
@@ -17,74 +21,35 @@ export class FormBuilderService {
     public currentForm: any;
     public currentTenant: any;
     public currentReport: any;
-    private licenseName: string = 'enterpriseBuilder';
 
     constructor(
         public config: FormioAppConfig,
         public router: Router,
-        public builderConfig: FormBuilderConfig,
         private auth: FormioAuthService,
         ) {
-        this.builderConfig = builderConfig;
         this.init();
     }
 
     async init() {
-        const allowed = await this.checkLicense();
-        if (allowed) {
-            const auth = await this.auth.ready.then(() => {
-                if (this.auth.authenticated) {
-                    this.loadTenants({params: {type: 'tenant'}}).then((tenants) => {
-                        this.setTenant(tenants[0])
-                    })
-                    return true;
-                } else {
-                    this.router.navigate(['/auth/login']);
-                    return false;
-                }
-            });
-        }
-    }
-
-    async checkLicense() {
-        const {license: licenseKey} = this.builderConfig;
-        if (!licenseKey) {
-            throw new Error('License is required to use the Enterprise Builder module.');
+        try {
+            await checkLicense();
+        } catch (err) {
+            if (err instanceof Error) {
+                alert(err.message);
+            }
+            return;
         }
 
-        const libLicense = await OfflineLibraryLicense.verify(licenseKey);
-
-        if (!libLicense) {
-            throw new Error('Invalid License Key.');
-        } else  if (!_.get(libLicense, `terms.${this.licenseName}`)) {
-            throw new Error('Enterprise Builder Module is not enabled for your license.');
-        }
-        const allowedHostnames = _.get(libLicense, 'terms.hostnames', [])
-        const currentHost = `${window.location.protocol}//${window.location.hostname}`;
-
-        const allowCurrentHost = this.isAllowedUrl(allowedHostnames, currentHost);
-
-        if (allowCurrentHost) {
-            return true;
-        }
-
-        const allowedProjectEndpoints =  _.get(libLicense, 'terms.endpoints', []);
-
-        const allowCurrentEndpoint = this.config.appUrl
-            ? this.isAllowedUrl(allowedProjectEndpoints, this.config.appUrl)
-            : false;
-
-        if (!allowCurrentEndpoint) {
-            throw new Error(`Current hostname (${currentHost}) and project endpoint (${this.config.appUrl}) is not allowed by the license.`);
-        }
-
-        return true;
-    }
-
-    isAllowedUrl(allowedList =[], currentUrl) {
-        return _.some(allowedList, url => {
-            const hostRegex = new RegExp(`^${_.chain(url).split('*').join('(\\S+)').value()}$`, 'i');
-            return hostRegex.test(currentUrl);
+        await this.auth.ready.then(() => {
+            if (this.auth.authenticated) {
+                this.loadTenants({params: {type: 'tenant'}}).then((tenants) => {
+                    this.setTenant(tenants[0])
+                })
+                return true;
+            } else {
+                this.router.navigate(['/auth/login']);
+                return false;
+            }
         });
     }
 
