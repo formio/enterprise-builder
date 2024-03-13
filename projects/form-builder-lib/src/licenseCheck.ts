@@ -1,9 +1,30 @@
 import { OfflineLibraryLicense } from '@formio/license/library';
+import { Formio } from 'formiojs';
 
 declare const window: Window & {
   Formio?: {
     license?: string;
   };
+};
+let licenseErrorIsShown = false;
+
+const originalFormioRequest = Formio?.request;
+
+if (!originalFormioRequest) {
+  throw new Error('Object Formio is not provided');
+}
+Formio.request = async (url, ...otherArgs) => {
+  try {
+    await checkEndpointAllowed(url);
+    return originalFormioRequest(url, ...otherArgs);
+  } catch (err) {
+    // Prevent multiple alerts showing
+    if (!licenseErrorIsShown) {
+      alert(err.message || 'Your license is not valid');
+      licenseErrorIsShown = true;
+    }
+    return Promise.reject(err);
+  }
 };
 
 const license = new OfflineLibraryLicense('enterpriseBuilder');
@@ -18,12 +39,17 @@ const doCheck = async (checkFunc: () => Promise<void>): Promise<void> => {
   await checkFunc();
 };
 
-export const checkLicense = async (): Promise<void> =>
-  await doCheck(() => license.verify(window.Formio.license));
+export const checkLicense = async (): Promise<void> => {
+  try {
+    await doCheck(() => license.verify(window.Formio.license));
+  } catch (err) {
+    if (!licenseErrorIsShown) {
+      alert(err.message || 'Your license is not valid');
+      licenseErrorIsShown = true;
+    }
+    throw err;
+  }
+};
 
-export const checkEndpointAllowed = async (
-  endpointUrl: string
-): Promise<void> =>
-  await doCheck(() =>
-    license.checkAllowedEndpoints(endpointUrl, window.Formio.license)
-  );
+const checkEndpointAllowed = async (endpointUrl: string): Promise<void> =>
+  await doCheck(() => license.checkAllowedEndpoints(endpointUrl, window.Formio.license));
