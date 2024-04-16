@@ -43,7 +43,11 @@ export const checkLicense = async (): Promise<void> => {
   try {
     await doCheck(() => license.verify(window.Formio.license));
   } catch (err) {
-    if (!licenseErrorIsShown) {
+
+    if (err.softFailLicenseExpiration) {
+      console.error(err.message)
+    }
+    else if (!licenseErrorIsShown) {
       alert(err.message || 'Your license is not valid');
       licenseErrorIsShown = true;
     }

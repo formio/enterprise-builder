@@ -33,7 +33,9 @@ export class FormBuilderService {
     try {
       await checkLicense();
     } catch (err) {
-      return;
+      if(!err.softFailLicenseExpiration) {
+        return;
+      }
     }
 
     await this.auth.ready.then(() => {
