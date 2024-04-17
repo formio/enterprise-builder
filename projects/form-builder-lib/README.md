@@ -1,17 +1,24 @@
 # Enterprise-Builder
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.0. 
+This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.0.
 
 ## Build
 
 Run `ng build formBuilder-lib` to build the project. The build artifacts will be stored in the `dist/` directory.
 
+## License
+You need to have a valid Library License key to use this package.
+If you don't have one yet, please contact sales@form.io.
 
+If you already have the Library License key, please be sure to set it on the Formio variable in your application
+```js
+Formio.license = 'yourLibraryLicenseKey';
+```
 
 ## Running Demo
 
 To run a demo of the Enterprise Builder, please follow these steps.
- 
+
  1. Make sure you have the [Angular CLI](https://angular.io) installed on your machine.
  2. Create a new application and add all dependencies into the application as described in the [documentation](https://help.form.io/developers/introduction/application#create-an-application)
  3. Add as a dependency `@formio/enterprise-builder`
@@ -21,17 +28,17 @@ To run a demo of the Enterprise Builder, please follow these steps.
     export const editFormOptions =  {
         showTabs: [
             // Tere is a list of general tabs that are offered for the components. To hide a tab, comment it below.
-            'Display', 
-            'Data', 
-            // 'Validation', 
-            'Conditional', 
-            // 'API', 
+            'Display',
+            'Data',
+            // 'Validation',
+            'Conditional',
+            // 'API',
             // 'Logic',
             'Layout'
         ],
 
         hiddenFields: {
-            // Every tab contains different fields which can be hidden. All fields are shown by default. 
+            // Every tab contains different fields which can be hidden. All fields are shown by default.
             // To hide the fields, uncomment them below
             display: [
                 //'label',
@@ -199,7 +206,7 @@ To run a demo of the Enterprise Builder, please follow these steps.
     import { formBuilderOptions } from './formBuilderOptions';
     import { editFormOptions } from './editFormOptions';
 
-    ... 
+    ...
     @NgModule({
         declarations: [
             ...
@@ -222,7 +229,7 @@ To run a demo of the Enterprise Builder, please follow these steps.
     })
     ...
     ```
-    
+
  7. Run the application, type ```ng serve```
- 
+
 
