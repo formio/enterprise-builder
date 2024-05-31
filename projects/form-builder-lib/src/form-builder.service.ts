@@ -70,8 +70,8 @@ export class FormBuilderService {
         element.setAttribute('type', 'text/javascript');
         element.setAttribute('src', projectTenant.public.custom.js);
         document.head.appendChild(element);
-        this.currentTenant = projectTenant;
       }
+      this.currentTenant = projectTenant;
       this.onTenant.next(projectTenant);
     });
   }

@@ -40,6 +40,7 @@
     "@angular/compiler-cli": "^15.2.0",
     "@angular/language-service": "^15.2.0",
     "@formio/license": "^1.4.2",
+    "@types/bootstrap": "^5.2.10",
     "@types/jasmine": "^4.3.1",
     "@types/jasminewd2": "^2.0.8",
     "@types/node": "^18.14.1",

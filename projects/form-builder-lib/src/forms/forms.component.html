@@ -5,7 +5,7 @@
     <ul class="list-group">
         <li class="mb-2 card" *ngFor="let form of (forms | async)">
             <div class="col-md-8 p-2 pl-3">
-                <span class="card-title" (click)="service.setForm(form, 'edit')">{{form.title}}</span>
+                <span class="card-title" (click)="service.setForm(form, 'view')">{{form.title}}</span>
                 <br/>
                 <span class="small text-muted">{{config.apiUrl}}/{{form.tenant.name}}/{{form.path}}</span>
             </div>
@@ -16,6 +16,6 @@
 
 <ng-template #checkTenantMessage>
     <div class="alert alert-light" role="alert">
-      Current Tenant was not found. Please check yor project plan and tenant configuration.
+      Current Tenant was not found. Please check your project plan and tenant configuration.
     </div>
 </ng-template>

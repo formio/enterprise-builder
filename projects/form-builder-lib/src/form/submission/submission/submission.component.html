@@ -1,11 +1,7 @@
-<div class="card shadow p-3 border-top-0">
-  <h4>{{serviceManager.form?.title}} › Submission</h4>
-  <ul aria-label="Submission" role="navigation" class="nav nav-tabs" style="margin-bottom:10px">
-    <li class="nav-item"><a class="nav-link" routerLink="../"><em class="fa fa-chevron-left glyphicon glyphicon-chevron-left"></em></a></li>
-    <li class="nav-item" routerLinkActive="active"><a class="nav-link" routerLink="view" routerLinkActive="active"><em class="fa fa-eye"></em> View</a></li>
-    <li class="nav-item" routerLinkActive="active"><a class="nav-link" routerLink="edit" routerLinkActive="active"><em class="fa fa-edit"></em> Edit</a></li>
-    <li class="nav-item" routerLinkActive="active"><a class="nav-link" routerLink="delete" routerLinkActive="active"><span class="fa fa-trash glyphicon glyphicon-trash"></span>Delete</a></li>
-  </ul>
+<div class="p-3">
+  <div class="d-flex mt-2 mb-2">
+    <div class="nav-item mr-auto" ><a class="pl-2 pr-2 p-1 nav-link border border-1 rounded-circle" routerLink="edit" routerLinkActive="border-secondary bg-light"><i class="fa fa-edit glyphicon glyphicon-edit"></i></a></div>
+    <div class="nav-item" #delete><a class="pl-2 pr-2 p-1 nav-link border border-1 rounded-circle" routerLink="delete" routerLinkActive="border-secondary bg-light"><i class="fa fa-trash glyphicon glyphicon-trash"></i></a></div>
+  </div>
   <router-outlet></router-outlet>
 </div>
-
