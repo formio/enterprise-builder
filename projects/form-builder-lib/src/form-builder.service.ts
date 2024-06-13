@@ -76,12 +76,12 @@ export class FormBuilderService {
     });
   }
 
-  setForm(form, mode) {
+  setForm(form, mode, route) {
     this.currentForm = form;
     this.formio = new Formio(
       `${this.config.apiUrl}/${this.currentTenant.name}/form/${form._id}`
     );
-    this.router.navigate([`/form/${form._id}/${mode}`]);
+    this.router.navigate([`../form/${form._id}/${mode}`], { relativeTo: route});
   }
 
   setReport(report) {
