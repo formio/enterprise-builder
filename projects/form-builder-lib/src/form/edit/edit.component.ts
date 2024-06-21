@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormioAlerts } from '@formio/angular';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { FormioAlerts, FormBuilderComponent } from '@formio/angular';
 import { Formio, Utils } from 'formiojs';
 import { ActivatedRoute } from '@angular/router';
 import _ from 'lodash';
@@ -11,6 +11,8 @@ import { FormBuilderService } from '../../form-builder.service';
 })
 
 export class FormEditComponent implements OnInit {
+  @ViewChild('type', {static: false}) formType: ElementRef;
+  @ViewChild(FormBuilderComponent, {static: false}) builder: FormBuilderComponent;
   public form: any = {components: []};
   private isChanged: Boolean = false;
   public updatedForm: any = {components: []};
@@ -54,11 +56,17 @@ export class FormEditComponent implements OnInit {
       const formio = new Formio(`${this.service.formio.projectUrl}/form/${formId}`);
       formio.loadForm().then((form) => {
         this.form = form;
+        this.formType.nativeElement.value = form.display || 'form';
       })
     } else {
       this.form = currentForm;
+      this.formType.nativeElement.value = this.form.display || 'form';
     }
     this.options = this.service.getBuilderOptions();
+  }
+
+  onDisplaySelect(event) {
+    this.builder.setDisplay(event.target.value);
   }
 
   onSaveForm() {

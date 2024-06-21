@@ -41,6 +41,6 @@ export class FormioReportComponent implements OnInit{
   }
 
   goToReports(): void {
-    this.router.navigate(['/reports']);
+    this.router.navigate(['../../reports'], { relativeTo: this.route});
   }
 }
