@@ -1,8 +1,8 @@
 import { AfterViewInit, Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { FormioAppConfig } from '@formio/angular';
 import { FormBuilderService } from '../form-builder.service';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { Formio } from 'formiojs';
 import { PageChangedEvent } from 'ngx-bootstrap/pagination';
 
 @Component({
@@ -18,7 +18,8 @@ export class FormioFormsComponent implements AfterViewInit{
   public limit = 10;
   constructor( 
     public service: FormBuilderService,
-    public config: FormioAppConfig
+    public config: FormioAppConfig,
+    private route: ActivatedRoute
   ) { };
 
   ngAfterViewInit(): void {

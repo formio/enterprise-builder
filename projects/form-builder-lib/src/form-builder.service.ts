@@ -72,18 +72,18 @@ export class FormBuilderService {
         element.setAttribute('type', 'text/javascript');
         element.setAttribute('src', projectTenant.public.custom.js);
         document.head.appendChild(element);
-        this.currentTenant = projectTenant;
       }
+      this.currentTenant = projectTenant;
       this.onTenant.next(projectTenant);
     });
   }
 
-  setForm(form, mode) {
+  setForm(form, mode, route) {
     this.currentForm = form;
     this.formio = new Formio(
       `${this.config.apiUrl}/${this.currentTenant.name}/form/${form._id}`
     );
-    this.router.navigate([`/form/${form._id}/${mode}`]);
+    this.router.navigate([`../form/${form._id}/${mode}`], { relativeTo: route});
   }
 
   setReport(report) {

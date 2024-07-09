@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilderService } from '../form-builder.service';
 
 @Component({
@@ -11,11 +11,12 @@ export class FormBuilderIndexComponent {
   constructor( 
     public service: FormBuilderService,
     private router: Router,
+    private route: ActivatedRoute
     ) { 
       service.init()
     };
 
   navigateTo(path) {
-    this.router.navigate([`/${path}`]);
+    this.router.navigate([`./${path}`], { relativeTo: this.route});
   }
 }

@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { FormioAlerts } from '@formio/angular';
+import { FormioAlerts, FormBuilderComponent  } from '@formio/angular';
 import { Router } from '@angular/router';
 import { FormBuilderService } from '../form-builder.service';
 import _ from 'lodash';
@@ -12,6 +12,8 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class FormBuilderNewBuilderComponent implements OnInit{
   @ViewChild('title', {static: false}) formTitle: ElementRef;
+  @ViewChild('type', {static: false}) formType: ElementRef;
+  @ViewChild(FormBuilderComponent, {static: false}) builder: FormBuilderComponent;
   public form: any = {};
   public newForm: any = {components: []};
   public updatedForm: {components} = {components: []};
@@ -42,7 +44,11 @@ export class FormBuilderNewBuilderComponent implements OnInit{
   }
 
   getOptions(): void {
-      this.options = this.service.getBuilderOptions();
+    this.options = this.service.getBuilderOptions();
+  }
+
+  onDisplaySelect(event) {
+    this.builder.setDisplay(event.target.value);
   }
 
   titleChange() {
@@ -55,11 +61,12 @@ export class FormBuilderNewBuilderComponent implements OnInit{
   }
 
   onSaveForm() {
-    this.newForm.title = this.formTitle.nativeElement.value;
+    this.newForm.title = this.formTitle.nativeElement.value.trim();
     if (!this.newForm.title) {
       this.alerts.setAlert({type: 'danger', message: 'Title is required'});
       return;
     }
+    this.newForm.display = this.formType.nativeElement.value;
     this.newForm.name = _.camelCase(this.newForm.title).toLowerCase();
     this.newForm.path = this.newForm.name;
     this.newForm.components = this.updatedForm.components;

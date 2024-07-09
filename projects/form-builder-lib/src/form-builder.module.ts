@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommonModule } from '@angular/common';
 import { FormBuilderRoutes } from './form-builder.routes';
 import { FormBuilderIndexComponent } from './index/index.component';
 import { extendRouter, FormioModule} from '@formio/angular';
@@ -20,8 +19,7 @@ import { FormioReportComponent } from './report/report.component';
     FormioReportComponent
   ],
   imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
+    CommonModule,
     FormioModule,
     ToastrModule.forRoot(),
     PaginationModule.forRoot()
