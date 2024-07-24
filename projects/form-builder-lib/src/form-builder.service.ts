@@ -5,7 +5,7 @@ import { FormioAuthService } from '@formio/angular/auth';
 
 import { Subject } from 'rxjs';
 
-import { Components } from 'formiojs';
+import { Components } from '@formio/js';
 
 import _ from 'lodash';
 

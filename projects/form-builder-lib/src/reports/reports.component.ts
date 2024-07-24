@@ -3,7 +3,7 @@ import { FormioAppConfig } from '@formio/angular';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilderService } from '../form-builder.service';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { Formio } from 'formiojs';
+import { Formio } from '@formio/js';
 
 @Component({
   selector: 'app-reports',
