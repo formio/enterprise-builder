@@ -7,7 +7,7 @@
     "declaration": false,
     "paths": {
       "formBuilder-lib": [
-        "dist/form-builder-lib"
+        "dist/enterprise-builder"
       ]
     },
     "module": "es2020",

@@ -1,6 +1,6 @@
 {
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
-  "dest": "../../dist/form-builder-lib",
+  "dest": "../../dist/enterprise-builder",
   "lib": {
     "entryFile": "src/index.ts"
   }
