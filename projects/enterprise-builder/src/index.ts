@@ -12,3 +12,4 @@ export { FormSubmissionComponent } from './form/submission/submission/submission
 export { FormComponent } from './form/form/form.component';
 export { FormModule } from './form/form.module';
 export { FormioFormsComponent } from './forms/forms.component';
+export { FormioReportComponent } from './report/report.component';

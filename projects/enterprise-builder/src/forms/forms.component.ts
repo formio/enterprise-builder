@@ -18,8 +18,7 @@ export class FormioFormsComponent implements AfterViewInit{
   public limit = 10;
   constructor( 
     public service: FormBuilderService,
-    public config: FormioAppConfig,
-    private route: ActivatedRoute
+    public config: FormioAppConfig
   ) { };
 
   ngAfterViewInit(): void {
