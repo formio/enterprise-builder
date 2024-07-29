@@ -4,7 +4,7 @@ This library was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Build
 
-Run `ng build formBuilder-lib` to build the project. The build artifacts will be stored in the `dist/` directory.
+Run `ng build enterprise-builder` to build the project. The build artifacts will be stored in the `dist/` directory.
 
 ## License
 You need to have a valid Library License key to use this package.

@@ -3,23 +3,23 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "formBuilder-lib": {
+    "enterprise-builder": {
       "projectType": "library",
-      "root": "projects/form-builder-lib",
-      "sourceRoot": "projects/form-builder-lib/src",
+      "root": "projects/enterprise-builder",
+      "sourceRoot": "projects/enterprise-builder/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/form-builder-lib/ng-package.json"
+            "project": "projects/enterprise-builder/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/form-builder-lib/tsconfig.lib.prod.json"
+              "tsConfig": "projects/enterprise-builder/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/form-builder-lib/tsconfig.lib.json"
+              "tsConfig": "projects/enterprise-builder/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -27,7 +27,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "tsConfig": "projects/form-builder-lib/tsconfig.spec.json",
+            "tsConfig": "projects/enterprise-builder/tsconfig.spec.json",
             "polyfills": [
               "zone.js",
               "zone.js/testing"

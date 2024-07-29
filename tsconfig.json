@@ -6,8 +6,8 @@
     "sourceMap": true,
     "declaration": false,
     "paths": {
-      "formBuilder-lib": [
-        "dist/form-builder-lib"
+      "enterprise-builder": [
+        "dist/enterprise-builder"
       ]
     },
     "module": "es2020",
