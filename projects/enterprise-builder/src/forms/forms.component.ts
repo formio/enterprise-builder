@@ -19,7 +19,7 @@ export class FormioFormsComponent implements AfterViewInit{
   constructor( 
     public service: FormBuilderService,
     public config: FormioAppConfig,
-    private route: ActivatedRoute
+    public route: ActivatedRoute
   ) { };
 
   ngAfterViewInit(): void {

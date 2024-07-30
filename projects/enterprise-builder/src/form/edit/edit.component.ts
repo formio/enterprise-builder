@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormioAlerts, FormBuilderComponent } from '@formio/angular';
-import { Formio, Utils } from 'formiojs';
+import { Formio, Utils } from '@formio/js';
 import { ActivatedRoute } from '@angular/router';
 import _ from 'lodash';
 import { FormBuilderService } from '../../form-builder.service';

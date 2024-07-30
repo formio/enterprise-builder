@@ -1,5 +1,5 @@
 import { OfflineLibraryLicense } from '@formio/license/library';
-import { Formio } from 'formiojs';
+import { Formio } from '@formio/js';
 
 declare const window: Window & {
   Formio?: {

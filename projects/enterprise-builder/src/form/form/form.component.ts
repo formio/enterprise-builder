@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilderService } from '../../form-builder.service';
 import { FormManagerService } from '@formio/angular/manager';
-import { Formio } from 'formiojs';
+import { Formio } from '@formio/js';
 import { ActivatedRoute} from '@angular/router';
 
 @Component({
