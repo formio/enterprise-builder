@@ -1,14 +1,14 @@
 {
-  "name": "enterprise-builder",
+  "name": "@formio/enterprise-builder",
   "version": "0.0.1",
   "peerDependencies": {
-    "@angular/common": "^18.1.2",
-    "@angular/core": "^18.1.2",
-    "@formio/js": "^5.0.0-rc.68"
+    "@angular/common": "^18.2.1",
+    "@angular/core": "^18.2.1",
+    "@formio/js": "^5.0.0-rc.75"
   },
   "devDependencies": {
     "tslib": "^2.3.0",
-    "@formio/js": "^5.0.0-rc.68"
+    "@formio/js": "^5.0.0-rc.75"
   },
   "sideEffects": false
 }
