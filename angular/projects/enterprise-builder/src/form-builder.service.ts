@@ -2,13 +2,8 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormioAppConfig, Formio } from '@formio/angular';
 import { FormioAuthService } from '@formio/angular/auth';
-
 import { Subject } from 'rxjs';
-
 import { Components } from '@formio/js';
-
-import _ from 'lodash';
-
 import { checkLicense } from './licenseCheck';
 
 @Injectable({

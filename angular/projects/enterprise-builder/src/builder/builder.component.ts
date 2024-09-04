@@ -2,7 +2,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormioAlerts, FormBuilderComponent  } from '@formio/angular';
 import { Router } from '@angular/router';
 import { FormBuilderService } from '../form-builder.service';
-import _ from 'lodash';
+import { camelCase } from 'lodash';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -67,7 +67,7 @@ export class FormBuilderNewBuilderComponent implements OnInit{
       return;
     }
     this.newForm.display = this.formType.nativeElement.value;
-    this.newForm.name = _.camelCase(this.newForm.title).toLowerCase();
+    this.newForm.name = camelCase(this.newForm.title).toLowerCase();
     this.newForm.path = this.newForm.name;
     this.newForm.components = this.updatedForm.components;
     this.service.formio.saveForm(this.newForm).then((newForm) => {

@@ -1,0 +1,23 @@
+{
+  "name": "@formio/enterprise-builder-angular",
+  "version": "1.0.0",
+  "peerDependencies": {
+    "@angular/common": "^18.2.1",
+    "@angular/core": "^18.2.1",
+    "@formio/js": "^5.0.0-rc.75"
+  },
+  "sideEffects": false,
+  "typings": "index.d.ts",
+  "exports": {
+    "./package.json": {
+      "default": "./package.json"
+    },
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./enterprise-builder.js"
+    }
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}
