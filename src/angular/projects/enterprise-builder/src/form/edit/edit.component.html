@@ -1,0 +1,6 @@
+<div class="bg-body rounded shadow-sm p-2">
+    <formio-builder [form]="service.builderForm" [options]="service.builderOptions" (change)="service.onChange($event)" (ready)="onBuilder($event)"></formio-builder>
+</div>
+<div class="d-flex justify-content-end my-3">
+    <a type="button" class="btn btn-success align-self-end" (click)="saveForm()">Save Form</a>
+</div>
