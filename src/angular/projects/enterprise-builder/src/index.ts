@@ -5,6 +5,7 @@ export * from './form';
 export * from './enterprise-builder.service';
 export * from './enterprise-builder.alerts';
 export * from './enterprise-builder.module';
+export * from './enterprise-builder.config';
 export * from './loader';
 export {
     EnterpriseBuilderConfig,
