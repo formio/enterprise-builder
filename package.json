@@ -16,9 +16,9 @@
     },
     "scripts": {
         "clean": "rm -rf build && mkdir build",
-        "build:angular": "cd src/angular && yarn --force && ng cache clean && npm run build",
+        "build:angular": "cd angular/src && yarn --force && ng cache clean && npm run build",
         "copy:package": "cp package.json build/package.json",
-        "copy:angular": "rsync -av src/angular/dist/enterprise-builder/ build/angular",
+        "copy:angular": "rsync -av angular/src/dist/enterprise-builder/ build/angular",
         "build": "npm run clean && npm run build:angular && npm run copy:package && npm run copy:angular"
     }
 }
