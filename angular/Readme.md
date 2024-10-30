@@ -1,0 +1,2 @@
+## Enterprise Form Builder module for Angular
+This is the Enterprise Form Builder Module for Form.io in the Angular framework. For complete installation instructions and developer documentation, please refer to the help docs found @ https://help.form.io/enterprise-builder/angular.

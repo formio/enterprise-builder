@@ -1,6 +1,6 @@
 {
     "name": "@formio/enterprise-builder",
-    "version": "1.0.0-dev.1",
+    "version": "1.0.0-dev.2",
     "repository": "git@github.com:formio/enterprise-builder.git",
     "license": "MIT",
     "exports": {
@@ -19,6 +19,7 @@
         "build:angular": "cd angular/src && yarn --force && ng cache clean && npm run build",
         "copy:package": "cp package.json build/package.json",
         "copy:angular": "rsync -av angular/src/dist/enterprise-builder/ build/angular",
-        "build": "npm run clean && npm run build:angular && npm run copy:package && npm run copy:angular"
+        "build": "npm run clean && npm run build:angular && npm run copy:package && npm run copy:angular",
+        "release": "npm run build && npm publish ./build --access public --tag dev"
     }
 }
