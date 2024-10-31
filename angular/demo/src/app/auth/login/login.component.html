@@ -1,0 +1,9 @@
+<div class="w-100 mt-3 d-flex justify-content-center">
+    <div class="mt-0 w-50 flex-shrink-0">
+        <div class="rounded mx-auto bg-light py-5 h-100 border flex flex-column justify-content-center">
+            <div class="px-5">
+                <formio [src]="service.loginForm" [renderOptions]="renderOptions" (submit)="service.onLoginSubmit($event)"></formio>
+            </div>
+        </div>
+    </div>
+</div>
