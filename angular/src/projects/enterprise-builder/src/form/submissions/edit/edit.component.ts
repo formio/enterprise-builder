@@ -19,7 +19,7 @@ export class FormSubmissionEditComponent {
 
   saveSubmission(submission:any) {
     return this.service.saveSubmission(submission).then(() => {
-      this.router.navigate(['../view'], {relativeTo: this.route});
+      this.router.navigate(['..'], {relativeTo: this.route});
     });
   }
 }

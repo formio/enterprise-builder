@@ -7,11 +7,9 @@ import { AlertType } from '@formio/enterprise-builder-core';
 
 @Component({
   selector: 'form-view',
-  templateUrl: './view.component.html',
-  styleUrls: ['./view.component.scss']
+  templateUrl: './view.component.html'
 })
 export class FormViewComponent implements OnInit {
-  public mobileView: boolean = false;
   constructor(
     public service: FormsService,
     public router: Router,
@@ -39,7 +37,11 @@ export class FormViewComponent implements OnInit {
     this.router.navigate(['../complete'], {relativeTo: this.route});
   }
 
-  onSubmit(submission: Submission) {
+  onSubmit(submission: any) {
+    return this.submit(submission as Submission);
+  }
+
+  submit(submission: Submission) {
     this.service.createSubmission(submission).then((result: any) => {
       this.service.loadSubmission(result._id)
         .then((submission: Submission) => this.onSubmitDone(submission))

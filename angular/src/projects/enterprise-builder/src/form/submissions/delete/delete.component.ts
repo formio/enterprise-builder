@@ -18,7 +18,7 @@ export class FormSubmissionDeleteComponent {
   ) {}
 
   cancel() {
-    this.router.navigate(['../view'], {relativeTo: this.route});
+    this.router.navigate(['..'], {relativeTo: this.route});
   }
 
   deleteSubmission() {

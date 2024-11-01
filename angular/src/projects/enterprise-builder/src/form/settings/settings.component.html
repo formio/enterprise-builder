@@ -1,7 +1,17 @@
-<h4>Form Settings</h4>
-<div class="bg-body rounded shadow-sm p-2">
-    <formio [form]="settingsForm" [submission]="settings"></formio>
+<div class="row">
+    <div class="col col-8">
+        <h4>Form Settings</h4>
+        <div class="bg-body rounded shadow-sm p-2">
+            <formio [form]="settingsForm" [submission]="settings"></formio>
+        </div>
+    </div>
+    <div class="col col-4">
+        <h4>Danger Zone</h4>
+        <div class="bg-body border border-danger rounded shadow-sm p-2">
+            <a class="btn btn-danger" routerLink="../delete">Delete Form</a>
+        </div>
+    </div>
 </div>
-<div class="d-flex justify-content-end my-3">
+<div class="d-flex my-3">
     <a type="button" class="btn btn-success align-self-end" (click)="saveForm()">Save Form</a>
 </div>

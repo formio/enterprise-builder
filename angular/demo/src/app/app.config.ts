@@ -1,6 +1,18 @@
 import { EnterpriseBuilderConfig } from '@formio/enterprise-builder/angular';
+let savedAppConfig: any = localStorage.getItem('enterpriseBuilderConfig') || null;
+try {
+  if (savedAppConfig) {
+    savedAppConfig = JSON.parse(savedAppConfig as string);
+  }
+}
+catch (err) {
+  savedAppConfig = null;
+  localStorage.removeItem('enterpriseBuilderConfig');
+}
 export const AppConfig: EnterpriseBuilderConfig = {
-  license: 'eyJhbGciOiJQUzI1NiJ9.eyJpc3MiOiJodHRwczovL2Zvcm0uaW8iLCJzdWIiOiJGb3JtLmlvIiwiaWF0IjoxNzI3OTY5ODY4LCJleHAiOjE3NTk1MDU4NTYsInRlcm1zIjp7InByZW1pdW0iOnRydWUsIm9mZmxpbmUiOnRydWUsInJlcG9ydGluZyI6dHJ1ZSwiZW50ZXJwcmlzZUJ1aWxkZXIiOnRydWUsInNxbGNvbm5lY3RvciI6dHJ1ZSwiYXBwc2VydmVyIjp0cnVlfX0.Yujmqfaf6UAGTyCElTTDOWBjx2Ft-N31P8881F08A2Avr73EZ2oPR1VMafzTiRRuqc_kB3J0bK8aO97xbDa0BxIHrp2EuhF1UJdpTbleuDxeqRUl9TtTmy1Pb-3MdS5efvho3cJFiyO-4mUXXRmObiaq6fXFu5friTFwDzNZYWRyCSiYgLWMLyx-DFUr56snnWMbW7nhXJuRSh88sLi1Y0OQW86rqCYCdgrEZ8ZogLXP06U-u9rjFFBypKDZdDPn7yyKWo05AGt_Yju2xF324D6vmWjkwEibW9OXrFMGq63Bes9pe4wXBc_dCIS1TunVwsWzGkR-sE3Udna_5N-z1g',
-  baseUrl: 'https://form.local',
-  projectUrl: 'https://form.local/sandbox'
+  license: savedAppConfig ? savedAppConfig.license : '',
+  projectUrl: savedAppConfig?.projectUrl ? savedAppConfig.projectUrl : '',
+  baseUrl: savedAppConfig?.baseUrl ? savedAppConfig.baseUrl : '',
+  tag: 'common',
+  showData: true
 };

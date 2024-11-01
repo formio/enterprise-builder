@@ -7,11 +7,11 @@
             <img src="icon.png" style="height: 100%" />
           </div>
           <div class="p-3 col-10">
-            <h5 class="fs-5 fw-semibold m-0 text-body">{{ service.currentProject.title || 'Form.io Project'}}</h5>
+            <h5 class="fs-5 fw-semibold m-0 text-body">{{ service.currentProject?.title || 'Form.io Project'}}</h5>
           </div>
         </div>
         <div class="mt-3 list-group gy-5">
-          <span *ngIf="(service.project | async)" class="mt-3 ms-3"><i class="bi bi-building fs-3"></i> {{ service.currentProject.name }}</span>
+          <span *ngIf="(service.project | async)" class="mt-3 ms-3"><i class="bi bi-building fs-3"></i> {{ service.currentProject?.name }}</span>
           <hr *ngIf="(service.project | async)" class="m-0 ms-3" />
           <a *ngIf="(service.project | async)" routerLink="/forms" routerLinkActive="text-primary" [routerLinkActiveOptions]="{exact: true}"
             class="text-decoration-none px-3 py-2 list-group-item-action border-0 d-flex align-items-center justify-content-start ms-3">
