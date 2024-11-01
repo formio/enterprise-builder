@@ -1519,17 +1519,17 @@
     lodash "^4.17.21"
     moment "^2.29.4"
 
-"@formio/enterprise-builder-core@^1.0.0-dev.3":
-  version "1.0.0-dev.3"
-  resolved "https://registry.npmjs.org/@formio/enterprise-builder-core/-/enterprise-builder-core-1.0.0-dev.3.tgz#6525285f25271239de0f9d68f18db1cd55eba9bc"
-  integrity sha512-qnB3ljcnyMfuAmMkLJzbPXCIVSeLfEub3fOTsDFD380kMyNXTYvArPnrg0hpeiA1gSkNPoaqpFMxsggV8mgPzA==
+"@formio/enterprise-builder-core@^1.0.0-dev.5":
+  version "1.0.0-dev.5"
+  resolved "https://registry.npmjs.org/@formio/enterprise-builder-core/-/enterprise-builder-core-1.0.0-dev.5.tgz#55dffece990e448e31e1406bfe9d1733103f7333"
+  integrity sha512-TxZSZOWB/l7n0S+3QgrISd8cmJ1EIpVsp2RBfaCeSn+RMyotmAG7tXLBBkqQa/h7rKMz4j25wd1JUdTzSRI5Rg==
 
-"@formio/enterprise-builder@^1.0.0-dev.4":
-  version "1.0.0-dev.4"
-  resolved "https://registry.npmjs.org/@formio/enterprise-builder/-/enterprise-builder-1.0.0-dev.4.tgz#f5dfdb9d1b2198099bb263fcef591b069e99edd2"
-  integrity sha512-liOwfmzE4XbZX3HF+h/gV9shDvlUhzJNhpOpaoYdQpLClzsRhrUkQRUc6qi9xMs6UQGUPNbtqKJlx3Bgwgr9tA==
+"@formio/enterprise-builder@^1.0.0-dev.5":
+  version "1.0.0-dev.5"
+  resolved "https://registry.npmjs.org/@formio/enterprise-builder/-/enterprise-builder-1.0.0-dev.5.tgz#07651193360fe58fdb9362de0477732ae4c45575"
+  integrity sha512-efBqRnJv90LO2QiZVvuwmg3AcluJlNkzwa+1PQeJYtR56h/48wqreAimbfsnupF0Pcat0E9jVUfFiG2BNjT/KA==
   dependencies:
-    "@formio/enterprise-builder-core" "^1.0.0-dev.3"
+    "@formio/enterprise-builder-core" "^1.0.0-dev.5"
 
 "@formio/js@^5.0.0-rc.96":
   version "5.0.0-rc.96"

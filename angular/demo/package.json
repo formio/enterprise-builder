@@ -19,7 +19,7 @@
     "@angular/platform-browser-dynamic": "^18.2.0",
     "@angular/router": "^18.2.0",
     "@formio/angular": "^8.0.0-dev.tt.1",
-    "@formio/enterprise-builder": "^1.0.0-dev.4",
+    "@formio/enterprise-builder": "^1.0.0-dev.5",
     "@formio/js": "^5.0.0-rc.96",
     "@formio/premium": "^2.0.0-dev.tt-1",
     "@formio/reporting": "^2.0.0-dev.tt.8",

@@ -1619,17 +1619,17 @@
   resolved "https://registry.npmjs.org/@esbuild/win32-x64/-/win32-x64-0.23.1.tgz#81fd50d11e2c32b2d6241470e3185b70c7b30699"
   integrity sha512-BHpFFeslkWrXWyUPnbKm+xYYVYruCinGcftSBaa8zoF9hZO4BcSCFUvHVTtzpIY6YzUnYtuEhZ+C9iEXjxnasg==
 
-"@formio/angular@^8.0.0-rc.7":
-  version "8.0.0-rc.9"
-  resolved "https://registry.npmjs.org/@formio/angular/-/angular-8.0.0-rc.9.tgz#0fe004f7ac306f0af01c147ae09b3bb53729eb46"
-  integrity sha512-aP8h3HcBFIIfVv1TZlIqdskVggt8rnNxTNJ3TLRXgorDXWvoKjQgHY/kGAqe/rnRQc0YTKNHPsp116LinvvpOA==
+"@formio/angular@^8.0.0-dev.tt.1":
+  version "8.0.0-dev.tt.1"
+  resolved "https://registry.npmjs.org/@formio/angular/-/angular-8.0.0-dev.tt.1.tgz#3ae22adbc4b5b64a90a29f6a508d2cda0db05495"
+  integrity sha512-b0oQ0XrnDAGRm4FBkdqRrzFPq+IeydHr68Mmw58a1am1S76eo0Uq3/bQH7zjtWXguh9PPAvz2YgYqAfeT2rfXA==
   dependencies:
     tslib "^2.0.0"
 
-"@formio/bootstrap@3.0.0-rc.37":
-  version "3.0.0-rc.37"
-  resolved "https://registry.npmjs.org/@formio/bootstrap/-/bootstrap-3.0.0-rc.37.tgz#111c8e3ede3a88bddad4452f27677d717d804628"
-  integrity sha512-ipIjxwc+VRu7sV2M/wYhG0wGetObHaT58LcvetVCVOIDzvUBFZdfMY50tnaZTtTxjAbSHpuPAf7Vr1W+b8Id8g==
+"@formio/bootstrap@3.0.0-rc.41":
+  version "3.0.0-rc.41"
+  resolved "https://registry.npmjs.org/@formio/bootstrap/-/bootstrap-3.0.0-rc.41.tgz#460b10ab1f4771df379369909840587de4a7438a"
+  integrity sha512-jGPxTNHZEnt7c9MO7agx/Ni4K4utcTjK6ePlGX8tPlJzOMbzI45JU3SD12f4i1g9oWIyHSMJoP//soCvrkTTOA==
 
 "@formio/choices.js@^10.2.1":
   version "10.2.1"
@@ -1640,10 +1640,10 @@
     fuse.js "^6.6.2"
     redux "^4.2.0"
 
-"@formio/core@2.2.2":
-  version "2.2.2"
-  resolved "https://registry.npmjs.org/@formio/core/-/core-2.2.2.tgz#3dd6810ccf32b6f8e2e9d97c4d3a385db0f69f0c"
-  integrity sha512-FyvqUS/UEvsUYKLaCw0TegUGyrk7Cz9vnUYfeK9NDnWObFPZFwYVDFcaJoXTttWrLLlPM6+pv2rTtf0dnhpuCg==
+"@formio/core@2.3.0-rc.18":
+  version "2.3.0-rc.18"
+  resolved "https://registry.npmjs.org/@formio/core/-/core-2.3.0-rc.18.tgz#44f0eaf854d8dc6bbbad1753786f2b13939eac6e"
+  integrity sha512-inkZLOSpYBiatQa8uJUII+cRk23URlyK4HkS09pHJG/857dxwfn0BIalSc9loTgFawjg6E3UuzCTfjfgUY6MDA==
   dependencies:
     "@types/json-logic-js" "^2.0.7"
     browser-cookies "^1.2.0"
@@ -1663,20 +1663,20 @@
   resolved "https://registry.npmjs.org/@formio/deprecated-types/-/deprecated-types-0.1.0.tgz#e8db67b93a2eded12efd640a10c7ddf0cffa2441"
   integrity sha512-jNc3Nw55nc75KESg+KPxxdG9ktnERTYodScAx3eh/J2dlA06N2Korafhu9zmwcDis8lOqtEz3X89cVxpJM9MzQ==
 
-"@formio/enterprise-builder-core@^1.0.0-dev.3":
-  version "1.0.0-dev.3"
-  resolved "https://registry.npmjs.org/@formio/enterprise-builder-core/-/enterprise-builder-core-1.0.0-dev.3.tgz#6525285f25271239de0f9d68f18db1cd55eba9bc"
-  integrity sha512-qnB3ljcnyMfuAmMkLJzbPXCIVSeLfEub3fOTsDFD380kMyNXTYvArPnrg0hpeiA1gSkNPoaqpFMxsggV8mgPzA==
+"@formio/enterprise-builder-core@^1.0.0-dev.5":
+  version "1.0.0-dev.5"
+  resolved "https://registry.npmjs.org/@formio/enterprise-builder-core/-/enterprise-builder-core-1.0.0-dev.5.tgz#55dffece990e448e31e1406bfe9d1733103f7333"
+  integrity sha512-TxZSZOWB/l7n0S+3QgrISd8cmJ1EIpVsp2RBfaCeSn+RMyotmAG7tXLBBkqQa/h7rKMz4j25wd1JUdTzSRI5Rg==
 
-"@formio/js@^5.0.0-rc.78":
-  version "5.0.0-rc.78"
-  resolved "https://registry.npmjs.org/@formio/js/-/js-5.0.0-rc.78.tgz#f4dae3ac227984411200a9ac38bcd731e4a97c1b"
-  integrity sha512-VK6ZJfzYHgDJc9Cx8umPTbH3MD1aEFKrddXeQMesn1ubPPV0xfj/qNH9dZWlM+ve5t0kqNiuGq9ZX+QLQBfKjA==
+"@formio/js@^5.0.0-rc.96":
+  version "5.0.0-rc.96"
+  resolved "https://registry.npmjs.org/@formio/js/-/js-5.0.0-rc.96.tgz#70994ab5c6a240435f460fc32139ea57b3313683"
+  integrity sha512-WMHgv13rAqjGX5qntPSHlfv7Ccg/IXM6+jOango6UqHBQCr2mZWprpOTDkfO2MewVvYVwZGgnWO7TfLacfoWZg==
   dependencies:
-    "@formio/bootstrap" "3.0.0-rc.37"
+    "@formio/bootstrap" "3.0.0-rc.41"
     "@formio/choices.js" "^10.2.1"
-    "@formio/core" "2.2.2"
-    "@formio/text-mask-addons" "^3.8.0-formio.2"
+    "@formio/core" "2.3.0-rc.18"
+    "@formio/text-mask-addons" "^3.8.0-formio.3"
     "@formio/vanilla-text-mask" "^5.1.1-formio.1"
     abortcontroller-polyfill "^1.7.5"
     autocompleter "^8.0.4"
@@ -1720,32 +1720,25 @@
     jsonwebtoken "^9.0.0"
     node-cache "^5.1.2"
 
-"@formio/premium@^2.0.0-rc.11":
-  version "2.0.0-rc.11"
-  resolved "https://registry.npmjs.org/@formio/premium/-/premium-2.0.0-rc.11.tgz#c840a051caba60d72b735cd00551803df208f318"
-  integrity sha512-ud5rbnyX1cYyvXDuCvlRvGfUhOE91oS4HKUmQ44+VBr99OqxzyXZ/r3lLqPnDjHMjcLwouPNDoX4QohmWz1yJA==
+"@formio/premium@^2.0.0-dev.tt-1":
+  version "2.0.0-dev.tt-1"
+  resolved "https://registry.npmjs.org/@formio/premium/-/premium-2.0.0-dev.tt-1.tgz#d0ed4028b8feb0e9ef0c53c7e8150f708116fa67"
+  integrity sha512-XgsFgvq2trrXH7aW1I7YiiIufgmMK3qVXXsGKxIlqdWuYnabjwVF1aYj9U7SpKlumISy269RE5fETqAXphprTg==
   dependencies:
     "@juggle/resize-observer" "^3.4.0"
-    "@zxing/library" "^0.21.0"
-    dayjs "^1.11.11"
-    lodash "^4.17.21"
+    "@zxing/library" "^0.21.2"
+    dayjs "^1.11.12"
+    jose "^5.6.3"
     papaparse "^5.3.1"
     tooltip.js "^1.3.3"
-    two.js "0.8.13"
+    two.js "^0.7.13"
     uuid "^9.0.1"
     vanilla-picker "^2.12.3"
 
-"@formio/reporting@^2.0.0-rc.12":
-  version "2.0.0-rc.13"
-  resolved "https://registry.npmjs.org/@formio/reporting/-/reporting-2.0.0-rc.13.tgz#84fb1cbfbecab3906fa4fcc1a23b0ca410997548"
-  integrity sha512-a0HeqtzgUCHfZO6t5kInoj6PhHVPkZZMJ+gq4Wu687pUwNnC8yAFuKVhYtRIgFwGEXe01SrhEo6rfUFwQErQTg==
-  dependencies:
-    file-saver "^2.0.5"
-
-"@formio/text-mask-addons@^3.8.0-formio.2":
-  version "3.8.0-formio.2"
-  resolved "https://registry.npmjs.org/@formio/text-mask-addons/-/text-mask-addons-3.8.0-formio.2.tgz#b9489e68911c70a31997b97dd846d8a7cca6abdb"
-  integrity sha512-H4Sm+1Sx59jbrlKxtKbzethhp5OIcP8Oi4JBpsvH/SB8P/KCRmtjKbN5ACqURnXmYtBHLJC6Yr9KZibOVRGxpA==
+"@formio/text-mask-addons@^3.8.0-formio.3":
+  version "3.8.0-formio.3"
+  resolved "https://registry.npmjs.org/@formio/text-mask-addons/-/text-mask-addons-3.8.0-formio.3.tgz#9da71371a2cb6f781e5e9f90246f25b3d053f75d"
+  integrity sha512-izNhggJTaCEJNOhtdCkouLxBP3byl+ObsHTdp9RpKwNz0k/ZIy/0xuelk1NY4vAjKojnJPiAjtxn+rrcZnEkpw==
 
 "@formio/vanilla-text-mask@^5.1.1-formio.1":
   version "5.1.1-formio.1"
@@ -2833,7 +2826,7 @@
   resolved "https://registry.npmjs.org/@yarnpkg/lockfile/-/lockfile-1.1.0.tgz#e77a97fbd345b76d83245edcd17d393b1b41fb31"
   integrity sha512-GpSwvyXOcOOlV70vbnzjj4fW5xW/FdUF6nQEt1ENy7m4ZCczi1+/buVUPAqmGfqznsORNFzUMjctTIp8a9tuCQ==
 
-"@zxing/library@^0.21.0":
+"@zxing/library@^0.21.2":
   version "0.21.3"
   resolved "https://registry.npmjs.org/@zxing/library/-/library-0.21.3.tgz#0a4cb777701884131832b05922d7e88ef1b87ab4"
   integrity sha512-hZHqFe2JyH/ZxviJZosZjV+2s6EDSY0O24R+FQmlWZBZXP9IqMo7S3nb3+2LBWxodJQkSurdQGnqE7KXqrYgow==
@@ -3917,7 +3910,7 @@ date-format@^4.0.14:
   resolved "https://registry.npmjs.org/date-format/-/date-format-4.0.14.tgz#7a8e584434fb169a521c8b7aa481f355810d9400"
   integrity sha512-39BOQLs9ZjKh0/patS9nrT8wc3ioX3/eA/zgbKNopnF2wCqJEoxywwwElATYvRsXdnOxA/OQeQoFZ3rFjVajhg==
 
-dayjs@^1.11.11:
+dayjs@^1.11.11, dayjs@^1.11.12:
   version "1.11.13"
   resolved "https://registry.npmjs.org/dayjs/-/dayjs-1.11.13.tgz#92430b0139055c3ebb60150aa13e860a4b5a366c"
   integrity sha512-oaMBel6gjolK862uaPQOVTA7q3TZhuSvuMQAAglQDOWYO9A91IrAOUJEyKVlqJlHE0vq5p5UXxzdPfMH/x6xNg==
@@ -4632,11 +4625,6 @@ fetch-ponyfill@^7.1.0:
   integrity sha512-FhbbL55dj/qdVO3YNK7ZEkshvj3eQ7EuIGV2I6ic/2YiocvyWv+7jg2s4AyS0wdRU75s3tA8ZxI/xPigb0v5Aw==
   dependencies:
     node-fetch "~2.6.1"
-
-file-saver@^2.0.5:
-  version "2.0.5"
-  resolved "https://registry.npmjs.org/file-saver/-/file-saver-2.0.5.tgz#d61cfe2ce059f414d899e9dd6d4107ee25670c38"
-  integrity sha512-P9bmyZ3h/PRG+Nzga+rbdI4OEpNDzAVyy74uVO9ATgzLK6VtAsYybF/+TOCvrc0MO793d6+42lLyZTw7/ArVzA==
 
 fill-range@^7.1.1:
   version "7.1.1"
@@ -8260,10 +8248,10 @@ tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   resolved "https://registry.npmjs.org/tweetnacl/-/tweetnacl-0.14.5.tgz#5ae68177f192d4456269d108afa93ff8743f4f64"
   integrity sha512-KXXFFdAbFXY4geFIwoyNK+f5Z1b7swfXABfL7HXCmoIWMKU3dmS26672A4EeQtDzLKy7SXmfBu51JolvEKwtGA==
 
-two.js@0.8.13:
-  version "0.8.13"
-  resolved "https://registry.npmjs.org/two.js/-/two.js-0.8.13.tgz#a50f5f0201dd2b3f14fe1f81b944b263185707d2"
-  integrity sha512-/j14c9/dY3AIf2sgagrSd0EWzG66XAF/P4XDq690WkACSat1HB1PYNWJTkhRRuNrT+D+luPea3NsZWQH3ClLDA==
+two.js@^0.7.13:
+  version "0.7.13"
+  resolved "https://registry.npmjs.org/two.js/-/two.js-0.7.13.tgz#b4dbd89fd5889b17758a4dbe3281df5c3c767b3b"
+  integrity sha512-UP2MkH7gm4p8WQrLGoYnEo8ZztHKijoZzBz0h/ehdOUh93/6p8LvI0gtZZ3+n5Mndks2jVxJRgPYKSwpk7jrrw==
 
 type-fest@^0.21.3:
   version "0.21.3"
