@@ -1,0 +1,25 @@
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h5 class="my-2 d-flex gap-2 align-items-center" style="font-size: 16px;">
+        <i class="bi fs-4 bi-clipboard-data"></i>
+        Your Reports
+    </h5>
+</div>
+<div class="form-list-header list-group-flush d-flex flex-row justify-content-between align-items-center mb-2">
+    <div class="col-10 ps-3 fw-3 text-muted">Title</div>
+    <div class="col-2 ps-3 fw-3 text-muted">Actions</div>
+</div>
+<hr />
+<ul class="list-group list-group-flush list-group-light">
+    <a class="list-group-item list-group-item-action d-flex flex-row  align-items-center py-4  mb-2 shadow-sm rounded" *ngFor="let report of (reports | async)">
+        <div class="col-10 ms-3 mr-auto d-flex flex-row gap-4 justify-content-start align-items-center cursor-pointer" routerLink="{{ report._id }}">
+            <div class="ms-3 me-auto">
+                <div class="fs-4 fw-3 text-muted">{{ report.data.title }}</div>
+                <div class="fs-6 fw-lighter text-muted">created {{ report.created | date: 'short' }}</div>
+                <div class="fs-6 fw-lighter text-muted">modified {{ report.modified | date: 'short' }}</div>
+            </div>
+        </div>
+        <div class="col-2 form-actions d-flex flex-row  align-items-start gap-2 justify-content-center ml-auto">
+            <a routerLink="{{ report._id }}" class="btn btn-primary btn-icon btn-xs rounded-circle"><i class="bi bi-eye fs-xs"></i></a>
+        </div>
+    </a>
+</ul>

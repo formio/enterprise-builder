@@ -18,7 +18,12 @@ const routes: Routes = [
     path: 'forms',
     canActivate: [AuthGuard],
     loadChildren: () => import('./forms/forms.module').then(m => m.FormsModule)
-  }
+  },
+  {
+    path: 'reports',
+    canActivate: [AuthGuard],
+    loadChildren: () => import('./report/report.module').then(m => m.ReportModule)
+  },
 ];
 
 @NgModule({

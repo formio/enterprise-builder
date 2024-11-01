@@ -7,5 +7,5 @@ import { FormViewComponent } from '@formio/enterprise-builder/angular';
   styleUrl: './view.component.scss'
 })
 export class ViewComponent extends FormViewComponent {
-  public override mobileView: boolean = false;
+  public mobileView: boolean = false;
 }
