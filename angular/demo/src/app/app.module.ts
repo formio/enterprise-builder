@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -30,6 +30,7 @@ import { AppConfig } from './app.config';
   ],
   providers: [
     provideToastr(),
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
     {provide: ENTERPRISE_BUILDER_CONFIG, useValue: AppConfig},
     {provide: FormioAppConfig, useClass: EnterpriseBuilderAppConfig},
     {provide: EnterpriseBuilderAlerts, useClass: AppAlertsService},

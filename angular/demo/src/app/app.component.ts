@@ -22,7 +22,6 @@ export class AppComponent {
 
     this.auth.onLogout.subscribe(() => {
       this.router.navigate(['/auth/login']);
-      window.location.reload();
     });
 
     this.auth.onRegister.subscribe(() => {
