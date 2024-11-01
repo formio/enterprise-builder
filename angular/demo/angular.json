@@ -24,6 +24,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "baseHref": "/enterprise-builder/angular/",
             "outputPath": "dist/demo",
             "index": "src/index.html",
             "browser": "src/main.ts",
