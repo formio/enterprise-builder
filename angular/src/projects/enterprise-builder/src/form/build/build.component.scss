@@ -1,0 +1,20 @@
+.formbuilder {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    .formarea {
+        width: 80%;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #ffffff;
+    }
+    .formcomponents {
+        padding: 10px;
+        width: 18%;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #ffffff;
+    }
+}
