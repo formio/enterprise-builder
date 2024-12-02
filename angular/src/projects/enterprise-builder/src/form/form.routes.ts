@@ -6,6 +6,7 @@ import { FormComponent } from './form/form.component';
 import { FormsComponent } from './forms.component';
 import { formResolver } from './form.resolver';
 import { formsResolver } from './forms.resolver';
+import { projectResolver } from './project.resolver';
 import { FormDeleteComponent } from './delete/delete.component';
 import { FormCompleteComponent } from './complete/complete.component';
 import { FormErrorComponent } from './error/error.component';
@@ -40,7 +41,8 @@ export function FormRoutes(config: FormRouteConfig = {}): Routes {
     },
     {
       path: 'build',
-      component: config.build || FormBuildComponent
+      component: config.build || FormBuildComponent,
+      resolve: { project: projectResolver }
     },
     {
       path: ':formId',
