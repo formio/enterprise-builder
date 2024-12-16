@@ -1,32 +1,27 @@
 {
     "name": "@formio/enterprise-builder",
-    "version": "1.0.0-dev.5",
+    "version": "1.0.0-rc.1",
     "repository": "git@github.com:formio/enterprise-builder.git",
     "license": "MIT",
-    "exports": {
-        "./angular/package.json": {
-            "default": "./angular/package.json"
-        },
-        "./angular": {
-            "types": "./angular/index.d.ts",
-            "esm2022": "./angular/esm2022/formio-enterprise-builder-angular.mjs",
-            "esm": "./angular/esm2022/formio-enterprise-builder-angular.mjs",
-            "default": "./angular/fesm2022/formio-enterprise-builder-angular.mjs"
-        }
-    },
     "dependencies": {
-        "@formio/enterprise-builder-core": "^1.0.0-dev.5"
-    },
-    "peerDependencies": {
-        "@formio/js": "^5.0.0-rc.80",
-        "@formio/premium": "^2.0.0-rc.11"
+        "@formio/enterprise-builder-core": "^1.0.0-rc.1",
+        "@formio/js": "^5.0.0",
+        "@formio/premium": "^3.0.0",
+        "@formio/reporting": "^2.0.0",
+        "@formio/angular": "^8.0.0"
     },
     "scripts": {
-        "clean": "rm -rf build && mkdir build",
+        "updatedeps": "node ./updatedeps.js",
+        "clean": "rm -rf build && mkdir build && npm run updatedeps",
         "build:angular": "cd angular/src && yarn --force && ng cache clean && npm run build",
-        "copy:package": "cp package.json build/package.json",
+        "copy:package": "cp package-build.json build/package.json",
         "copy:angular": "rsync -av angular/src/dist/enterprise-builder/ build/angular",
-        "build": "npm run clean && npm run build:angular && npm run copy:package && npm run copy:angular",
-        "release": "npm run build && npm publish ./build --access public --tag dev"
+        "build:module": "npm run clean && npm run build:angular && npm run copy:package && npm run copy:angular",
+        "release:module:rc": "npm run build:module && npm publish ./build --access public --tag rc",
+        "release:module:prod": "npm run build:module && npm publish ./build --access public",
+        "build:angular:demo": "cd angular/demo && yarn --force && ng cache clean && npm run build",
+        "release:angular:demo:dev": "cd angular/demo && npm run deploy:dev",
+        "release:angular:demo:prod": "cd angular/demo && npm run deploy:prod",
+        "release:dev": "npm run release:module:rc && sleep 10 && npm run release:angular:demo:dev"
     }
 }

@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-"@formio/enterprise-builder-core@^1.0.0-dev.5":
-  version "1.0.0-dev.5"
-  resolved "https://registry.npmjs.org/@formio/enterprise-builder-core/-/enterprise-builder-core-1.0.0-dev.5.tgz#55dffece990e448e31e1406bfe9d1733103f7333"
-  integrity sha512-TxZSZOWB/l7n0S+3QgrISd8cmJ1EIpVsp2RBfaCeSn+RMyotmAG7tXLBBkqQa/h7rKMz4j25wd1JUdTzSRI5Rg==
+"@formio/enterprise-builder-core@^1.0.0-rc.1":
+  version "1.0.0-rc.1"
+  resolved "https://registry.npmjs.org/@formio/enterprise-builder-core/-/enterprise-builder-core-1.0.0-rc.1.tgz#4ea868935311b3a7208174447df85b59d479f26a"
+  integrity sha512-QsdK/D2rcg5abiu+gI4FCM5SO0df6H2rucp8Oatby8d85jecg/aBh4CCZs3S7zBt62YsyctCUHkWpXR517AoHQ==
