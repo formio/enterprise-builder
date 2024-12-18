@@ -1524,7 +1524,7 @@
   resolved "https://registry.npmjs.org/@formio/enterprise-builder-core/-/enterprise-builder-core-1.0.0-rc.1.tgz#4ea868935311b3a7208174447df85b59d479f26a"
   integrity sha512-QsdK/D2rcg5abiu+gI4FCM5SO0df6H2rucp8Oatby8d85jecg/aBh4CCZs3S7zBt62YsyctCUHkWpXR517AoHQ==
 
-"@formio/enterprise-builder@^1.0.0-rc.2":
+"@formio/enterprise-builder@1.0.0-rc.2":
   version "1.0.0-rc.2"
   resolved "https://registry.npmjs.org/@formio/enterprise-builder/-/enterprise-builder-1.0.0-rc.2.tgz#5bb00de39079b6a8d2b5e23480f2b261b1f0460b"
   integrity sha512-JPPqkPpxqgl06rjxkOSWgGR5OQ/ilMMqt2GdRVTx3sJTgWdG2MOFa8owZ8cpZ24KTb+EbMAkzMGNvDMIjXxkyA==
