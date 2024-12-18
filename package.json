@@ -20,8 +20,8 @@
         "release:module:rc": "npm run build:module && npm publish ./build --access public --tag rc",
         "release:module:prod": "npm run build:module && npm publish ./build --access public",
         "build:angular:demo": "cd angular/demo && yarn --force && ng cache clean && npm run build",
-        "release:angular:demo:dev": "cd angular/demo && npm run deploy:dev",
-        "release:angular:demo:prod": "cd angular/demo && npm run deploy:prod",
+        "release:angular:demo:dev": "npm run updatedeps && cd angular/demo && npm run deploy:dev",
+        "release:angular:demo:prod": "npm run updatedeps && cd angular/demo && npm run deploy:prod",
         "release:dev": "npm run release:module:rc && sleep 10 && npm run release:angular:demo:dev"
     }
 }
