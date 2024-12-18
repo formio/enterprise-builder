@@ -1480,10 +1480,10 @@
   resolved "https://registry.npmjs.org/@esbuild/win32-x64/-/win32-x64-0.23.0.tgz#db44a6a08520b5f25bbe409f34a59f2d4bcc7ced"
   integrity sha512-Arm+WgUFLUATuoxCJcahGuk6Yj9Pzxd6l11Zb/2aAuv5kWWvvfhLFo2fni4uSK5vzlUdCGZ/BdV5tH8klj8p8g==
 
-"@formio/angular@^8.0.0":
-  version "8.0.0"
-  resolved "https://registry.npmjs.org/@formio/angular/-/angular-8.0.0.tgz#9ff59c0fc8176529edd5c478c7944980a843d545"
-  integrity sha512-GivxcfSlycaHv8dW7L1QRRxGzNXSNOT8tzX1q2qR31HlkJc4INiY+5QKTNJpQd/ogxmVUdkzFnX2nNkNKDEGEg==
+"@formio/angular@^8.1.0-rc.1":
+  version "8.1.0-rc.1"
+  resolved "https://registry.npmjs.org/@formio/angular/-/angular-8.1.0-rc.1.tgz#77887cf6ddb8eb13957e729bbfba64dd2d57d7fa"
+  integrity sha512-m48Jtfx7Aj8KqP9mEpALLpZG5eMMQdsqKFkggYdfcJPIzv7a4Y2titSK9jlnfLTKPGXb6gpxxjHgTHUtAa0HpA==
   dependencies:
     tslib "^2.0.0"
 
@@ -1519,10 +1519,17 @@
     lodash "^4.17.21"
     moment "^2.29.4"
 
-"@formio/enterprise-builder@^1.0.0-dev.1":
-  version "1.0.0-dev.1"
-  resolved "https://registry.npmjs.org/@formio/enterprise-builder/-/enterprise-builder-1.0.0-dev.1.tgz#5102e13e6545e5f335934ae2d4dcc939b54f63cb"
-  integrity sha512-n3+aHaL/cN/NPKZpswg+OQEjkMprs3nHQh5pTctXqkt/OGRV+aloOZpVFT4+LuVOCmb80yGBNbCtdN5fWOs59w==
+"@formio/enterprise-builder-core@^1.0.0-rc.1":
+  version "1.0.0-rc.1"
+  resolved "https://registry.npmjs.org/@formio/enterprise-builder-core/-/enterprise-builder-core-1.0.0-rc.1.tgz#4ea868935311b3a7208174447df85b59d479f26a"
+  integrity sha512-QsdK/D2rcg5abiu+gI4FCM5SO0df6H2rucp8Oatby8d85jecg/aBh4CCZs3S7zBt62YsyctCUHkWpXR517AoHQ==
+
+"@formio/enterprise-builder@^1.0.0-rc.1":
+  version "1.0.0-rc.1"
+  resolved "https://registry.npmjs.org/@formio/enterprise-builder/-/enterprise-builder-1.0.0-rc.1.tgz#a66ba38066ea8b027fffbb12e9bddd48c36e71ce"
+  integrity sha512-x0HLTd0zWqkN5jn2r8YETC5QrEUZgQ5ijp6Nsf/t3ki0m+W4mxgwO8RBOmzkPOPlPGnVLzN2y3V8+x74qwqKzQ==
+  dependencies:
+    "@formio/enterprise-builder-core" "^1.0.0-rc.1"
 
 "@formio/js@^5.0.0":
   version "5.0.0"

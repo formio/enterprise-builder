@@ -1,6 +1,6 @@
 {
   "name": "@formio/enterprise-builder",
-  "version": "1.0.0-rc.1",
+  "version": "1.0.0-rc.2",
   "repository": "git@github.com:formio/enterprise-builder.git",
   "license": "MIT",
   "exports": {
