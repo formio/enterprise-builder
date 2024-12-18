@@ -10,7 +10,7 @@
     "@angular/core": "^18.2.1",
     "@formio/js": "^5.0.0",
     "@formio/premium": "^3.0.0",
-    "@formio/reporting": "^2.0.0"
+    "@formio/reporting": "^2.0.0-dev.tt.9"
   },
   "sideEffects": false,
   "module": "fesm2022/formio-enterprise-builder-angular.mjs",

@@ -1611,10 +1611,10 @@
   resolved "https://registry.npmjs.org/@esbuild/win32-x64/-/win32-x64-0.23.1.tgz#81fd50d11e2c32b2d6241470e3185b70c7b30699"
   integrity sha512-BHpFFeslkWrXWyUPnbKm+xYYVYruCinGcftSBaa8zoF9hZO4BcSCFUvHVTtzpIY6YzUnYtuEhZ+C9iEXjxnasg==
 
-"@formio/angular@^8.0.0":
-  version "8.0.0"
-  resolved "https://registry.npmjs.org/@formio/angular/-/angular-8.0.0.tgz#9ff59c0fc8176529edd5c478c7944980a843d545"
-  integrity sha512-GivxcfSlycaHv8dW7L1QRRxGzNXSNOT8tzX1q2qR31HlkJc4INiY+5QKTNJpQd/ogxmVUdkzFnX2nNkNKDEGEg==
+"@formio/angular@^8.1.0-rc.1":
+  version "8.1.0-rc.1"
+  resolved "https://registry.npmjs.org/@formio/angular/-/angular-8.1.0-rc.1.tgz#77887cf6ddb8eb13957e729bbfba64dd2d57d7fa"
+  integrity sha512-m48Jtfx7Aj8KqP9mEpALLpZG5eMMQdsqKFkggYdfcJPIzv7a4Y2titSK9jlnfLTKPGXb6gpxxjHgTHUtAa0HpA==
   dependencies:
     tslib "^2.0.0"
 
