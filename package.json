@@ -22,6 +22,7 @@
         "build:angular:demo": "cd angular/demo && yarn --force && ng cache clean && npm run build",
         "release:angular:demo:dev": "npm run updatedeps && cd angular/demo && npm run deploy:dev",
         "release:angular:demo:prod": "npm run updatedeps && cd angular/demo && npm run deploy:prod",
-        "release:dev": "npm run release:module:rc && sleep 10 && npm run release:angular:demo:dev"
+        "release:dev": "npm run release:module:rc && sleep 10 && npm run release:angular:demo:dev",
+        "release:prod": "npm run release:module:prod && sleep 10 && npm run release:angular:demo"
     }
 }

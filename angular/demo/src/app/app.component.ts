@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { FormioAuthService } from '@formio/angular/auth';
 import { intersection } from 'lodash';
 import { EnterpriseBuilderService } from '@formio/enterprise-builder/angular';
+import packageJSON from '../../package.json';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,13 @@ import { EnterpriseBuilderService } from '@formio/enterprise-builder/angular';
 export class AppComponent {
   title = 'Form Builder Demo';
   version: string = VERSION.full;
+  appVersion: string = packageJSON.version;
+  rendererVersion: string = packageJSON.dependencies['@formio/js'].replace(/[\^\~]/g, '');
+  angularVersion: string = packageJSON.dependencies['@formio/angular'].replace(/[\^\~]/g, '');;
+  builderVersion: string = packageJSON.dependencies['@formio/enterprise-builder'].replace(/[\^\~]/g, '');;
+  premiumVersion: string = packageJSON.dependencies['@formio/premium'].replace(/[\^\~]/g, '');;
+  reportingVersion: string = packageJSON.dependencies['@formio/reporting'].replace(/[\^\~]/g, '');;
+  copyrightYear = new Date().getFullYear();
   constructor(
     public auth: FormioAuthService,
     private router: Router,
