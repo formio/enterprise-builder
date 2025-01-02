@@ -1,6 +1,6 @@
 {
   "name": "@formio/enterprise-builder-angular",
-  "version": "1.0.0-rc.4",
+  "version": "1.0.0-rc.5",
   "scripts": {
     "ng": "ng",
     "build": "ng build enterprise-builder",

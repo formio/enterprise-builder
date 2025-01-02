@@ -1,6 +1,6 @@
 {
   "name": "@formio/enterprise-builder-angular",
-  "version": "1.0.0-rc.4",
+  "version": "1.0.0-rc.5",
   "dependencies": {
     "@formio/enterprise-builder-core": "1.0.0-rc.3"
   },
