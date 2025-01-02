@@ -1,6 +1,6 @@
 {
   "name": "demo",
-  "version": "1.0.0-rc.3",
+  "version": "1.0.0-rc.4",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -25,10 +25,10 @@
     "@angular/platform-browser-dynamic": "^18.2.0",
     "@angular/router": "^18.2.0",
     "@formio/angular": "^8.1.0-rc.1",
-    "@formio/enterprise-builder": "1.0.0-rc.3",
+    "@formio/enterprise-builder": "1.0.0-rc.4",
     "@formio/js": "^5.0.0",
     "@formio/premium": "3.0.1-rc.1",
-    "@formio/reporting": "2.0.0",
+    "@formio/reporting": "2.1.0-rc.1",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
     "bootswatch": "^5.3.3",

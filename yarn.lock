@@ -48,10 +48,10 @@
     lodash "^4.17.21"
     moment "^2.29.4"
 
-"@formio/enterprise-builder-core@1.0.0-rc.2":
-  version "1.0.0-rc.2"
-  resolved "https://registry.npmjs.org/@formio/enterprise-builder-core/-/enterprise-builder-core-1.0.0-rc.2.tgz#23480af798582ffc5313b7ee20d53770df72b4f5"
-  integrity sha512-Ct5Wouw46AsN0jzJUiKOeH799XhHXDGuofbm/5fe0kozyWJlhZNy8ASW/CM9cF/2pvkTS+h/s5R53brglz4OaA==
+"@formio/enterprise-builder-core@1.0.0-rc.3":
+  version "1.0.0-rc.3"
+  resolved "https://registry.npmjs.org/@formio/enterprise-builder-core/-/enterprise-builder-core-1.0.0-rc.3.tgz#9cbb8e5cb0a224d39d0f5b3343829ffcece4c219"
+  integrity sha512-M7XWqDiMiVhhxB5vi2fZm0A7kdNq0TOMdG93o6tUiRVfcZZmNn9xdUQzgSIsKWT5LTHjgKaCWaxCj4PZPFVoJg==
 
 "@formio/js@^5.0.0":
   version "5.0.0"
@@ -109,12 +109,13 @@
     uuid "^9.0.1"
     vanilla-picker "^2.12.3"
 
-"@formio/reporting@2.0.0":
-  version "2.0.0"
-  resolved "https://registry.npmjs.org/@formio/reporting/-/reporting-2.0.0.tgz#d7711e04102e4132226b4c207c5f4fc9f08ec7ee"
-  integrity sha512-hEVePzOCGPO+UHs7i+SPLJc3YWrildxvQ56Rl8mO+vh+dF5YkI6SjWmdrBO3fPKznnuFykZVJcbHCgNPYmHIYQ==
+"@formio/reporting@2.1.0-rc.1":
+  version "2.1.0-rc.1"
+  resolved "https://registry.npmjs.org/@formio/reporting/-/reporting-2.1.0-rc.1.tgz#f6d9761d8fa44dee9df6d9da8fdb4db85cb3ca40"
+  integrity sha512-0IFWryZbmRRiTyMd8mpOSvkOTUaoBmdyDMydO0Ww03+pC+UlOSkKE31KC8Bev1a7fH1BSEqT/1Lh5j3RXMFHoQ==
   dependencies:
     file-saver "^2.0.5"
+    jose "^5.6.3"
 
 "@formio/text-mask-addons@^3.8.0-formio.3":
   version "3.8.0-formio.4"

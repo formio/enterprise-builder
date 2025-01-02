@@ -1655,10 +1655,10 @@
   resolved "https://registry.npmjs.org/@formio/deprecated-types/-/deprecated-types-0.1.0.tgz#e8db67b93a2eded12efd640a10c7ddf0cffa2441"
   integrity sha512-jNc3Nw55nc75KESg+KPxxdG9ktnERTYodScAx3eh/J2dlA06N2Korafhu9zmwcDis8lOqtEz3X89cVxpJM9MzQ==
 
-"@formio/enterprise-builder-core@1.0.0-rc.2":
-  version "1.0.0-rc.2"
-  resolved "https://registry.npmjs.org/@formio/enterprise-builder-core/-/enterprise-builder-core-1.0.0-rc.2.tgz#23480af798582ffc5313b7ee20d53770df72b4f5"
-  integrity sha512-Ct5Wouw46AsN0jzJUiKOeH799XhHXDGuofbm/5fe0kozyWJlhZNy8ASW/CM9cF/2pvkTS+h/s5R53brglz4OaA==
+"@formio/enterprise-builder-core@1.0.0-rc.3":
+  version "1.0.0-rc.3"
+  resolved "https://registry.npmjs.org/@formio/enterprise-builder-core/-/enterprise-builder-core-1.0.0-rc.3.tgz#9cbb8e5cb0a224d39d0f5b3343829ffcece4c219"
+  integrity sha512-M7XWqDiMiVhhxB5vi2fZm0A7kdNq0TOMdG93o6tUiRVfcZZmNn9xdUQzgSIsKWT5LTHjgKaCWaxCj4PZPFVoJg==
 
 "@formio/js@^5.0.0":
   version "5.0.0"
