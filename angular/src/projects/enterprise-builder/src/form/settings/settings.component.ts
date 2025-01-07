@@ -3,7 +3,8 @@ import { FormEditComponent } from '../edit/edit.component';
 
 @Component({
   selector: 'form-settings',
-  templateUrl: './settings.component.html'
+  templateUrl: './settings.component.html',
+  standalone: false
 })
 export class FormSettingsComponent extends FormEditComponent implements OnInit {
   public settings: any = {};

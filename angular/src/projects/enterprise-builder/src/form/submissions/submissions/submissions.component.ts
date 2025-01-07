@@ -6,7 +6,8 @@ import { Utils } from '@formio/js/utils';
 @Component({
   selector: 'form-submissions',
   templateUrl: './submissions.component.html',
-  styleUrls: ['./submissions.component.scss']
+  styleUrls: ['./submissions.component.scss'],
+  standalone: false
 })
 export class FormSubmissionsComponent implements OnInit {
   public submissionForm: any;

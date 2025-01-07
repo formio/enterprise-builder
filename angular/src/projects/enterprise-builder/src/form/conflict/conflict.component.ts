@@ -7,7 +7,8 @@ import { FormEditComponent } from '../edit/edit.component';
 
 @Component({
   selector: 'form-conflict',
-  templateUrl: './conflict.component.html'
+  templateUrl: './conflict.component.html',
+  standalone: false
 })
 export class FormConflictComponent extends FormEditComponent {
   constructor(

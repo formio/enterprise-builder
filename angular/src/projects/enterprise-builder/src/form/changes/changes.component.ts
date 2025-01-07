@@ -6,7 +6,8 @@ import { FormEditComponent } from '../edit/edit.component';
 
 @Component({
   selector: 'form-changes',
-  templateUrl: './changes.component.html'
+  templateUrl: './changes.component.html',
+  standalone: false
 })
 export class FormChangesComponent extends FormEditComponent {
   private intendedRoute: string | null = null;
