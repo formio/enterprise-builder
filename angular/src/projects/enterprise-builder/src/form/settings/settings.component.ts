@@ -61,7 +61,7 @@ export class FormSettingsComponent extends FormEditComponent implements OnInit {
     if (this.settings.data.tags) {
       this.service.builderForm.tags = typeof this.settings.data.tags ===  'string'
       ? this.settings.data.tags.split(',').map((tag: string) => tag.trim())
-      : this.settings.data.tagss;
+      : this.settings.data.tags;
     }
     return super.saveForm();
   }
