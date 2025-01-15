@@ -48,10 +48,10 @@
     lodash "^4.17.21"
     moment "^2.29.4"
 
-"@formio/enterprise-builder-core@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.npmjs.org/@formio/enterprise-builder-core/-/enterprise-builder-core-1.0.0-rc.1.tgz#4ea868935311b3a7208174447df85b59d479f26a"
-  integrity sha512-QsdK/D2rcg5abiu+gI4FCM5SO0df6H2rucp8Oatby8d85jecg/aBh4CCZs3S7zBt62YsyctCUHkWpXR517AoHQ==
+"@formio/enterprise-builder-core@1.0.0-rc.5":
+  version "1.0.0-rc.5"
+  resolved "https://registry.yarnpkg.com/@formio/enterprise-builder-core/-/enterprise-builder-core-1.0.0-rc.5.tgz#56ac082e85dfb73c3a069f8da15f9075ad5cd58b"
+  integrity sha512-29CNqn3Txxe+gurL4uiZMfs6bt4v4B7MbxswPwIARc2erVCL+reCnPfP2XCzy8cu6TRRrfiRJnbAE1EVsLg7KA==
 
 "@formio/js@^5.0.0":
   version "5.0.0"
@@ -94,10 +94,10 @@
     uuid "^9.0.0"
     vanilla-picker "^2.12.3"
 
-"@formio/premium@^3.0.0":
-  version "3.0.0"
-  resolved "https://registry.npmjs.org/@formio/premium/-/premium-3.0.0.tgz#56227c2b3f3573b2f46cb6528870256f13a37972"
-  integrity sha512-shajPnY7EtHglOnSYBF+IGkE36EbQ/e+g0Vi7Q5hH8OZs/depESDPCu8CGNcebsFpz+epU48E056rQR9PkFegA==
+"@formio/premium@3.0.1-rc.4":
+  version "3.0.1-rc.4"
+  resolved "https://registry.yarnpkg.com/@formio/premium/-/premium-3.0.1-rc.4.tgz#09db5c78abc56392cc15a273349973dc63174e8f"
+  integrity sha512-ZqHkajchKrcOhas+M8Y/45oEMbJILQDss8YaOH7aT+sIv8fNfmp3JnxBg7Y2nFFr+1XKEMhdWe7gl5a6fBdXaA==
   dependencies:
     "@juggle/resize-observer" "^3.4.0"
     "@zxing/library" "^0.21.2"
@@ -109,13 +109,12 @@
     uuid "^9.0.1"
     vanilla-picker "^2.12.3"
 
-"@formio/reporting@^2.0.0-dev.tt.9":
-  version "2.0.0-dev.tt.9"
-  resolved "https://registry.npmjs.org/@formio/reporting/-/reporting-2.0.0-dev.tt.9.tgz#9743a330a78cd8adfa21214a9abd49f021beb143"
-  integrity sha512-J5Pw50v1f9oBSYKXkhSpu1DwygKSrbQON96cEXuBgvL/FgIfBZc27fvd8gD6V96IY9PXh/hWzvMDcak8YW3C1A==
+"@formio/reporting@2.0.1-rc.3":
+  version "2.0.1-rc.3"
+  resolved "https://registry.yarnpkg.com/@formio/reporting/-/reporting-2.0.1-rc.3.tgz#227021f962fc37542eeb60f949bcdb5da9d54669"
+  integrity sha512-eJhVbefzihY2dcQhyZZLPXf6J+XyHp6W79sqkOtu0v88/rFz1NEjz9hW+AOTNz9sZsnCjJY0Cm9zQWpV90fUBw==
   dependencies:
     file-saver "^2.0.5"
-    jose "^5.6.3"
 
 "@formio/text-mask-addons@^3.8.0-formio.3":
   version "3.8.0-formio.4"

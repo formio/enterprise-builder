@@ -1,28 +1,28 @@
 {
-    "name": "@formio/enterprise-builder",
-    "version": "1.0.0-rc.2",
-    "repository": "git@github.com:formio/enterprise-builder.git",
-    "license": "MIT",
-    "dependencies": {
-        "@formio/angular": "^8.1.0-rc.1",
-        "@formio/enterprise-builder-core": "^1.0.0-rc.1",
-        "@formio/js": "^5.0.0",
-        "@formio/premium": "^3.0.0",
-        "@formio/reporting": "^2.0.0-dev.tt.9"
-    },
-    "scripts": {
-        "updatedeps": "node ./updatedeps.js",
-        "clean": "rm -rf build && mkdir build && npm run updatedeps",
-        "build:angular": "cd angular/src && yarn --force && ng cache clean && npm run build",
-        "copy:package": "cp package-build.json build/package.json",
-        "copy:angular": "rsync -av angular/src/dist/enterprise-builder/ build/angular",
-        "build:module": "npm run clean && npm run build:angular && npm run copy:package && npm run copy:angular",
-        "release:module:rc": "npm run build:module && npm publish ./build --access public --tag rc",
-        "release:module:prod": "npm run build:module && npm publish ./build --access public",
-        "build:angular:demo": "cd angular/demo && yarn --force && ng cache clean && npm run build",
-        "release:angular:demo:dev": "npm run updatedeps && cd angular/demo && npm run deploy:dev",
-        "release:angular:demo:prod": "npm run updatedeps && cd angular/demo && npm run deploy:prod",
-        "release:dev": "npm run release:module:rc && sleep 10 && npm run release:angular:demo:dev",
-        "release:prod": "npm run release:module:prod && sleep 10 && npm run release:angular:demo"
-    }
+  "name": "@formio/enterprise-builder",
+  "version": "1.0.0-rc.7",
+  "repository": "git@github.com:formio/enterprise-builder.git",
+  "license": "MIT",
+  "dependencies": {
+    "@formio/angular": "^8.1.0-rc.1",
+    "@formio/enterprise-builder-core": "1.0.0-rc.5",
+    "@formio/js": "^5.0.0",
+    "@formio/premium": "3.0.1-rc.4",
+    "@formio/reporting": "2.0.1-rc.3"
+  },
+  "scripts": {
+    "updatedeps": "node ./updatedeps.js",
+    "clean": "rm -rf build && mkdir build && npm run updatedeps",
+    "build:angular": "cd angular/src && yarn --force && ng cache clean && npm run build",
+    "copy:package": "cp package-build.json build/package.json",
+    "copy:angular": "rsync -av angular/src/dist/enterprise-builder/ build/angular",
+    "build:module": "npm run clean && npm run build:angular && npm run copy:package && npm run copy:angular",
+    "release:module:rc": "npm run build:module && npm publish ./build --access public --tag rc",
+    "release:module:prod": "npm run build:module && npm publish ./build --access public",
+    "build:angular:demo": "cd angular/demo && yarn --force && ng cache clean && npm run build",
+    "release:angular:demo:dev": "npm run updatedeps && cd angular/demo && npm run deploy:dev",
+    "release:angular:demo:prod": "npm run updatedeps && cd angular/demo && npm run deploy:prod",
+    "release:dev": "npm run release:module:rc && sleep 10 && npm run release:angular:demo:dev",
+    "release:prod": "npm run release:module:prod && sleep 10 && npm run release:angular:demo"
+  }
 }
