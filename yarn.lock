@@ -48,10 +48,10 @@
     lodash "^4.17.21"
     moment "^2.29.4"
 
-"@formio/enterprise-builder-core@1.0.0-rc.6":
-  version "1.0.0-rc.6"
-  resolved "https://registry.yarnpkg.com/@formio/enterprise-builder-core/-/enterprise-builder-core-1.0.0-rc.6.tgz#935991d6105c46e60735833e62f7aee7c0a0ff16"
-  integrity sha512-XADUbBecu78lRkGBLQJA0j0EYoV2Zs9Scw++j9GRgxAF3jCl89zI9fhqJATw6Mwwb8g71Ty12TGzB8GaBc6lTQ==
+"@formio/enterprise-builder-core@1.0.0-rc.8":
+  version "1.0.0-rc.8"
+  resolved "https://registry.yarnpkg.com/@formio/enterprise-builder-core/-/enterprise-builder-core-1.0.0-rc.8.tgz#b391302b2e07256b2793e3b50f28d247bd565d82"
+  integrity sha512-CmsFs5ASlUgdclwhSLfXt4XE+AHpxNoGp4Tzq3k9moFy9PqNFQWn3FBoewz9KwcBUzIYhmwux5Fd5IJVOhLYFA==
 
 "@formio/js@^5.0.0":
   version "5.0.0"
@@ -94,10 +94,10 @@
     uuid "^9.0.0"
     vanilla-picker "^2.12.3"
 
-"@formio/premium@3.0.1-rc.5":
-  version "3.0.1-rc.5"
-  resolved "https://registry.yarnpkg.com/@formio/premium/-/premium-3.0.1-rc.5.tgz#a17c58c693ea8cf4f5a840c73ca4c2534f6d3426"
-  integrity sha512-y2hAboHVikwBYx0bVnaUMqVrZZ1xxP+Lhv8zdCJqHIOdtEMy39GfocateJEtsOrceMCiSee4NEVip9fwDfGQqQ==
+"@formio/premium@3.0.1-rc.6":
+  version "3.0.1-rc.6"
+  resolved "https://registry.yarnpkg.com/@formio/premium/-/premium-3.0.1-rc.6.tgz#fd506dab20dd7cc5955c5b5b96794a568d15bcd7"
+  integrity sha512-Gn/Zl+xMSkGdXgExcfM2sp9abb8t/oQCNI+bq3AwEA6rDy1wBqbFlA9/RDVi5U7Rhe/Md3MAOyNT+d5RFLnN0w==
   dependencies:
     "@juggle/resize-observer" "^3.4.0"
     "@zxing/library" "^0.21.2"
@@ -109,10 +109,10 @@
     uuid "^9.0.1"
     vanilla-picker "^2.12.3"
 
-"@formio/reporting@2.0.1-rc.4":
-  version "2.0.1-rc.4"
-  resolved "https://registry.yarnpkg.com/@formio/reporting/-/reporting-2.0.1-rc.4.tgz#b59ba78383c3a8ea215b0e3b78d1242b808683b6"
-  integrity sha512-MQEFNPUz/PWvLP0ENVEOlg27ogc5sU/3bFL3ePqoqt741mOJDpkKYGX0SqiYJMVW/hD+ou+YR5x4JI8M3nVBlg==
+"@formio/reporting@2.0.1-rc.6":
+  version "2.0.1-rc.6"
+  resolved "https://registry.yarnpkg.com/@formio/reporting/-/reporting-2.0.1-rc.6.tgz#17ef8d9c5a454112252f4543a473cb2b0b69b6e2"
+  integrity sha512-UxqoIgS52sp0/WpRCw/bBnYjPYSggeDu9MWuqUYmxK6Lwz7bV1DsRSmNeLNxzQ3aaohRlBLulN10xVYTcH/uWQ==
   dependencies:
     file-saver "^2.0.5"
 
