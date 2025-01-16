@@ -714,7 +714,9 @@ class FormSettingsComponent extends FormEditComponent {
         this.service.builderForm.name = this.settings.data.name;
         this.service.builderForm.path = this.settings.data.path;
         if (this.settings.data.tags) {
-            this.service.builderForm.tags = this.settings.data.tags.split(',').map((tag) => tag.trim());
+            this.service.builderForm.tags = typeof this.settings.data.tags === 'string'
+                ? this.settings.data.tags.split(',').map((tag) => tag.trim())
+                : this.settings.data.tags;
         }
         return super.saveForm();
     }

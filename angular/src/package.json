@@ -1,6 +1,6 @@
 {
   "name": "@formio/enterprise-builder-angular",
-  "version": "1.0.0-rc.6",
+  "version": "1.0.0-rc.9",
   "scripts": {
     "ng": "ng",
     "build": "ng build enterprise-builder",
@@ -19,9 +19,9 @@
     "@angular/platform-browser-dynamic": "^18.2.1",
     "@angular/router": "^18.2.1",
     "@formio/angular": "^8.1.0-rc.1",
-    "@formio/enterprise-builder-core": "1.0.0-rc.4",
+    "@formio/enterprise-builder-core": "1.0.0-rc.8",
     "@formio/js": "^5.0.0",
-    "@formio/premium": "3.0.1-rc.3",
+    "@formio/premium": "3.0.1-rc.6",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.10.5",
     "bootswatch": "^5.3.3",
