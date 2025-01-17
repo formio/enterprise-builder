@@ -4,7 +4,11 @@ All notable changes to this project will be documented in this file
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased: 1.0.0-rc.13]
+## 1.0.0-rc.13
+### Changed
+ - Updated @formio/reporting@2.0.1-rc.8
+ - Updated @formio/enterprise-builder-core@1.0.0-rc.10
+
 
 ## 1.0.0-rc.12
 ### Changed
