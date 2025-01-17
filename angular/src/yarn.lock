@@ -1655,10 +1655,10 @@
   resolved "https://registry.npmjs.org/@formio/deprecated-types/-/deprecated-types-0.1.0.tgz#e8db67b93a2eded12efd640a10c7ddf0cffa2441"
   integrity sha512-jNc3Nw55nc75KESg+KPxxdG9ktnERTYodScAx3eh/J2dlA06N2Korafhu9zmwcDis8lOqtEz3X89cVxpJM9MzQ==
 
-"@formio/enterprise-builder-core@1.0.0-rc.8":
-  version "1.0.0-rc.8"
-  resolved "https://registry.yarnpkg.com/@formio/enterprise-builder-core/-/enterprise-builder-core-1.0.0-rc.8.tgz#b391302b2e07256b2793e3b50f28d247bd565d82"
-  integrity sha512-CmsFs5ASlUgdclwhSLfXt4XE+AHpxNoGp4Tzq3k9moFy9PqNFQWn3FBoewz9KwcBUzIYhmwux5Fd5IJVOhLYFA==
+"@formio/enterprise-builder-core@1.0.0-rc.9":
+  version "1.0.0-rc.9"
+  resolved "https://registry.yarnpkg.com/@formio/enterprise-builder-core/-/enterprise-builder-core-1.0.0-rc.9.tgz#a6dad49bcd788ac5f3620a15b6957998973b30e9"
+  integrity sha512-y8DuCzYPhLV63fR752LcXd3GXHPPN5Vd2wHZCjDkR6wSkAX5BW0vL6yfIHR5z4vmuYfw6RF1b1PuE8PzOEQ+NQ==
 
 "@formio/js@^5.0.0":
   version "5.0.0"
@@ -1712,10 +1712,10 @@
     jsonwebtoken "^9.0.0"
     node-cache "^5.1.2"
 
-"@formio/premium@3.0.1-rc.6":
-  version "3.0.1-rc.6"
-  resolved "https://registry.yarnpkg.com/@formio/premium/-/premium-3.0.1-rc.6.tgz#fd506dab20dd7cc5955c5b5b96794a568d15bcd7"
-  integrity sha512-Gn/Zl+xMSkGdXgExcfM2sp9abb8t/oQCNI+bq3AwEA6rDy1wBqbFlA9/RDVi5U7Rhe/Md3MAOyNT+d5RFLnN0w==
+"@formio/premium@3.0.1-rc.7":
+  version "3.0.1-rc.7"
+  resolved "https://registry.yarnpkg.com/@formio/premium/-/premium-3.0.1-rc.7.tgz#6c4808b0ff4b1e479058b3ecbe53fac67d498279"
+  integrity sha512-FIFeGqDETUR4ibxHpuIuxueqmcrpXiFW0ffpkpqi3W0TdfGo5dWaWkCOz4LSXVCAmnJo1Zb5Wi7+ts0hDHL7BA==
   dependencies:
     "@juggle/resize-observer" "^3.4.0"
     "@zxing/library" "^0.21.2"
