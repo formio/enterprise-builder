@@ -10,9 +10,6 @@
     "@formio/premium": "3.0.1-rc.7",
     "@formio/reporting": "2.0.1-rc.7"
   },
-  "devDependencies": {
-    "@formio/reporting": "2.0.1-rc.7"
-  },
   "scripts": {
     "updatedeps": "node ./updatedeps.js",
     "clean": "rm -rf build && mkdir build && npm run updatedeps",
