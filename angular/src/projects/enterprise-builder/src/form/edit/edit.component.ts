@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Form } from '@formio/core/types';
+import { Component, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormsService } from '../forms.service';
 import { FormBuilder } from '@formio/js';
 import { EnterpriseBuilderAlerts } from '../../enterprise-builder.alerts';
+import { FormioBuilder } from '@formio/angular/embed';
 
 @Component({
   selector: 'form-edit',
@@ -10,14 +12,78 @@ import { EnterpriseBuilderAlerts } from '../../enterprise-builder.alerts';
   styleUrls: ['./edit.component.scss']
 })
 export class FormEditComponent {
-  public builder: FormBuilder;
+  @ViewChild(FormioBuilder) builder: FormioBuilder;
   public mobileView: boolean = false;
+  public formConfig: {data: {display: 'form' | 'wizard' | 'pdf'}} = {data: {
+    display: 'form'
+  }}
   constructor(
     public service: FormsService,
     public router: Router,
     public route: ActivatedRoute,
     public alerts: EnterpriseBuilderAlerts
   ) {}
+
+  configForm() {
+    return {
+      components: [
+        {
+          "columns": [
+            {
+              "components": [],
+              "width": 8,
+              "offset": 0,
+              "push": 0,
+              "pull": 0,
+              "size": "md",
+              "currentWidth": 8
+            },
+            {
+              "components": [
+                {
+                  "label": "Display",
+                  "widget": "choicesjs",
+                  "placeholder": "Display as",
+                  "tableView": true,
+                  "hideLabel": true,
+                  "data": {
+                    "values": [
+                      {
+                        "label": "Form",
+                        "value": "form"
+                      },
+                      {
+                        "label": "Wizard",
+                        "value": "wizard"
+                      },
+                      {
+                        "label": "PDF",
+                        "value": "pdf"
+                      }
+                    ]
+                  },
+                  "validateWhenHidden": false,
+                  "key": "display",
+                  "type": "select",
+                  "input": true
+                }
+              ],
+              "width": 4,
+              "offset": 0,
+              "push": 0,
+              "pull": 0,
+              "size": "md",
+              "currentWidth": 4
+            }
+          ],
+          "key": "columns",
+          "type": "columns",
+          "input": false,
+          "tableView": false
+        }
+      ]
+    }
+  }
 
   cancel() {
     this.service.cancelFormUpdate();
@@ -37,11 +103,13 @@ export class FormEditComponent {
   }
 
   onBuilder(builder: FormBuilder) {
-    this.builder = builder;
+    this.formConfig.data.display = (builder.form as Form).display;
   }
 
   onDisplaySelect(event) {
-    this.builder.setDisplay(event.target.value);
+    if (event.target?.value) {
+      this.builder.builder.setDisplay(this.formConfig.data.display);
+    };
   }
 
   saveForm() {
