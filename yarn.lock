@@ -109,12 +109,13 @@
     uuid "^9.0.1"
     vanilla-picker "^2.12.3"
 
-"@formio/reporting@2.0.1-rc.9":
-  version "2.0.1-rc.9"
-  resolved "https://registry.yarnpkg.com/@formio/reporting/-/reporting-2.0.1-rc.9.tgz#efb072e44cac6f63026c0d42a310d96bd847a03f"
-  integrity sha512-mGraMX2leSWyn43iGpVpp5tF9lwcpQtwaCowpsJUN+KjWFc/uvRHCcEPZlr8tTtiK7FuM/KSjMvb2zkyu2NmfA==
+"@formio/reporting@2.1.0-rc.3":
+  version "2.1.0-rc.3"
+  resolved "https://registry.yarnpkg.com/@formio/reporting/-/reporting-2.1.0-rc.3.tgz#eec9144674aa6c9e6208f3250e61aade141a6d62"
+  integrity sha512-FWodF/msPBD7mcLQGoOoBxNriqCoiecogYRHg3BZrZm8qkSGoy3YJHQam1dfQjf/m4gjwa6p4D0lo20ZzmFE9g==
   dependencies:
     file-saver "^2.0.5"
+    jose "^5.6.3"
 
 "@formio/text-mask-addons@^3.8.0-formio.3":
   version "3.8.0-formio.4"

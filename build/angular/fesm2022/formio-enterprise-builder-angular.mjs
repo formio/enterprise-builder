@@ -245,11 +245,74 @@ class FormEditComponent {
     alerts;
     builder;
     mobileView = false;
+    formConfig = { data: {
+            display: 'form'
+        } };
     constructor(service, router, route, alerts) {
         this.service = service;
         this.router = router;
         this.route = route;
         this.alerts = alerts;
+    }
+    configForm() {
+        return {
+            components: [
+                {
+                    "columns": [
+                        {
+                            "components": [],
+                            "width": 8,
+                            "offset": 0,
+                            "push": 0,
+                            "pull": 0,
+                            "size": "md",
+                            "currentWidth": 8
+                        },
+                        {
+                            "components": [
+                                {
+                                    "label": "Display",
+                                    "widget": "choicesjs",
+                                    "placeholder": "Display as",
+                                    "tableView": true,
+                                    "hideLabel": true,
+                                    "data": {
+                                        "values": [
+                                            {
+                                                "label": "Form",
+                                                "value": "form"
+                                            },
+                                            {
+                                                "label": "Wizard",
+                                                "value": "wizard"
+                                            },
+                                            {
+                                                "label": "PDF",
+                                                "value": "pdf"
+                                            }
+                                        ]
+                                    },
+                                    "validateWhenHidden": false,
+                                    "key": "display",
+                                    "type": "select",
+                                    "input": true
+                                }
+                            ],
+                            "width": 4,
+                            "offset": 0,
+                            "push": 0,
+                            "pull": 0,
+                            "size": "md",
+                            "currentWidth": 4
+                        }
+                    ],
+                    "key": "columns",
+                    "type": "columns",
+                    "input": false,
+                    "tableView": false
+                }
+            ]
+        };
     }
     cancel() {
         this.service.cancelFormUpdate();
@@ -265,10 +328,13 @@ class FormEditComponent {
         this.router.navigate(['../conflict'], { relativeTo: this.route });
     }
     onBuilder(builder) {
-        this.builder = builder;
+        this.formConfig.data.display = builder.form.display;
     }
     onDisplaySelect(event) {
-        this.builder.setDisplay(event.target.value);
+        if (event.target?.value) {
+            this.builder.builder.setDisplay(this.formConfig.data.display);
+        }
+        ;
     }
     saveForm() {
         this.service.saveForm().then(() => {
@@ -280,12 +346,15 @@ class FormEditComponent {
         });
     }
     static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "18.2.13", ngImport: i0, type: FormEditComponent, deps: [{ token: FormsService }, { token: i2.Router }, { token: i2.ActivatedRoute }, { token: EnterpriseBuilderAlerts }], target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "18.2.13", type: FormEditComponent, selector: "form-edit", ngImport: i0, template: "<div class=\"bg-body rounded shadow-sm p-2\">\n    <formio-builder [form]=\"service.builderForm\" [options]=\"service.builderOptions\" (change)=\"service.onChange($event)\" (ready)=\"onBuilder($event)\"></formio-builder>\n</div>\n<div class=\"d-flex justify-content-end my-3\">\n    <a type=\"button\" class=\"btn btn-success align-self-end\" (click)=\"saveForm()\">Save Form</a>\n</div>\n", styles: [".formbuilder{display:flex;flex-direction:row;justify-content:space-between;gap:10px}.formbuilder .formarea{width:80%;padding:20px;border:1px solid #ccc;border-radius:5px;background-color:#fff}.formbuilder .formcomponents{padding:10px;width:18%;border:1px solid #ccc;border-radius:5px;background-color:#fff}.mobileView .formbuilder{display:flex;gap:30px}.mobileView .formbuilder .formarea{width:30%!important;margin:0 auto!important}\n"], dependencies: [{ kind: "component", type: i4.FormioBuilder, selector: "formio-builder", inputs: ["form", "options"], outputs: ["change", "ready", "error"] }] });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "18.2.13", type: FormEditComponent, selector: "form-edit", viewQueries: [{ propertyName: "builder", first: true, predicate: FormioBuilder, descendants: true }], ngImport: i0, template: "<formio [form]=\"configForm()\" [submission]=\"formConfig\" (change)=\"onDisplaySelect($event)\" class=\"w-100\"></formio>\n<div class=\"bg-body rounded shadow-sm p-2\">\n    <formio-builder [form]=\"service.builderForm\" [options]=\"service.builderOptions\" (change)=\"service.onChange($event)\" (ready)=\"onBuilder($event)\"></formio-builder>\n</div>\n<div class=\"d-flex justify-content-end my-3\">\n    <a type=\"button\" class=\"btn btn-success align-self-end\" (click)=\"saveForm()\">Save Form</a>\n</div>\n", styles: [".formbuilder{display:flex;flex-direction:row;justify-content:space-between;gap:10px}.formbuilder .formarea{width:80%;padding:20px;border:1px solid #ccc;border-radius:5px;background-color:#fff}.formbuilder .formcomponents{padding:10px;width:18%;border:1px solid #ccc;border-radius:5px;background-color:#fff}.mobileView .formbuilder{display:flex;gap:30px}.mobileView .formbuilder .formarea{width:30%!important;margin:0 auto!important}\n"], dependencies: [{ kind: "component", type: i4.FormioComponent, selector: "formio", inputs: ["src", "form", "submission", "url", "options"], outputs: ["ready", "submit", "error", "change"] }, { kind: "component", type: i4.FormioBuilder, selector: "formio-builder", inputs: ["form", "options"], outputs: ["change", "ready", "error"] }] });
 }
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.2.13", ngImport: i0, type: FormEditComponent, decorators: [{
             type: Component,
-            args: [{ selector: 'form-edit', template: "<div class=\"bg-body rounded shadow-sm p-2\">\n    <formio-builder [form]=\"service.builderForm\" [options]=\"service.builderOptions\" (change)=\"service.onChange($event)\" (ready)=\"onBuilder($event)\"></formio-builder>\n</div>\n<div class=\"d-flex justify-content-end my-3\">\n    <a type=\"button\" class=\"btn btn-success align-self-end\" (click)=\"saveForm()\">Save Form</a>\n</div>\n", styles: [".formbuilder{display:flex;flex-direction:row;justify-content:space-between;gap:10px}.formbuilder .formarea{width:80%;padding:20px;border:1px solid #ccc;border-radius:5px;background-color:#fff}.formbuilder .formcomponents{padding:10px;width:18%;border:1px solid #ccc;border-radius:5px;background-color:#fff}.mobileView .formbuilder{display:flex;gap:30px}.mobileView .formbuilder .formarea{width:30%!important;margin:0 auto!important}\n"] }]
-        }], ctorParameters: () => [{ type: FormsService }, { type: i2.Router }, { type: i2.ActivatedRoute }, { type: EnterpriseBuilderAlerts }] });
+            args: [{ selector: 'form-edit', template: "<formio [form]=\"configForm()\" [submission]=\"formConfig\" (change)=\"onDisplaySelect($event)\" class=\"w-100\"></formio>\n<div class=\"bg-body rounded shadow-sm p-2\">\n    <formio-builder [form]=\"service.builderForm\" [options]=\"service.builderOptions\" (change)=\"service.onChange($event)\" (ready)=\"onBuilder($event)\"></formio-builder>\n</div>\n<div class=\"d-flex justify-content-end my-3\">\n    <a type=\"button\" class=\"btn btn-success align-self-end\" (click)=\"saveForm()\">Save Form</a>\n</div>\n", styles: [".formbuilder{display:flex;flex-direction:row;justify-content:space-between;gap:10px}.formbuilder .formarea{width:80%;padding:20px;border:1px solid #ccc;border-radius:5px;background-color:#fff}.formbuilder .formcomponents{padding:10px;width:18%;border:1px solid #ccc;border-radius:5px;background-color:#fff}.mobileView .formbuilder{display:flex;gap:30px}.mobileView .formbuilder .formarea{width:30%!important;margin:0 auto!important}\n"] }]
+        }], ctorParameters: () => [{ type: FormsService }, { type: i2.Router }, { type: i2.ActivatedRoute }, { type: EnterpriseBuilderAlerts }], propDecorators: { builder: [{
+                type: ViewChild,
+                args: [FormioBuilder]
+            }] } });
 
 class FormComponent {
     service;
