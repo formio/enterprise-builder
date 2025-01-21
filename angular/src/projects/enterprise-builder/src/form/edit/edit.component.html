@@ -1,3 +1,4 @@
+<formio [form]="configForm()" [submission]="formConfig" (change)="onDisplaySelect($event)" class="w-100"></formio>
 <div class="bg-body rounded shadow-sm p-2">
     <formio-builder [form]="service.builderForm" [options]="service.builderOptions" (change)="service.onChange($event)" (ready)="onBuilder($event)"></formio-builder>
 </div>
