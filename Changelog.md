@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
  - Updated @formio/reporting@2.1.0-rc.4
  - Updated @formio/premium@3.0.2-rc.2
  - Updated @formio/enterprise-builder-core@1.0.0-rc.11
+ - FIO-9561: Added missing premium styles 
 
 ## 1.0.0-rc.15
 ### Changed
