@@ -29,5 +29,4 @@ function updatePackage(packageSrc) {
 
 updatePackage('./package-build.json');
 updatePackage('./angular/src/package.json');
-updatePackage('./angular/src/projects/enterprise-builder/package.json')
-updatePackage('./angular/demo/package.json');
+updatePackage('./angular/src/projects/enterprise-builder/package.json');
