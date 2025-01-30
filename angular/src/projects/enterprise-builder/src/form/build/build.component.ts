@@ -33,6 +33,8 @@ export class FormBuildComponent implements OnInit {
       event.changed.component &&
       event.changed.component.key === 'display'
     ) {
+      this.service.form.display = this.formConfig.data.display;
+      this.builder.builder.options = this.service.builderOptions;
       this.builder.builder.setDisplay(this.formConfig.data.display);
     }
   }

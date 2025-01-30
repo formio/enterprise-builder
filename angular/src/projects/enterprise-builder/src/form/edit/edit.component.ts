@@ -108,6 +108,8 @@ export class FormEditComponent {
 
   onDisplaySelect(event) {
     if (event.target?.value) {
+      this.service.form.display = this.formConfig.data.display;
+      this.builder.builder.options = this.service.builderOptions;
       this.builder.builder.setDisplay(this.formConfig.data.display);
     };
   }
