@@ -121,4 +121,14 @@ export class FormBuildComponent implements OnInit {
     this.service.builderForm.display = this.formConfig.data.display;
     this.service.saveForm().then((form) => this.onSave(form));
   }
+
+  isPDFattached() {
+    return (this.service.builderForm as Form).settings?.pdf;
+  }
+
+  removePDF() {
+    delete (this.service.builderForm as Form).settings.pdf;
+    this.service.builderForm = {...this.service.builderForm};
+    this.builder.builder.setDisplay('pdf');
+  }
 }
