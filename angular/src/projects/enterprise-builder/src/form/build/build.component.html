@@ -7,6 +7,9 @@
 </div>
 <hr />
 <formio [form]="configForm()" [submission]="formConfig" (change)="configChange($event)" class="w-100"></formio>
+<div class="d-flex justify-content-end my-3" *ngIf="service.builderForm.display === 'pdf' && isPDFattached()">
+  <a type="button" class="btn btn-danger" (click)="removePDF()">Remove PDF</a>
+</div>
 <div class="bg-body rounded shadow-sm p-2">
   <formio-builder [form]="service.builderForm" [options]="service.builderOptions" (change)="service.onChange($event)"></formio-builder>
 </div>
