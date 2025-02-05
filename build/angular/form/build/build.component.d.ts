@@ -68,6 +68,11 @@ export declare class FormBuildComponent implements OnInit {
     };
     onSave(form: Form): void;
     saveForm(): void;
+    isPDFattached(): {
+        src: string;
+        id: string;
+    };
+    removePDF(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<FormBuildComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<FormBuildComponent, "form-build", never, {}, {}, never, never, false, never>;
 }

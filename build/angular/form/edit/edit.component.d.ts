@@ -57,6 +57,11 @@ export declare class FormEditComponent {
     onBuilder(builder: FormBuilder): void;
     onDisplaySelect(event: any): void;
     saveForm(): void;
+    isPDFattached(): {
+        src: string;
+        id: string;
+    };
+    removePDF(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<FormEditComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<FormEditComponent, "form-edit", never, {}, {}, never, never, false, never>;
 }
