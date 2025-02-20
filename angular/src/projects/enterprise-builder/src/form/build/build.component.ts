@@ -1,5 +1,7 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Modal } from 'bootstrap';
+import { get } from 'lodash';
 import { FormsService } from '../forms.service';
 import { EnterpriseBuilderAlerts } from '../../enterprise-builder.alerts';
 import { FormioBuilder } from '@formio/angular/embed';
@@ -10,12 +12,15 @@ import { Form } from '@formio/core/types';
   templateUrl: './build.component.html',
   styleUrls: ['./build.component.scss']
 })
-export class FormBuildComponent implements OnInit {
+export class FormBuildComponent implements OnInit, AfterViewInit {
   @ViewChild(FormioBuilder) builder: FormioBuilder;
+  @ViewChild('warningModal') modalElement: ElementRef;
+  private modalInstance: Modal;
   public formConfig: any = {data: {
     title: '',
     display: 'form'
   }}
+
   constructor(
     public service: FormsService,
     public router: Router,
@@ -25,6 +30,12 @@ export class FormBuildComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.resetForm();
+  }
+
+  ngAfterViewInit(): void {
+    if (this.modalElement) {
+      this.modalInstance = new Modal(this.modalElement.nativeElement);
+    }
   }
 
   configChange(event) {
@@ -130,5 +141,17 @@ export class FormBuildComponent implements OnInit {
     delete (this.service.builderForm as Form).settings.pdf;
     this.service.builderForm = {...this.service.builderForm};
     this.builder.builder.setDisplay('pdf');
+  }
+
+  canClearFields() {
+    const builderForm = this.service.builderForm;
+    return (builderForm.display === 'pdf'
+      && get(builderForm, 'settings.pdf.nonFillableConversionUsed', false))
+  }
+
+  clearFields() {
+    this.service.builderForm.components = [];
+    this.builder.builder.instance.setForm(this.service.builderForm);
+    this.modalInstance?.hide();
   }
 }
