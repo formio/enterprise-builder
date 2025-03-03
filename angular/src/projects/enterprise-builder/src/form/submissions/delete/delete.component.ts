@@ -7,7 +7,8 @@ import { EnterpriseBuilderAlerts } from '../../../enterprise-builder.alerts';
 @Component({
   selector: 'form-submission-delete',
   templateUrl: './delete.component.html',
-  styleUrls: ['./delete.component.scss']
+  styleUrls: ['./delete.component.scss'],
+  standalone: false
 })
 export class FormSubmissionDeleteComponent {
   constructor(

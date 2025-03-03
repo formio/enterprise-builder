@@ -10,7 +10,8 @@ import { Form } from '@formio/core/types';
 @Component({
   selector: 'form-build',
   templateUrl: './build.component.html',
-  styleUrls: ['./build.component.scss']
+  styleUrls: ['./build.component.scss'],
+  standalone: false
 })
 export class FormBuildComponent implements OnInit, AfterViewInit {
   @ViewChild(FormioBuilder) builder: FormioBuilder;

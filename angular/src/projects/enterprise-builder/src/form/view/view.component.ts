@@ -7,7 +7,8 @@ import { AlertType } from '@formio/enterprise-builder-core';
 
 @Component({
   selector: 'form-view',
-  templateUrl: './view.component.html'
+  templateUrl: './view.component.html',
+  standalone: false
 })
 export class FormViewComponent implements OnInit {
   constructor(

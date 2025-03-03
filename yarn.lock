@@ -9,10 +9,10 @@
   dependencies:
     regenerator-runtime "^0.14.0"
 
-"@formio/angular@^8.1.0-rc.1":
-  version "8.1.0-rc.1"
-  resolved "https://registry.npmjs.org/@formio/angular/-/angular-8.1.0-rc.1.tgz#77887cf6ddb8eb13957e729bbfba64dd2d57d7fa"
-  integrity sha512-m48Jtfx7Aj8KqP9mEpALLpZG5eMMQdsqKFkggYdfcJPIzv7a4Y2titSK9jlnfLTKPGXb6gpxxjHgTHUtAa0HpA==
+"@formio/angular@^9.0.0-rc.1":
+  version "9.0.0-rc.1"
+  resolved "https://registry.npmjs.org/@formio/angular/-/angular-9.0.0-rc.1.tgz#72fb6b82f536e0e1545fa6045607cb3212f3638f"
+  integrity sha512-nI8d1strqqLdHPCu9Ff/QLYcb9rWSpUXlLs+tnILYQiuYm2Zp3viSr5mQE+GhCrYJw24VbYDwiq8UfZclzfHtw==
   dependencies:
     tslib "^2.0.0"
 

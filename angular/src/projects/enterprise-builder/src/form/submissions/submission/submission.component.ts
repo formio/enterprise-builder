@@ -5,7 +5,8 @@ import { FormsService } from '../../forms.service';
 @Component({
   selector: 'form-submission',
   templateUrl: './submission.component.html',
-  styleUrls: ['./submission.component.scss']
+  styleUrls: ['./submission.component.scss'],
+  standalone: false
 })
 export class FormSubmissionComponent {
   pdfDownload: string = '';

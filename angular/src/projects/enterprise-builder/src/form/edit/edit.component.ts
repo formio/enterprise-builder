@@ -9,7 +9,8 @@ import { FormioBuilder } from '@formio/angular/embed';
 @Component({
   selector: 'form-edit',
   templateUrl: './edit.component.html',
-  styleUrls: ['./edit.component.scss']
+  styleUrls: ['./edit.component.scss'],
+  standalone: false
 })
 export class FormEditComponent {
   @ViewChild(FormioBuilder) builder: FormioBuilder;

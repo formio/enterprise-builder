@@ -4,7 +4,8 @@ import { Webform } from '@formio/js';
 
 @Component({
   selector: 'enterprise-builder-forms',
-  templateUrl: './forms.component.html'
+  templateUrl: './forms.component.html',
+  standalone: false
 })
 export class FormsComponent {
   constructor (public service: FormsService) {}

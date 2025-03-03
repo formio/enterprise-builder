@@ -7,7 +7,8 @@ import { EnterpriseBuilderAlerts } from '../../../enterprise-builder.alerts';
 @Component({
   selector: 'form-submission-edit',
   templateUrl: './edit.component.html',
-  styleUrls: ['./edit.component.scss']
+  styleUrls: ['./edit.component.scss'],
+  standalone: false
 })
 export class FormSubmissionEditComponent {
   constructor(
