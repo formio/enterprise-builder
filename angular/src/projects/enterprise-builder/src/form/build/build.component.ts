@@ -25,16 +25,21 @@ export class FormBuildComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.resetForm();
+    this.service.initializeFormModule();
   }
 
   configChange(event) {
     if (
-      event.changed && 
+      event.changed &&
       event.changed.component &&
       event.changed.component.key === 'display'
     ) {
       this.service.form.display = this.formConfig.data.display;
-      this.builder.builder.options = this.service.builderOptions;
+      const builderOptions = this.service.initializeFormModule();
+      this.builder.builder.options = {
+        ...this.service.builderOptions,
+        builder: builderOptions ?? this.service.builderOptions.builder,
+      };
       this.builder.builder.setDisplay(this.formConfig.data.display);
     }
   }

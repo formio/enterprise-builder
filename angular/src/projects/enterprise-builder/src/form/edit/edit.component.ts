@@ -1,5 +1,5 @@
 import { Form } from '@formio/core/types';
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormsService } from '../forms.service';
 import { FormBuilder } from '@formio/js';
@@ -11,7 +11,7 @@ import { FormioBuilder } from '@formio/angular/embed';
   templateUrl: './edit.component.html',
   styleUrls: ['./edit.component.scss']
 })
-export class FormEditComponent {
+export class FormEditComponent implements OnInit {
   @ViewChild(FormioBuilder) builder: FormioBuilder;
   public mobileView: boolean = false;
   public formConfig: {data: {display: 'form' | 'wizard' | 'pdf'}} = {data: {
@@ -23,6 +23,10 @@ export class FormEditComponent {
     public route: ActivatedRoute,
     public alerts: EnterpriseBuilderAlerts
   ) {}
+
+  ngOnInit(): void {
+    this.service.initializeFormModule();
+  }
 
   configForm() {
     return {
@@ -109,7 +113,11 @@ export class FormEditComponent {
   onDisplaySelect(event) {
     if (event.target?.value) {
       this.service.form.display = this.formConfig.data.display;
-      this.builder.builder.options = this.service.builderOptions;
+      const builderOptions = this.service.initializeFormModule();
+      this.builder.builder.options = {
+        ...this.service.builderOptions,
+        builder: builderOptions ?? this.service.builderOptions.builder,
+      };
       this.builder.builder.setDisplay(this.formConfig.data.display);
     };
   }
