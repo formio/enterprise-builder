@@ -1,10 +1,11 @@
 import * as i5 from '@formio/angular/embed';
-import { FormioBuilder, FormioEmbedModule, Formio as Formio$1 } from '@formio/angular/embed';
+import { FormioBuilder, FormioEmbedModule, Formio as Formio$2 } from '@formio/angular/embed';
 import PremiumModule from '@formio/premium';
 import * as i0 from '@angular/core';
 import { Injectable, Component, ViewChild, inject, NgModule, InjectionToken, Inject } from '@angular/core';
 import { AlertService, AppService, FormService, AlertType, AlertLevel } from '@formio/enterprise-builder-core';
 export { AlertLevel, AlertService, AlertType, AppService, FormService } from '@formio/enterprise-builder-core';
+import { Formio } from '@formio/js/sdk';
 import * as i2 from '@angular/router';
 import { Router, RouterModule } from '@angular/router';
 import * as i1 from '@formio/angular';
@@ -12,7 +13,7 @@ import { FormioAppConfig } from '@formio/angular';
 import * as i2$1 from '@angular/common';
 import { CommonModule } from '@angular/common';
 import { Utils } from '@formio/js/utils';
-import { Formio } from '@formio/js';
+import { Formio as Formio$1 } from '@formio/js';
 
 class EnterpriseBuilderAlerts extends AlertService {
     static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "18.2.13", ngImport: i0, type: EnterpriseBuilderAlerts, deps: null, target: i0.ɵɵFactoryTarget.Injectable });
@@ -67,6 +68,31 @@ class FormsService extends FormService {
         super(appService);
         this.appService = appService;
     }
+    initializeFormModule() {
+        const currentProject = this.app.currentProject;
+        if (!currentProject.public.formModule) {
+            return null;
+        }
+        let formModule = null;
+        let builderOptions = null;
+        try {
+            formModule = Formio.Evaluator.evaluate(`return ${currentProject.public.formModule}`);
+        }
+        catch (err) {
+            console.warn(err);
+        }
+        if (formModule && formModule.options?.builder) {
+            if (this.builderOptions?.builder) {
+                builderOptions = {
+                    ...(formModule.options?.builder?.builder ?? {}),
+                    ...this.builderOptions.builder,
+                };
+                formModule.options.builder.builder = builderOptions;
+            }
+            Formio.use(formModule);
+        }
+        return builderOptions;
+    }
     static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "18.2.13", ngImport: i0, type: FormsService, deps: [{ token: EnterpriseBuilderService }], target: i0.ɵɵFactoryTarget.Injectable });
     static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "18.2.13", ngImport: i0, type: FormsService, providedIn: 'root' });
 }
@@ -95,13 +121,18 @@ class FormBuildComponent {
     }
     ngOnInit() {
         this.service.resetForm();
+        this.service.initializeFormModule();
     }
     configChange(event) {
         if (event.changed &&
             event.changed.component &&
             event.changed.component.key === 'display') {
             this.service.form.display = this.formConfig.data.display;
-            this.builder.builder.options = this.service.builderOptions;
+            const builderOptions = this.service.initializeFormModule();
+            this.builder.builder.options = {
+                ...this.service.builderOptions,
+                builder: builderOptions ?? this.service.builderOptions.builder,
+            };
             this.builder.builder.setDisplay(this.formConfig.data.display);
         }
     }
@@ -264,6 +295,9 @@ class FormEditComponent {
         this.route = route;
         this.alerts = alerts;
     }
+    ngOnInit() {
+        this.service.initializeFormModule();
+    }
     configForm() {
         return {
             components: [
@@ -343,7 +377,11 @@ class FormEditComponent {
     onDisplaySelect(event) {
         if (event.target?.value) {
             this.service.form.display = this.formConfig.data.display;
-            this.builder.builder.options = this.service.builderOptions;
+            const builderOptions = this.service.initializeFormModule();
+            this.builder.builder.options = {
+                ...this.service.builderOptions,
+                builder: builderOptions ?? this.service.builderOptions.builder,
+            };
             this.builder.builder.setDisplay(this.formConfig.data.display);
         }
         ;
@@ -1064,7 +1102,7 @@ class EnterpriseBuilderAppConfig extends FormioAppConfig {
             appUrl: config.projectUrl,
             apiUrl: config.baseUrl
         });
-        Formio.license = config.license;
+        Formio$1.license = config.license;
         this.license = config.license;
         this.projectUrl = config.projectUrl;
         this.baseUrl = config.baseUrl;
@@ -1083,7 +1121,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.2.13", ngImpo
                     args: [ENTERPRISE_BUILDER_CONFIG]
                 }] }] });
 
-Formio$1.use(PremiumModule);
+Formio$2.use(PremiumModule);
 
 /**
  * Generated bundle index. Do not edit.

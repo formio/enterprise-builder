@@ -1,10 +1,11 @@
+import { OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormsService } from '../forms.service';
 import { FormBuilder } from '@formio/js';
 import { EnterpriseBuilderAlerts } from '../../enterprise-builder.alerts';
 import { FormioBuilder } from '@formio/angular/embed';
 import * as i0 from "@angular/core";
-export declare class FormEditComponent {
+export declare class FormEditComponent implements OnInit {
     service: FormsService;
     router: Router;
     route: ActivatedRoute;
@@ -17,6 +18,7 @@ export declare class FormEditComponent {
         };
     };
     constructor(service: FormsService, router: Router, route: ActivatedRoute, alerts: EnterpriseBuilderAlerts);
+    ngOnInit(): void;
     configForm(): {
         components: {
             columns: {
