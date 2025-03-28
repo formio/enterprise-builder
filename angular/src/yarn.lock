@@ -1654,15 +1654,15 @@
   resolved "https://registry.npmjs.org/@formio/deprecated-types/-/deprecated-types-0.1.0.tgz#e8db67b93a2eded12efd640a10c7ddf0cffa2441"
   integrity sha512-jNc3Nw55nc75KESg+KPxxdG9ktnERTYodScAx3eh/J2dlA06N2Korafhu9zmwcDis8lOqtEz3X89cVxpJM9MzQ==
 
-"@formio/enterprise-builder-core@1.0.0-rc.27":
-  version "1.0.0-rc.27"
-  resolved "https://registry.yarnpkg.com/@formio/enterprise-builder-core/-/enterprise-builder-core-1.0.0-rc.27.tgz#88466963ec9516c4dff198c4a1a6974503c66e9e"
-  integrity sha512-7FBug4DrDyrSOpTOMJ+m4kpmKZdcoaUJm8uMZ/fjWAIUEo24RDgBL+lbWSceK3OT4MxenGJtRNg79NAZPsQOWg==
+"@formio/enterprise-builder-core@1.0.0-rc.28":
+  version "1.0.0-rc.28"
+  resolved "https://registry.yarnpkg.com/@formio/enterprise-builder-core/-/enterprise-builder-core-1.0.0-rc.28.tgz#185e6190bd3eb2c371845a6754429311be751bb8"
+  integrity sha512-yCdS4K6fWOtMUjdWQNr7RqTOSGX+QQMaqTC4KRrEifG+ZfmBNMWks7UT/MiYkH1TgvEubzXP5WBC8/ugVCinZQ==
 
-"@formio/js@5.1.0-rc.28":
-  version "5.1.0-rc.28"
-  resolved "https://registry.yarnpkg.com/@formio/js/-/js-5.1.0-rc.28.tgz#d464c9199a1df721269e4726335ee066defe9282"
-  integrity sha512-ZtdThj1GtHMgXHSHtXXoY6gX2GBFEto55YnwmJCN9+EMhjsI1VzfzXu8C6hEtqeTZy9vvmnrJSs5bV3l/PqLjw==
+"@formio/js@5.1.0-rc.29":
+  version "5.1.0-rc.29"
+  resolved "https://registry.yarnpkg.com/@formio/js/-/js-5.1.0-rc.29.tgz#e1e27d99bd3a00ee4872e1bf5a01ab6c37dd8377"
+  integrity sha512-jv0WSL8IEn2yN+uf5IXFFx279HHOzn05i/ggCIof7F2Mnx9ivm3ma2UOaXsEnk9/sIO/uYnbouIkYCJk/wMyeQ==
   dependencies:
     "@formio/bootstrap" "3.1.0-rc.4"
     "@formio/choices.js" "^10.2.1"
@@ -1711,10 +1711,10 @@
     jsonwebtoken "^9.0.0"
     node-cache "^5.1.2"
 
-"@formio/premium@3.0.4-rc.9":
-  version "3.0.4-rc.9"
-  resolved "https://registry.yarnpkg.com/@formio/premium/-/premium-3.0.4-rc.9.tgz#1fde7d3285b8f316f6a7e38adb0500a05e4d1fc0"
-  integrity sha512-Oe2eKxytOrtqmjFNVegOs8OxvBU36LM4WZxiHPIeEVO/zl0/I1q/eMuApmb5pVKsMNStRcLr2lg8ixwjjcUp6w==
+"@formio/premium@3.0.4-rc.10":
+  version "3.0.4-rc.10"
+  resolved "https://registry.yarnpkg.com/@formio/premium/-/premium-3.0.4-rc.10.tgz#3ed3b5d6bbcd65b77ac158fb79c5b07fa50713ad"
+  integrity sha512-T/vRfbweyXroDnAoDq1caZWY4U293DeeeI9zGYTUYSNjyHqcvIAuOfhyc2rt+ZfMtKlDGoTaztRGx8LY6brAiQ==
   dependencies:
     "@juggle/resize-observer" "^3.4.0"
     "@zxing/library" "^0.21.2"
