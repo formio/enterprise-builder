@@ -1,12 +1,12 @@
 {
   "name": "@formio/enterprise-builder",
-  "version": "1.0.1-rc.1",
+  "version": "1.0.1",
   "repository": "git@github.com:formio/enterprise-builder.git",
   "license": "MIT",
   "dependencies": {
     "@formio/angular": "8.1.0",
-    "@formio/enterprise-builder-core": "1.0.1-rc.1",
-    "@formio/js": "5.1.1-rc.2",
+    "@formio/enterprise-builder-core": "1.0.1",
+    "@formio/js": "5.1.1",
     "@formio/premium": "3.0.4",
     "@formio/reporting": "2.1.0"
   },
