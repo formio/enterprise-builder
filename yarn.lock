@@ -47,15 +47,15 @@
     lodash "^4.17.21"
     moment "^2.29.4"
 
-"@formio/enterprise-builder-core@1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@formio/enterprise-builder-core/-/enterprise-builder-core-1.0.0.tgz#d2ba931031d8a3791080249d255bfb04a29dce2f"
-  integrity sha512-/HaNRCd/AuBdje4H9ij7bSZLqqLgTZRWk2hosuNQ5oybUA1NRelwboVn396fBRXBnYBXIc6eNgilK9b7OXyxZg==
+"@formio/enterprise-builder-core@1.0.1-rc.1":
+  version "1.0.1-rc.1"
+  resolved "https://registry.yarnpkg.com/@formio/enterprise-builder-core/-/enterprise-builder-core-1.0.1-rc.1.tgz#73e8eed7312b6cca15df20318ef60199e2ac9b8e"
+  integrity sha512-YtmKTG8a+Fr7VRXxcIcag5SyuUNh/21zADE5Jf2UwpOr3rvqOTCG+079NlcSCjG2pSmMPd3FRz+PzP8OM0Fm0A==
 
-"@formio/js@5.1.0":
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/@formio/js/-/js-5.1.0.tgz#e9a34186d8e80e71689d770601d40b570e928daf"
-  integrity sha512-C8yrtPENpYEKAup5bwt7YNEaVJAknV6sRzxgUJKsyMQ6kjwWWgNLa6sNSqhbJpHxHYBgLk5OaDPo0gxcOf2geg==
+"@formio/js@5.1.1-rc.2":
+  version "5.1.1-rc.2"
+  resolved "https://registry.yarnpkg.com/@formio/js/-/js-5.1.1-rc.2.tgz#62938fe27b90bdf894efd6e8946883663fb7a339"
+  integrity sha512-TqZJGZWQAO/1UuMZ4x3U0Gj13sapHKciSy1RIu528PUeAeVCU7v6T8frBArxXQ9u2IyuEaIDPYWdO+j8xH9hug==
   dependencies:
     "@formio/bootstrap" "3.1.0"
     "@formio/choices.js" "^10.2.1"
