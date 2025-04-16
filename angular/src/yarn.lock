@@ -1618,10 +1618,10 @@
   dependencies:
     tslib "^2.0.0"
 
-"@formio/bootstrap@3.1.0":
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/@formio/bootstrap/-/bootstrap-3.1.0.tgz#8af6217248f89e749421e07a2b8ba0d9d01d7d5c"
-  integrity sha512-BaH74g+0N9Ddrp7wTn6Ej5Lk/nbKj8h5eqzA6s0I3pvqAgmqTYITlKMXhtWAESWOUA34n18rumpyZIdpB5B35g==
+"@formio/bootstrap@3.1.1-rc.2":
+  version "3.1.1-rc.2"
+  resolved "https://registry.yarnpkg.com/@formio/bootstrap/-/bootstrap-3.1.1-rc.2.tgz#5876735fbc5da9b11113d2db3d5015a27f0eb433"
+  integrity sha512-BEgTdAUtuVRUrt8Q+cR9xQDIx7QxQfrC9cZV6OkFoJtHD6dfAQIjTC00q2HKeKKgZtuVj5geXwlB4BByCvmtog==
 
 "@formio/choices.js@^10.2.1":
   version "10.2.1"
@@ -1632,10 +1632,10 @@
     fuse.js "^6.6.2"
     redux "^4.2.0"
 
-"@formio/core@2.4.0":
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/@formio/core/-/core-2.4.0.tgz#a47b01fce5018362b622f4e5c8d0ba9b2e8fe043"
-  integrity sha512-JUEyDSQv39EfvL5EURKnSYWPz+T1Csc29WiZ+4aQNjsuskhbHOWcmHmPFrdv2JD8xct16g2bLHHne+Bowy5RDw==
+"@formio/core@2.4.1-rc.3":
+  version "2.4.1-rc.3"
+  resolved "https://registry.yarnpkg.com/@formio/core/-/core-2.4.1-rc.3.tgz#81623e109fda51684a67d432087e73064394c49b"
+  integrity sha512-yw1POpl68bd3tCra7rynXpjwlY9J7Gyyr2CpCg6N/LkOlXOmJ4YxPlaAB3UXY0U7QebFk4S9iTx8gM9rFC8lgQ==
   dependencies:
     browser-cookies "^1.2.0"
     core-js "^3.39.0"
@@ -1654,19 +1654,19 @@
   resolved "https://registry.npmjs.org/@formio/deprecated-types/-/deprecated-types-0.1.0.tgz#e8db67b93a2eded12efd640a10c7ddf0cffa2441"
   integrity sha512-jNc3Nw55nc75KESg+KPxxdG9ktnERTYodScAx3eh/J2dlA06N2Korafhu9zmwcDis8lOqtEz3X89cVxpJM9MzQ==
 
-"@formio/enterprise-builder-core@1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@formio/enterprise-builder-core/-/enterprise-builder-core-1.0.1.tgz#c854268234c6c698b0d2373f005f592e9acf004d"
-  integrity sha512-FZHnmNHPnR3rwqoH2Fo0Pv+gyPsmfVJzBDCwJSvTG/tBfBtZ0yrAtMOH88O9BTg+cc9x8+F+6OZe1VV1JmHy2A==
+"@formio/enterprise-builder-core@1.0.2-rc.1":
+  version "1.0.2-rc.1"
+  resolved "https://registry.yarnpkg.com/@formio/enterprise-builder-core/-/enterprise-builder-core-1.0.2-rc.1.tgz#7bbc18c19435de13d295fd9117eca813bbd334b0"
+  integrity sha512-PacKuJ0lghmWXJOiJ+mt87Mp9NRKWolhexrQrZy+L5RCKzDbrZ8l45q+gEYFgAMAI+DevrZX1Kqb1gALZq6x+g==
 
-"@formio/js@5.1.1":
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/@formio/js/-/js-5.1.1.tgz#992c32b3f64aac6d5883c85e44a414e70b8fd9de"
-  integrity sha512-dslkDKe9ppyt3gVkQWlFcJFfdtHUvaUl7mCVdGKmk/fVGamUsH2rObLZIqHnTy4ruEr269echkILyN2l+2bfUw==
+"@formio/js@5.1.2-rc.2":
+  version "5.1.2-rc.2"
+  resolved "https://registry.yarnpkg.com/@formio/js/-/js-5.1.2-rc.2.tgz#6ba61724832b1886d74c917f5b9ec6663e9585bf"
+  integrity sha512-5NVw+atOfAyfkoCJkH4al1GpD9mcKADeskl5P46kDPh63zay4RMFz3Q5VgGUz83V154LGmMg844st8KXEXqMRg==
   dependencies:
-    "@formio/bootstrap" "3.1.0"
+    "@formio/bootstrap" "3.1.1-rc.2"
     "@formio/choices.js" "^10.2.1"
-    "@formio/core" "2.4.0"
+    "@formio/core" "2.4.1-rc.3"
     "@formio/text-mask-addons" "^3.8.0-formio.4"
     "@formio/vanilla-text-mask" "^5.1.1-formio.1"
     abortcontroller-polyfill "^1.7.5"
@@ -1711,10 +1711,10 @@
     jsonwebtoken "^9.0.0"
     node-cache "^5.1.2"
 
-"@formio/premium@3.0.4":
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/@formio/premium/-/premium-3.0.4.tgz#d8bd52c30635db8c4fac6d40f4a05ee808d2097d"
-  integrity sha512-6PQoTtCxJVPXF2OptRzlKILotLb+hECAQHslsODqI24ey1o+mWxbSoVqqX/amAJGELG4nYlc5ZRVyTiF2MzH1A==
+"@formio/premium@3.0.5-rc.1":
+  version "3.0.5-rc.1"
+  resolved "https://registry.yarnpkg.com/@formio/premium/-/premium-3.0.5-rc.1.tgz#4d92c3b560474f5f5c64cee53f1caa593c313d78"
+  integrity sha512-CB0IivMXuNZ0NB+oJ24T5LjsKMtZwVs+ZbfBQCl6bfXIg0uMIXNNyCB9XAJB7AMyMDWlO5OBOWiSMW7fIKjR4g==
   dependencies:
     "@juggle/resize-observer" "^3.4.0"
     "@zxing/library" "^0.21.2"
