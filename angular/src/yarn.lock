@@ -1654,15 +1654,15 @@
   resolved "https://registry.npmjs.org/@formio/deprecated-types/-/deprecated-types-0.1.0.tgz#e8db67b93a2eded12efd640a10c7ddf0cffa2441"
   integrity sha512-jNc3Nw55nc75KESg+KPxxdG9ktnERTYodScAx3eh/J2dlA06N2Korafhu9zmwcDis8lOqtEz3X89cVxpJM9MzQ==
 
-"@formio/enterprise-builder-core@1.0.2-rc.2":
-  version "1.0.2-rc.2"
-  resolved "https://registry.yarnpkg.com/@formio/enterprise-builder-core/-/enterprise-builder-core-1.0.2-rc.2.tgz#2e282a888ac97f500e9e6c66353d3e45454259c2"
-  integrity sha512-Odhoe4OAFGOTi2ae/sBBEVqeyBM03Ez7KNJxS05Q+40BoDQ8Ahc1Gj9Hsuq4F1YIElIH66CytZvecp91+GqKfw==
+"@formio/enterprise-builder-core@1.0.2-rc.3":
+  version "1.0.2-rc.3"
+  resolved "https://registry.yarnpkg.com/@formio/enterprise-builder-core/-/enterprise-builder-core-1.0.2-rc.3.tgz#f06074c2347e85fc20bba7ca9e61a2fd60e81ca8"
+  integrity sha512-ND5MnjwN9biqL8kl82ipv2qDnkGVwNaHpO47ZH9M9kuWpNx2xSIYOFwE3zM/WNKugpC9cIXJrx1sMTXqKYFRig==
 
-"@formio/js@5.2.0-rc.5":
-  version "5.2.0-rc.5"
-  resolved "https://registry.yarnpkg.com/@formio/js/-/js-5.2.0-rc.5.tgz#17caaa57e594613111fc7c5b1261f293ca3f0322"
-  integrity sha512-5RqMnyjzYpa/A1jdXSLqt3SN1bS1ROBSEL4Ie1/XYobN/fKcfOCOtYKvuPBWCKnp9mYvCoYs6Uns+DOMHKVCbQ==
+"@formio/js@5.2.0-rc.6":
+  version "5.2.0-rc.6"
+  resolved "https://registry.yarnpkg.com/@formio/js/-/js-5.2.0-rc.6.tgz#a2f26ec09c82dd4f02bcda5c5eaa0110561b6058"
+  integrity sha512-B4ahKQrOzvpjLpd/SpXATtYJBVnbffG2CL9jO3PepwTWWgE8z36j+i4y/pqVwk4r1FSuKc+hpOLh3S1AZ7gdGQ==
   dependencies:
     "@formio/bootstrap" "3.1.1"
     "@formio/choices.js" "^10.2.1"
@@ -1711,10 +1711,10 @@
     jsonwebtoken "^9.0.0"
     node-cache "^5.1.2"
 
-"@formio/premium@3.0.5":
-  version "3.0.5"
-  resolved "https://registry.yarnpkg.com/@formio/premium/-/premium-3.0.5.tgz#6f8af35ff73dc3085c075780bc4aee83e94080ed"
-  integrity sha512-3B/5Mt0UQi9cLA6Bnzm63ediYRG2auoQ4SBXphWYPXQjEF+03k7p/LdovRtwlpkLPwkTf8Y2izqrfiE7Ac2oDg==
+"@formio/premium@3.0.6-rc.1":
+  version "3.0.6-rc.1"
+  resolved "https://registry.yarnpkg.com/@formio/premium/-/premium-3.0.6-rc.1.tgz#7c15aca50167d9e077feaf4e9b9e31d92456bde7"
+  integrity sha512-8vD9vGKVbyoLsMm9fNMFaZfJ8RXHoZPX3tNM3NevqyprmSJMZw3It8Hx98fXPYUEop3mRAvAf+3yptTYueb4eg==
   dependencies:
     "@juggle/resize-observer" "^3.4.0"
     "@zxing/library" "^0.21.2"
@@ -1723,7 +1723,6 @@
     papaparse "^5.3.1"
     tooltip.js "^1.3.3"
     two.js "^0.7.13"
-    uuid "^9.0.1"
     vanilla-picker "^2.12.3"
 
 "@formio/text-mask-addons@^3.8.0-formio.4":
@@ -8674,7 +8673,7 @@ uuid@^8.3.2:
   resolved "https://registry.npmjs.org/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
   integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
 
-uuid@^9.0.0, uuid@^9.0.1:
+uuid@^9.0.0:
   version "9.0.1"
   resolved "https://registry.npmjs.org/uuid/-/uuid-9.0.1.tgz#e188d4c8853cc722220392c424cd637f32293f30"
   integrity sha512-b+1eJOlsR9K8HJpow9Ok3fiWOWSIcIzXodvv0rQjVoOVNpWMpxf1wZNpt4y9h10odCNrqnYp1OBzRktckBe3sA==
