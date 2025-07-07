@@ -31,10 +31,10 @@
     lodash "^4.17.21"
     moment "^2.29.4"
 
-"@formio/enterprise-builder-core@1.1.0-rc.3":
-  version "1.1.0-rc.3"
-  resolved "https://registry.yarnpkg.com/@formio/enterprise-builder-core/-/enterprise-builder-core-1.1.0-rc.3.tgz#63dada4629b0bac58e7b4a09fd34b27dbc8fdcfd"
-  integrity sha512-wR3Z6+m3TgRnKZyzLm8YKE/rir2SzNCK5j2b4pTtbjDS1ZSMvhLmbluiviqIXtYJ0bmaqljM3FbaV/0iGZk9SQ==
+"@formio/enterprise-builder-core@1.1.0-rc.4":
+  version "1.1.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@formio/enterprise-builder-core/-/enterprise-builder-core-1.1.0-rc.4.tgz#d1599f5c2bdc8264ba28d0d7c2b2ac3bd16297c4"
+  integrity sha512-9hvQoXF+5Htx6lHd096+XGv4GJBchDJcjLoINKI3VUEidybRxpWAQ/Rei7fbydna91xn5qtvinPCr6y+O9Wsvw==
 
 "@formio/js@^5.3.0-rc.2":
   version "5.3.0-rc.2"

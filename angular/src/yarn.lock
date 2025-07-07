@@ -1474,10 +1474,10 @@
   resolved "https://registry.npmjs.org/@formio/deprecated-types/-/deprecated-types-0.1.0.tgz#e8db67b93a2eded12efd640a10c7ddf0cffa2441"
   integrity sha512-jNc3Nw55nc75KESg+KPxxdG9ktnERTYodScAx3eh/J2dlA06N2Korafhu9zmwcDis8lOqtEz3X89cVxpJM9MzQ==
 
-"@formio/enterprise-builder-core@1.1.0-rc.3":
-  version "1.1.0-rc.3"
-  resolved "https://registry.yarnpkg.com/@formio/enterprise-builder-core/-/enterprise-builder-core-1.1.0-rc.3.tgz#63dada4629b0bac58e7b4a09fd34b27dbc8fdcfd"
-  integrity sha512-wR3Z6+m3TgRnKZyzLm8YKE/rir2SzNCK5j2b4pTtbjDS1ZSMvhLmbluiviqIXtYJ0bmaqljM3FbaV/0iGZk9SQ==
+"@formio/enterprise-builder-core@1.1.0-rc.4":
+  version "1.1.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@formio/enterprise-builder-core/-/enterprise-builder-core-1.1.0-rc.4.tgz#d1599f5c2bdc8264ba28d0d7c2b2ac3bd16297c4"
+  integrity sha512-9hvQoXF+5Htx6lHd096+XGv4GJBchDJcjLoINKI3VUEidybRxpWAQ/Rei7fbydna91xn5qtvinPCr6y+O9Wsvw==
 
 "@formio/js@^5.3.0-rc.2":
   version "5.3.0-rc.2"
@@ -1531,10 +1531,10 @@
     jsonwebtoken "^9.0.0"
     node-cache "^5.1.2"
 
-"@formio/premium@3.1.0-rc.5":
-  version "3.1.0-rc.5"
-  resolved "https://registry.yarnpkg.com/@formio/premium/-/premium-3.1.0-rc.5.tgz#22a7a0fc2198fc748628f911afb698edd7154e53"
-  integrity sha512-OfFwgPJE2kp5YY98v7nQUW8yHF3uZOw/SHCJ/IuYU89CsIFm7Lx031LRjk5b3MX7Eap9o+h+1Se/mNyaJ2lBoA==
+"@formio/premium@3.1.0-rc.2":
+  version "3.1.0-rc.2"
+  resolved "https://registry.yarnpkg.com/@formio/premium/-/premium-3.1.0-rc.2.tgz#18b1b17c0010926ff0c71d27c6181d7c4cdaaf1a"
+  integrity sha512-rNp/PB207Z5F5J39ro8bQXU2YYC0nzPOlJZMlFhhrDbf8oNiEdHs/8nRHAUnI6sGHsCyqaIUKchlk/X2Ouc8VQ==
   dependencies:
     "@juggle/resize-observer" "^3.4.0"
     "@zxing/library" "^0.21.2"
@@ -1543,6 +1543,7 @@
     papaparse "^5.3.1"
     tooltip.js "^1.3.3"
     two.js "^0.7.13"
+    uuid "^9.0.1"
     vanilla-picker "^2.12.3"
 
 "@formio/text-mask-addons@3.8.0-formio.4":
@@ -8649,7 +8650,7 @@ uuid@^8.3.2:
   resolved "https://registry.npmjs.org/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
   integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
 
-uuid@^9.0.0:
+uuid@^9.0.0, uuid@^9.0.1:
   version "9.0.1"
   resolved "https://registry.npmjs.org/uuid/-/uuid-9.0.1.tgz#e188d4c8853cc722220392c424cd637f32293f30"
   integrity sha512-b+1eJOlsR9K8HJpow9Ok3fiWOWSIcIzXodvv0rQjVoOVNpWMpxf1wZNpt4y9h10odCNrqnYp1OBzRktckBe3sA==
