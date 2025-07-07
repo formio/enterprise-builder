@@ -4,6 +4,152 @@ All notable changes to this project will be documented in this file
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 1.0.2-rc.6
+### Changed
+ - Updated @formio/enterprise-builder-core@1.0.2-rc.6
+ - Updated @formio/js@5.2.0-rc.9
+
+## 1.0.2-rc.5
+### Changed
+ - Updated @formio/reporting@2.1.1-rc.1
+ - Updated @formio/premium@3.0.6-rc.2
+ - Updated @formio/enterprise-builder-core@1.0.2-rc.5
+ - Updated @formio/js@5.2.0-rc.8
+
+## 1.0.2-rc.4
+### Changed
+ - Updated @formio/enterprise-builder-core@1.0.2-rc.4
+ - Updated @formio/js@5.2.0-rc.7
+
+## 1.0.2-rc.3
+### Changed
+ - Updated @formio/premium@3.0.6-rc.1
+ - Updated @formio/enterprise-builder-core@1.0.2-rc.3
+ - Updated @formio/js@5.2.0-rc.6
+
+## 1.0.2-rc.2
+### Changed
+ - Updated @formio/premium@3.0.5
+ - Updated @formio/enterprise-builder-core@1.0.2-rc.2
+ - Updated @formio/js@5.2.0-rc.5
+
+## 1.0.2-rc.1
+### Changed
+ - Updated @formio/premium@3.0.5-rc.1
+ - Updated @formio/enterprise-builder-core@1.0.2-rc.1
+ - Updated @formio/js@5.1.2-rc.2
+
+## 1.0.1
+### Changed
+ - Official Release
+ - Updated @formio/enterprise-builder-core@1.0.1
+ - Updated @formio/js@5.1.1
+
+## 1.0.1-rc.1
+### Changed
+ - Updated @formio/enterprise-builder-core@1.0.1-rc.1
+ - Updated @formio/js@5.1.1-rc.2
+
+## 1.0.0
+### Changed
+ - Official Release
+ - Updated @formio/reporting@2.1.0
+ - Updated @formio/premium@3.0.4
+ - Updated @formio/enterprise-builder-core@1.0.0
+ - Updated @formio/angular@8.1.0
+ - Updated @formio/js@5.1.0
+
+## 1.0.0-rc.34
+### Changed
+ - Updated @formio/enterprise-builder-core@1.0.0-rc.30
+ - Updated @formio/js@5.1.0-rc.32
+
+## 1.0.0-rc.33
+### Changed
+ - Updated @formio/enterprise-builder-core@1.0.0-rc.29
+ - Updated @formio/js@5.1.0-rc.30
+
+## 1.0.0-rc.32
+### Changed
+ - Updated @formio/premium@3.0.4-rc.10
+ - Updated @formio/enterprise-builder-core@1.0.0-rc.28
+ - Updated @formio/js@5.1.0-rc.29
+
+## 1.0.0-rc.31
+### Changed
+ - Updated @formio/enterprise-builder-core@1.0.0-rc.27
+ - Updated @formio/js@5.1.0-rc.28
+
+## 1.0.0-rc.30
+### Changed
+ - Updated @formio/enterprise-builder-core@1.0.0-rc.26
+ - Updated @formio/js@5.1.0-rc.27
+
+## 1.0.0-rc.29
+### Changed
+ - Updated @formio/enterprise-builder-core@1.0.0-rc.25
+ - Updated @formio/js@5.1.0-rc.26
+
+## 1.0.0-rc.28
+### Changed
+ - Updated @formio/enterprise-builder-core@1.0.0-rc.24
+ - Updated @formio/js@5.1.0-rc.25
+
+## 1.0.0-rc.27
+### Changed
+ - Updated @formio/premium@3.0.4-rc.9
+ - Updated @formio/enterprise-builder-core@1.0.0-rc.23
+ - Updated @formio/js@5.1.0-rc.23
+ - FIO-9831: fixed typo
+
+## 1.0.0-rc.26
+### Changed
+ - Updated @formio/enterprise-builder-core@1.0.0-rc.22
+ - Updated @formio/js@5.1.0-rc.22
+ - FIO-9787: Fixed issue when form module conflict with builder configuration
+
+## 1.0.0-rc.25
+### Changed
+ - Updated @formio/premium@3.0.4-rc.8
+ - Updated @formio/enterprise-builder-core@1.0.0-rc.21
+
+## 1.0.0-rc.24
+### Changed
+ - Updated @formio/premium@3.0.4-rc.7
+ - Updated @formio/enterprise-builder-core@1.0.0-rc.20
+ - Updated @formio/js@5.1.0-rc.21
+
+## 1.0.0-rc.23
+### Changed
+ - Updated @formio/premium@3.0.4-rc.5
+ - Updated @formio/enterprise-builder-core@1.0.0-rc.19
+
+## 1.0.0-rc.22
+### Changed
+ - Updated @formio/premium@3.0.4-rc.4
+ - Updated @formio/enterprise-builder-core@1.0.0-rc.18
+
+## 1.0.0-rc.21
+### Changed
+ - Updated @formio/premium@3.0.4-rc.2
+ - Updated @formio/enterprise-builder-core@1.0.0-rc.17
+
+## 1.0.0-rc.20
+### Changed
+ - Updated @formio/enterprise-builder-core@1.0.0-rc.16
+
+## 1.0.0-rc.19
+### Changed
+ - Updated @formio/enterprise-builder-core@1.0.0-rc.15
+ - FIO-9654 fixed the display of components in builder mode
+ - FIO-9656: added ability to delete the uploaded PDF file
+
+## 1.0.0-rc.18
+### Changed
+ - Updated @formio/reporting@2.1.0-rc.5
+ - Updated @formio/premium@3.0.3
+ - Updated @formio/enterprise-builder-core@1.0.0-rc.12
+
 ## 1.0.0-rc.17
 ### Changed
  - Updated @formio/reporting@2.1.0-rc.5
