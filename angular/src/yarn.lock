@@ -1440,10 +1440,10 @@
   resolved "https://registry.npmjs.org/@esbuild/win32-x64/-/win32-x64-0.24.2.tgz#34aa0b52d0fbb1a654b596acfa595f0c7b77a77b"
   integrity sha512-7VTgWzgMGvup6aSqDPLiW5zHaxYJGTO4OokMjIlrCtf+VpEL+cXKtCvg723iguPYI5oaUNdS+/V7OU2gvXVWEg==
 
-"@formio/angular@^9.0.0-rc.1":
-  version "9.0.0-rc.1"
-  resolved "https://registry.npmjs.org/@formio/angular/-/angular-9.0.0-rc.1.tgz#72fb6b82f536e0e1545fa6045607cb3212f3638f"
-  integrity sha512-nI8d1strqqLdHPCu9Ff/QLYcb9rWSpUXlLs+tnILYQiuYm2Zp3viSr5mQE+GhCrYJw24VbYDwiq8UfZclzfHtw==
+"@formio/angular@9.0.1":
+  version "9.0.1"
+  resolved "https://registry.yarnpkg.com/@formio/angular/-/angular-9.0.1.tgz#519c0efc1a5abbe53d6f89d0fbf3fe75f29528b6"
+  integrity sha512-FfRNz5PX9qQ+PmK9OzzeagXygHKW8DGJRyB2Va2NucKM5QpP7wWYBo85FjIqRQkT2jlO7G2nxbLjxGdz2wOiHA==
   dependencies:
     tslib "^2.0.0"
 
@@ -1474,10 +1474,10 @@
   resolved "https://registry.npmjs.org/@formio/deprecated-types/-/deprecated-types-0.1.0.tgz#e8db67b93a2eded12efd640a10c7ddf0cffa2441"
   integrity sha512-jNc3Nw55nc75KESg+KPxxdG9ktnERTYodScAx3eh/J2dlA06N2Korafhu9zmwcDis8lOqtEz3X89cVxpJM9MzQ==
 
-"@formio/enterprise-builder-core@1.1.0-rc.2":
-  version "1.1.0-rc.2"
-  resolved "https://registry.yarnpkg.com/@formio/enterprise-builder-core/-/enterprise-builder-core-1.1.0-rc.2.tgz#e09cacb53401e415dc340d5f5c61b5dfcc25cc15"
-  integrity sha512-i4Yy70TtUilcSjil9YEixLLZ8oy5FguvPHkVqdhDAy2X1S/cp+e6KqfliGIzAqotbvp55Qk3u7pF6O4mmvMlGw==
+"@formio/enterprise-builder-core@1.1.0-rc.3":
+  version "1.1.0-rc.3"
+  resolved "https://registry.yarnpkg.com/@formio/enterprise-builder-core/-/enterprise-builder-core-1.1.0-rc.3.tgz#63dada4629b0bac58e7b4a09fd34b27dbc8fdcfd"
+  integrity sha512-wR3Z6+m3TgRnKZyzLm8YKE/rir2SzNCK5j2b4pTtbjDS1ZSMvhLmbluiviqIXtYJ0bmaqljM3FbaV/0iGZk9SQ==
 
 "@formio/js@^5.3.0-rc.2":
   version "5.3.0-rc.2"

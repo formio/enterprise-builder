@@ -1,8 +1,8 @@
 {
   "name": "@formio/enterprise-builder-angular",
-  "version": "1.1.0-rc.3",
+  "version": "1.1.0-rc.4",
   "dependencies": {
-    "@formio/enterprise-builder-core": "1.1.0-rc.2"
+    "@formio/enterprise-builder-core": "1.1.0-rc.3"
   },
   "peerDependencies": {
     "@angular/common": "^18.0.0 || ^19.0.0",
