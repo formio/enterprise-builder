@@ -1,18 +1,21 @@
 import * as i5 from '@formio/angular/embed';
-import { FormioBuilder, FormioEmbedModule, Formio as Formio$1 } from '@formio/angular/embed';
+import { FormioBuilder, FormioEmbedModule, Formio as Formio$2 } from '@formio/angular/embed';
 import PremiumModule from '@formio/premium';
 import * as i0 from '@angular/core';
 import { Injectable, Component, ViewChild, inject, NgModule, InjectionToken, Inject } from '@angular/core';
 import { AlertService, AppService, FormService, AlertType, AlertLevel } from '@formio/enterprise-builder-core';
 export { AlertLevel, AlertService, AlertType, AppService, FormService } from '@formio/enterprise-builder-core';
+import { Formio } from '@formio/js/sdk';
 import * as i2 from '@angular/router';
 import { Router, RouterModule } from '@angular/router';
 import * as i1 from '@formio/angular';
 import { FormioAppConfig } from '@formio/angular';
+import { Modal } from 'bootstrap';
+import { get } from 'lodash';
 import * as i2$1 from '@angular/common';
 import { CommonModule } from '@angular/common';
 import { Utils } from '@formio/js/utils';
-import { Formio } from '@formio/js';
+import { Formio as Formio$1 } from '@formio/js';
 
 class EnterpriseBuilderAlerts extends AlertService {
     static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.0.5", ngImport: i0, type: EnterpriseBuilderAlerts, deps: null, target: i0.ɵɵFactoryTarget.Injectable });
@@ -67,6 +70,31 @@ class FormsService extends FormService {
         super(appService);
         this.appService = appService;
     }
+    initializeFormModule() {
+        const currentProject = this.app.currentProject;
+        if (!currentProject.public.formModule) {
+            return null;
+        }
+        let formModule = null;
+        let builderOptions = null;
+        try {
+            formModule = Formio.Evaluator.evaluate(`return ${currentProject.public.formModule}`);
+        }
+        catch (err) {
+            console.warn(err);
+        }
+        if (formModule && formModule.options?.builder) {
+            if (this.builderOptions?.builder) {
+                builderOptions = {
+                    ...(formModule.options?.builder?.builder ?? {}),
+                    ...this.builderOptions.builder,
+                };
+                formModule.options.builder.builder = builderOptions;
+            }
+            Formio.use(formModule);
+        }
+        return builderOptions;
+    }
     static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.0.5", ngImport: i0, type: FormsService, deps: [{ token: EnterpriseBuilderService }], target: i0.ɵɵFactoryTarget.Injectable });
     static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.0.5", ngImport: i0, type: FormsService, providedIn: 'root' });
 }
@@ -83,6 +111,8 @@ class FormBuildComponent {
     route;
     alerts;
     builder;
+    modalElement;
+    modalInstance;
     formConfig = { data: {
             title: '',
             display: 'form'
@@ -95,13 +125,23 @@ class FormBuildComponent {
     }
     ngOnInit() {
         this.service.resetForm();
+        this.service.initializeFormModule();
+    }
+    ngAfterViewInit() {
+        if (this.modalElement) {
+            this.modalInstance = new Modal(this.modalElement.nativeElement);
+        }
     }
     configChange(event) {
         if (event.changed &&
             event.changed.component &&
             event.changed.component.key === 'display') {
             this.service.form.display = this.formConfig.data.display;
-            this.builder.builder.options = this.service.builderOptions;
+            const builderOptions = this.service.initializeFormModule();
+            this.builder.builder.options = {
+                ...this.service.builderOptions,
+                builder: builderOptions ?? this.service.builderOptions.builder,
+            };
             this.builder.builder.setDisplay(this.formConfig.data.display);
         }
     }
@@ -193,15 +233,28 @@ class FormBuildComponent {
         this.service.builderForm = { ...this.service.builderForm };
         this.builder.builder.setDisplay('pdf');
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "18.2.13", ngImport: i0, type: FormBuildComponent, deps: [{ token: FormsService }, { token: i2.Router }, { token: i2.ActivatedRoute }, { token: EnterpriseBuilderAlerts }], target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "18.2.13", type: FormBuildComponent, selector: "form-build", viewQueries: [{ propertyName: "builder", first: true, predicate: FormioBuilder, descendants: true }], ngImport: i0, template: "<div class=\"d-flex justify-content-between align-items-center mb-2 text-body\">\n  <h5 class=\"my-2 d-flex gap-2 align-items-center\" style=\"font-size: 16px;\">\n    <i class=\"bi fs-5 bi-card-list\"></i>\n    <span>\n      Create New Form</span>\n  </h5>\n</div>\n<hr />\n<formio [form]=\"configForm()\" [submission]=\"formConfig\" (change)=\"configChange($event)\" class=\"w-100\"></formio>\n<div class=\"d-flex justify-content-end my-3\" *ngIf=\"service.builderForm.display === 'pdf' && isPDFattached()\">\n  <a type=\"button\" class=\"btn btn-danger\" (click)=\"removePDF()\">Remove PDF</a>\n</div>\n<div class=\"bg-body rounded shadow-sm p-2\">\n  <formio-builder [form]=\"service.builderForm\" [options]=\"service.builderOptions\" (change)=\"service.onChange($event)\"></formio-builder>\n</div>\n<div class=\"d-flex justify-content-end my-3\">\n  <a type=\"button\" class=\"btn btn-success align-self-end\" (click)=\"saveForm()\">Save Form</a>\n</div>", styles: [".formbuilder{display:flex;flex-direction:row;justify-content:space-between;gap:10px}.formbuilder .formarea{width:80%;padding:20px;border:1px solid #ccc;border-radius:5px;background-color:#fff}.formbuilder .formcomponents{padding:10px;width:18%;border:1px solid #ccc;border-radius:5px;background-color:#fff}\n"], dependencies: [{ kind: "directive", type: i2$1.NgIf, selector: "[ngIf]", inputs: ["ngIf", "ngIfThen", "ngIfElse"] }, { kind: "component", type: i5.FormioComponent, selector: "formio", inputs: ["src", "form", "submission", "url", "options"], outputs: ["ready", "submit", "error", "change"] }, { kind: "component", type: i5.FormioBuilder, selector: "formio-builder", inputs: ["form", "options"], outputs: ["change", "ready", "error"] }] });
+    canClearFields() {
+        const builderForm = this.service.builderForm;
+        return (builderForm.display === 'pdf'
+            && get(builderForm, 'settings.pdf.nonFillableConversionUsed', false));
+    }
+    clearFields() {
+        this.service.builderForm.components = [];
+        this.builder.builder.instance.setForm(this.service.builderForm);
+        this.modalInstance?.hide();
+    }
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.0.5", ngImport: i0, type: FormBuildComponent, deps: [{ token: FormsService }, { token: i2.Router }, { token: i2.ActivatedRoute }, { token: EnterpriseBuilderAlerts }], target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "19.0.5", type: FormBuildComponent, isStandalone: false, selector: "form-build", viewQueries: [{ propertyName: "builder", first: true, predicate: FormioBuilder, descendants: true }, { propertyName: "modalElement", first: true, predicate: ["warningModal"], descendants: true }], ngImport: i0, template: "<div class=\"d-flex justify-content-between align-items-center mb-2 text-body\">\n  <h5 class=\"my-2 d-flex gap-2 align-items-center\" style=\"font-size: 16px;\">\n    <i class=\"bi fs-5 bi-card-list\"></i>\n    <span>\n      Create New Form</span>\n  </h5>\n</div>\n<hr />\n<formio [form]=\"configForm()\" [submission]=\"formConfig\" (change)=\"configChange($event)\" class=\"w-100\"></formio>\n<div class=\"d-flex justify-content-end my-3\" *ngIf=\"service.builderForm.display === 'pdf' && isPDFattached()\">\n  <a type=\"button\" class=\"btn btn-danger\" (click)=\"removePDF()\">Remove PDF</a>\n</div>\n<div class=\"bg-body rounded shadow-sm p-2\">\n  <formio-builder [form]=\"service.builderForm\" [options]=\"service.builderOptions\" (change)=\"service.onChange($event)\"></formio-builder>\n</div>\n<div class=\"d-flex justify-content-end my-3\">\n  <a type=\"button\" *ngIf=\"canClearFields()\" class=\"btn btn-outline-secondary me-2\" (click)=\"modalInstance?.show()\" title=\"The fields were recognized automatically. Click here to clear them\"><span class=\"bi bi-eraser\"></span> Clear Fields</a>\n  <a type=\"button\" class=\"btn btn-success align-self-end\" (click)=\"saveForm()\">Save Form</a>\n</div>\n\n<!-- Modal -->\n<div class=\"modal fade\" #warningModal tabindex=\"-1\" aria-labelledby=\"warningModalLabel\">\n  <div class=\"modal-dialog\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header border-0\">\n        <h5 class=\"modal-title\" id=\"warningModalLabel\">Warning</h5>\n        <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>\n      </div>\n      <div class=\"modal-body\">\n        You are going to clear all form fields. Are you sure you want to continue?\n      </div>\n      <div class=\"modal-footer border-0\">\n        <button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Cancel</button>\n        <button type=\"button\" class=\"btn btn-danger\" (click)=\"clearFields()\">Clear Fields</button>\n      </div>\n    </div>\n  </div>\n</div>", styles: [".formbuilder{display:flex;flex-direction:row;justify-content:space-between;gap:10px}.formbuilder .formarea{width:80%;padding:20px;border:1px solid #ccc;border-radius:5px;background-color:#fff}.formbuilder .formcomponents{padding:10px;width:18%;border:1px solid #ccc;border-radius:5px;background-color:#fff}\n"], dependencies: [{ kind: "directive", type: i2$1.NgIf, selector: "[ngIf]", inputs: ["ngIf", "ngIfThen", "ngIfElse"] }, { kind: "component", type: i5.FormioComponent, selector: "formio", inputs: ["src", "form", "submission", "url", "options"], outputs: ["ready", "submit", "error", "change"] }, { kind: "component", type: i5.FormioBuilder, selector: "formio-builder", inputs: ["form", "options"], outputs: ["change", "ready", "error"] }] });
 }
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.0.5", ngImport: i0, type: FormBuildComponent, decorators: [{
             type: Component,
-            args: [{ selector: 'form-build', template: "<div class=\"d-flex justify-content-between align-items-center mb-2 text-body\">\n  <h5 class=\"my-2 d-flex gap-2 align-items-center\" style=\"font-size: 16px;\">\n    <i class=\"bi fs-5 bi-card-list\"></i>\n    <span>\n      Create New Form</span>\n  </h5>\n</div>\n<hr />\n<formio [form]=\"configForm()\" [submission]=\"formConfig\" (change)=\"configChange($event)\" class=\"w-100\"></formio>\n<div class=\"d-flex justify-content-end my-3\" *ngIf=\"service.builderForm.display === 'pdf' && isPDFattached()\">\n  <a type=\"button\" class=\"btn btn-danger\" (click)=\"removePDF()\">Remove PDF</a>\n</div>\n<div class=\"bg-body rounded shadow-sm p-2\">\n  <formio-builder [form]=\"service.builderForm\" [options]=\"service.builderOptions\" (change)=\"service.onChange($event)\"></formio-builder>\n</div>\n<div class=\"d-flex justify-content-end my-3\">\n  <a type=\"button\" class=\"btn btn-success align-self-end\" (click)=\"saveForm()\">Save Form</a>\n</div>", styles: [".formbuilder{display:flex;flex-direction:row;justify-content:space-between;gap:10px}.formbuilder .formarea{width:80%;padding:20px;border:1px solid #ccc;border-radius:5px;background-color:#fff}.formbuilder .formcomponents{padding:10px;width:18%;border:1px solid #ccc;border-radius:5px;background-color:#fff}\n"] }]
+            args: [{ selector: 'form-build', standalone: false, template: "<div class=\"d-flex justify-content-between align-items-center mb-2 text-body\">\n  <h5 class=\"my-2 d-flex gap-2 align-items-center\" style=\"font-size: 16px;\">\n    <i class=\"bi fs-5 bi-card-list\"></i>\n    <span>\n      Create New Form</span>\n  </h5>\n</div>\n<hr />\n<formio [form]=\"configForm()\" [submission]=\"formConfig\" (change)=\"configChange($event)\" class=\"w-100\"></formio>\n<div class=\"d-flex justify-content-end my-3\" *ngIf=\"service.builderForm.display === 'pdf' && isPDFattached()\">\n  <a type=\"button\" class=\"btn btn-danger\" (click)=\"removePDF()\">Remove PDF</a>\n</div>\n<div class=\"bg-body rounded shadow-sm p-2\">\n  <formio-builder [form]=\"service.builderForm\" [options]=\"service.builderOptions\" (change)=\"service.onChange($event)\"></formio-builder>\n</div>\n<div class=\"d-flex justify-content-end my-3\">\n  <a type=\"button\" *ngIf=\"canClearFields()\" class=\"btn btn-outline-secondary me-2\" (click)=\"modalInstance?.show()\" title=\"The fields were recognized automatically. Click here to clear them\"><span class=\"bi bi-eraser\"></span> Clear Fields</a>\n  <a type=\"button\" class=\"btn btn-success align-self-end\" (click)=\"saveForm()\">Save Form</a>\n</div>\n\n<!-- Modal -->\n<div class=\"modal fade\" #warningModal tabindex=\"-1\" aria-labelledby=\"warningModalLabel\">\n  <div class=\"modal-dialog\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header border-0\">\n        <h5 class=\"modal-title\" id=\"warningModalLabel\">Warning</h5>\n        <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>\n      </div>\n      <div class=\"modal-body\">\n        You are going to clear all form fields. Are you sure you want to continue?\n      </div>\n      <div class=\"modal-footer border-0\">\n        <button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Cancel</button>\n        <button type=\"button\" class=\"btn btn-danger\" (click)=\"clearFields()\">Clear Fields</button>\n      </div>\n    </div>\n  </div>\n</div>", styles: [".formbuilder{display:flex;flex-direction:row;justify-content:space-between;gap:10px}.formbuilder .formarea{width:80%;padding:20px;border:1px solid #ccc;border-radius:5px;background-color:#fff}.formbuilder .formcomponents{padding:10px;width:18%;border:1px solid #ccc;border-radius:5px;background-color:#fff}\n"] }]
         }], ctorParameters: () => [{ type: FormsService }, { type: i2.Router }, { type: i2.ActivatedRoute }, { type: EnterpriseBuilderAlerts }], propDecorators: { builder: [{
                 type: ViewChild,
                 args: [FormioBuilder]
+            }], modalElement: [{
+                type: ViewChild,
+                args: ['warningModal']
             }] } });
 
 class FormViewComponent {
@@ -240,8 +293,8 @@ class FormViewComponent {
                 .catch((err) => this.onSubmitLoadError(err));
         }).catch((err) => this.onSubmitError(err));
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "18.2.13", ngImport: i0, type: FormViewComponent, deps: [{ token: FormsService }, { token: i2.Router }, { token: i2.ActivatedRoute }, { token: EnterpriseBuilderAlerts }], target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "18.2.13", type: FormViewComponent, selector: "form-view", ngImport: i0, template: "<div class=\"bg-body rounded shadow-sm p-2\">\n    <formio [url]=\"service.formUrl()\" [form]=\"service.form\" (submit)=\"onSubmit($event)\" (error)=\"onFormError($event)\"></formio>\n</div>", dependencies: [{ kind: "component", type: i5.FormioComponent, selector: "formio", inputs: ["src", "form", "submission", "url", "options"], outputs: ["ready", "submit", "error", "change"] }] });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.0.5", ngImport: i0, type: FormViewComponent, deps: [{ token: FormsService }, { token: i2.Router }, { token: i2.ActivatedRoute }, { token: EnterpriseBuilderAlerts }], target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "19.0.5", type: FormViewComponent, isStandalone: false, selector: "form-view", ngImport: i0, template: "<div class=\"bg-body rounded shadow-sm p-2\">\n    <formio [url]=\"service.formUrl()\" [form]=\"service.form\" (submit)=\"onSubmit($event)\" (error)=\"onFormError($event)\"></formio>\n</div>", dependencies: [{ kind: "component", type: i5.FormioComponent, selector: "formio", inputs: ["src", "form", "submission", "url", "options"], outputs: ["ready", "submit", "error", "change"] }] });
 }
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.0.5", ngImport: i0, type: FormViewComponent, decorators: [{
             type: Component,
@@ -263,6 +316,9 @@ class FormEditComponent {
         this.router = router;
         this.route = route;
         this.alerts = alerts;
+    }
+    ngOnInit() {
+        this.service.initializeFormModule();
     }
     configForm() {
         return {
@@ -343,7 +399,11 @@ class FormEditComponent {
     onDisplaySelect(event) {
         if (event.target?.value) {
             this.service.form.display = this.formConfig.data.display;
-            this.builder.builder.options = this.service.builderOptions;
+            const builderOptions = this.service.initializeFormModule();
+            this.builder.builder.options = {
+                ...this.service.builderOptions,
+                builder: builderOptions ?? this.service.builderOptions.builder,
+            };
             this.builder.builder.setDisplay(this.formConfig.data.display);
         }
         ;
@@ -365,12 +425,12 @@ class FormEditComponent {
         this.service.builderForm = { ...this.service.builderForm };
         this.builder.builder.setDisplay('pdf');
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "18.2.13", ngImport: i0, type: FormEditComponent, deps: [{ token: FormsService }, { token: i2.Router }, { token: i2.ActivatedRoute }, { token: EnterpriseBuilderAlerts }], target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "18.2.13", type: FormEditComponent, selector: "form-edit", viewQueries: [{ propertyName: "builder", first: true, predicate: FormioBuilder, descendants: true }], ngImport: i0, template: "<formio [form]=\"configForm()\" [submission]=\"formConfig\" (change)=\"onDisplaySelect($event)\" class=\"w-100\"></formio>\n<div class=\"d-flex justify-content-end my-3\" *ngIf=\"service.builderForm.display === 'pdf' && isPDFattached()\">\n    <a type=\"button\" class=\"btn btn-danger\" (click)=\"removePDF()\">Remove PDF</a>\n</div>\n<div class=\"bg-body rounded shadow-sm p-2\">\n    <formio-builder [form]=\"service.builderForm\" [options]=\"service.builderOptions\" (change)=\"service.onChange($event)\" (ready)=\"onBuilder($event)\"></formio-builder>\n</div>\n<div class=\"d-flex justify-content-end my-3\">\n    <a type=\"button\" class=\"btn btn-success align-self-end\" (click)=\"saveForm()\">Save Form</a>\n</div>\n", styles: [".formbuilder{display:flex;flex-direction:row;justify-content:space-between;gap:10px}.formbuilder .formarea{width:80%;padding:20px;border:1px solid #ccc;border-radius:5px;background-color:#fff}.formbuilder .formcomponents{padding:10px;width:18%;border:1px solid #ccc;border-radius:5px;background-color:#fff}.mobileView .formbuilder{display:flex;gap:30px}.mobileView .formbuilder .formarea{width:30%!important;margin:0 auto!important}\n"], dependencies: [{ kind: "directive", type: i2$1.NgIf, selector: "[ngIf]", inputs: ["ngIf", "ngIfThen", "ngIfElse"] }, { kind: "component", type: i5.FormioComponent, selector: "formio", inputs: ["src", "form", "submission", "url", "options"], outputs: ["ready", "submit", "error", "change"] }, { kind: "component", type: i5.FormioBuilder, selector: "formio-builder", inputs: ["form", "options"], outputs: ["change", "ready", "error"] }] });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.0.5", ngImport: i0, type: FormEditComponent, deps: [{ token: FormsService }, { token: i2.Router }, { token: i2.ActivatedRoute }, { token: EnterpriseBuilderAlerts }], target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "19.0.5", type: FormEditComponent, isStandalone: false, selector: "form-edit", viewQueries: [{ propertyName: "builder", first: true, predicate: FormioBuilder, descendants: true }], ngImport: i0, template: "<formio [form]=\"configForm()\" [submission]=\"formConfig\" (change)=\"onDisplaySelect($event)\" class=\"w-100\"></formio>\n<div class=\"d-flex justify-content-end my-3\" *ngIf=\"service.builderForm.display === 'pdf' && isPDFattached()\">\n    <a type=\"button\" class=\"btn btn-danger\" (click)=\"removePDF()\">Remove PDF</a>\n</div>\n<div class=\"bg-body rounded shadow-sm p-2\">\n    <formio-builder [form]=\"service.builderForm\" [options]=\"service.builderOptions\" (change)=\"service.onChange($event)\" (ready)=\"onBuilder($event)\"></formio-builder>\n</div>\n<div class=\"d-flex justify-content-end my-3\">\n    <a type=\"button\" class=\"btn btn-success align-self-end\" (click)=\"saveForm()\">Save Form</a>\n</div>\n", styles: [".formbuilder{display:flex;flex-direction:row;justify-content:space-between;gap:10px}.formbuilder .formarea{width:80%;padding:20px;border:1px solid #ccc;border-radius:5px;background-color:#fff}.formbuilder .formcomponents{padding:10px;width:18%;border:1px solid #ccc;border-radius:5px;background-color:#fff}.mobileView .formbuilder{display:flex;gap:30px}.mobileView .formbuilder .formarea{width:30%!important;margin:0 auto!important}\n"], dependencies: [{ kind: "directive", type: i2$1.NgIf, selector: "[ngIf]", inputs: ["ngIf", "ngIfThen", "ngIfElse"] }, { kind: "component", type: i5.FormioComponent, selector: "formio", inputs: ["src", "form", "submission", "url", "options"], outputs: ["ready", "submit", "error", "change"] }, { kind: "component", type: i5.FormioBuilder, selector: "formio-builder", inputs: ["form", "options"], outputs: ["change", "ready", "error"] }] });
 }
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.0.5", ngImport: i0, type: FormEditComponent, decorators: [{
             type: Component,
-            args: [{ selector: 'form-edit', template: "<formio [form]=\"configForm()\" [submission]=\"formConfig\" (change)=\"onDisplaySelect($event)\" class=\"w-100\"></formio>\n<div class=\"d-flex justify-content-end my-3\" *ngIf=\"service.builderForm.display === 'pdf' && isPDFattached()\">\n    <a type=\"button\" class=\"btn btn-danger\" (click)=\"removePDF()\">Remove PDF</a>\n</div>\n<div class=\"bg-body rounded shadow-sm p-2\">\n    <formio-builder [form]=\"service.builderForm\" [options]=\"service.builderOptions\" (change)=\"service.onChange($event)\" (ready)=\"onBuilder($event)\"></formio-builder>\n</div>\n<div class=\"d-flex justify-content-end my-3\">\n    <a type=\"button\" class=\"btn btn-success align-self-end\" (click)=\"saveForm()\">Save Form</a>\n</div>\n", styles: [".formbuilder{display:flex;flex-direction:row;justify-content:space-between;gap:10px}.formbuilder .formarea{width:80%;padding:20px;border:1px solid #ccc;border-radius:5px;background-color:#fff}.formbuilder .formcomponents{padding:10px;width:18%;border:1px solid #ccc;border-radius:5px;background-color:#fff}.mobileView .formbuilder{display:flex;gap:30px}.mobileView .formbuilder .formarea{width:30%!important;margin:0 auto!important}\n"] }]
+            args: [{ selector: 'form-edit', standalone: false, template: "<formio [form]=\"configForm()\" [submission]=\"formConfig\" (change)=\"onDisplaySelect($event)\" class=\"w-100\"></formio>\n<div class=\"d-flex justify-content-end my-3\" *ngIf=\"service.builderForm.display === 'pdf' && isPDFattached()\">\n    <a type=\"button\" class=\"btn btn-danger\" (click)=\"removePDF()\">Remove PDF</a>\n</div>\n<div class=\"bg-body rounded shadow-sm p-2\">\n    <formio-builder [form]=\"service.builderForm\" [options]=\"service.builderOptions\" (change)=\"service.onChange($event)\" (ready)=\"onBuilder($event)\"></formio-builder>\n</div>\n<div class=\"d-flex justify-content-end my-3\">\n    <a type=\"button\" class=\"btn btn-success align-self-end\" (click)=\"saveForm()\">Save Form</a>\n</div>\n", styles: [".formbuilder{display:flex;flex-direction:row;justify-content:space-between;gap:10px}.formbuilder .formarea{width:80%;padding:20px;border:1px solid #ccc;border-radius:5px;background-color:#fff}.formbuilder .formcomponents{padding:10px;width:18%;border:1px solid #ccc;border-radius:5px;background-color:#fff}.mobileView .formbuilder{display:flex;gap:30px}.mobileView .formbuilder .formarea{width:30%!important;margin:0 auto!important}\n"] }]
         }], ctorParameters: () => [{ type: FormsService }, { type: i2.Router }, { type: i2.ActivatedRoute }, { type: EnterpriseBuilderAlerts }], propDecorators: { builder: [{
                 type: ViewChild,
                 args: [FormioBuilder]
@@ -482,8 +542,8 @@ class FormsComponent {
     get pageNumbers() {
         return Array.from({ length: this.service.totalPages }, (_, i) => i + 1);
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "18.2.13", ngImport: i0, type: FormsComponent, deps: [{ token: FormsService }], target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "18.2.13", type: FormsComponent, selector: "enterprise-builder-forms", ngImport: i0, template: "<div class=\"d-flex justify-content-between align-items-center mb-3\">\n    <h5 class=\"my-2 d-flex gap-2 align-items-center\" style=\"font-size: 16px;\">\n        <i class=\"bi bi-list-check fs-5\"></i>\n        Forms\n    </h5>\n    <a routerLink=\"build\" class=\"btn btn-primary\">Create Form</a>\n</div>\n<div class=\"bg-body p-2 mb-3\">\n    <formio [form]=\"searchForm\" [submission]=\"search\" (ready)=\"enableSearch($event)\"></formio>\n</div>\n<div class=\"form-list-header list-group-flush d-flex flex-row justify-content-between align-items-center mb-2\">\n    <div class=\"col-8 ps-3 fw-3 text-muted\">Title</div>\n    <div class=\"col-2 ps-3 fw-3 text-muted\">Actions</div>\n    <div class=\"col-2 ps-3 fw-3 text-muted\">Tags</div>\n</div>\n<hr />\n<loader *ngIf=\"service.formsLoading\"></loader>\n<ul *ngIf=\"!service.formsLoading\" class=\"list-group list-group-flush list-group-light\">\n    <a class=\"list-group-item list-group-item-action d-flex flex-row  align-items-center py-4 mb-2 rounded shadow-sm\"\n        *ngFor=\"let form of (service.forms | async)\">\n        <!-- <i class=\"bi bi-file-medical fs-4 text-muted\"></i> -->\n        <div class=\"col-8 ms-3 mr-auto d-flex flex-row gap-4 justify-content-start align-items-center cursor-pointer\"\n            routerLink=\"{{ form._id }}/view\">\n            <div class=\"ms-3 me-auto\">\n                <div class=\"fs-4 fw-3 text-muted\">{{ form.title }}</div>\n                <div class=\"fs-6 fw-lighter text-muted\">created {{ form.created | date: 'short' }}</div>\n                <div class=\"fs-6 fw-lighter text-muted\">modified {{ form.modified | date: 'short' }}</div>\n            </div>\n        </div>\n        <div class=\"col-2 form-actions d-flex flex-row  align-items-start gap-2 text-center ml-auto\">\n            <a routerLink=\"{{ form._id }}/edit\" class=\"btn btn-outline-secondary btn-icon btn-xs rounded-circle\">\n                <i class=\"bi bi-pencil fs-xs\"></i>\n            </a>\n            <a routerLink=\"{{ form._id }}/submission\"\n                class=\"btn btn-outline-secondary btn-icon btn-xs rounded-circle\">\n                <i class=\"bi bi-table fs-xs\"></i>\n            </a>\n        </div>\n        <div class=\"col-2 form-tags d-flex flex-row align-items-center\">\n            <span class=\"badge text-bg-secondary me-1\" *ngFor=\"let tag of form.tags\">{{tag}}</span>\n        </div>\n    </a>\n</ul>\n<div *ngIf=\"!service.formsLoading\" class=\"d-flex justify-content-center\">\n    <nav aria-label=\"Forms Navigation\">\n        <ul class=\"pagination\" *ngIf=\"!service.formsLoading\">\n            <li class=\"page-item\"><button class=\"page-link\" (click)=\"service.prevPage()\"><i class=\"bi bi-chevron-left\"></i></button></li>\n            <li class=\"page-item\" *ngFor=\"let i of pageNumbers;\">\n                <button class=\"page-link\" [attr.aria-current]=\"i===service.page\" [ngClass]=\"{active: (i === service.page)}\" (click)=\"service.goto(i)\">{{ i }}</button>\n            </li>\n            <li class=\"page-item\"><button class=\"page-link\" (click)=\"service.nextPage()\"><i class=\"bi bi-chevron-right\"></i></button></li>\n        </ul>\n    </nav>\n</div>\n", dependencies: [{ kind: "directive", type: i2$1.NgClass, selector: "[ngClass]", inputs: ["class", "ngClass"] }, { kind: "directive", type: i2$1.NgForOf, selector: "[ngFor][ngForOf]", inputs: ["ngForOf", "ngForTrackBy", "ngForTemplate"] }, { kind: "directive", type: i2$1.NgIf, selector: "[ngIf]", inputs: ["ngIf", "ngIfThen", "ngIfElse"] }, { kind: "component", type: i5.FormioComponent, selector: "formio", inputs: ["src", "form", "submission", "url", "options"], outputs: ["ready", "submit", "error", "change"] }, { kind: "component", type: EnterpriseBuilderLoaderComponent, selector: "loader" }, { kind: "directive", type: i2.RouterLink, selector: "[routerLink]", inputs: ["target", "queryParams", "fragment", "queryParamsHandling", "state", "info", "relativeTo", "preserveFragment", "skipLocationChange", "replaceUrl", "routerLink"] }, { kind: "pipe", type: i2$1.AsyncPipe, name: "async" }, { kind: "pipe", type: i2$1.DatePipe, name: "date" }] });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.0.5", ngImport: i0, type: FormsComponent, deps: [{ token: FormsService }], target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "19.0.5", type: FormsComponent, isStandalone: false, selector: "enterprise-builder-forms", ngImport: i0, template: "<div class=\"d-flex justify-content-between align-items-center mb-3\">\n    <h5 class=\"my-2 d-flex gap-2 align-items-center\" style=\"font-size: 16px;\">\n        <i class=\"bi bi-list-check fs-5\"></i>\n        Forms\n    </h5>\n    <a routerLink=\"build\" class=\"btn btn-primary\">Create Form</a>\n</div>\n<div class=\"bg-body p-2 mb-3\">\n    <formio [form]=\"searchForm\" [submission]=\"search\" (ready)=\"enableSearch($event)\"></formio>\n</div>\n<div class=\"form-list-header list-group-flush d-flex flex-row justify-content-between align-items-center mb-2\">\n    <div class=\"col-8 ps-3 fw-3 text-muted\">Title</div>\n    <div class=\"col-2 ps-3 fw-3 text-muted\">Actions</div>\n    <div class=\"col-2 ps-3 fw-3 text-muted\">Tags</div>\n</div>\n<hr />\n<loader *ngIf=\"service.formsLoading\"></loader>\n<ul *ngIf=\"!service.formsLoading\" class=\"list-group list-group-flush list-group-light\">\n    <a class=\"list-group-item list-group-item-action d-flex flex-row  align-items-center py-4 mb-2 rounded shadow-sm\"\n        *ngFor=\"let form of (service.forms | async)\">\n        <!-- <i class=\"bi bi-file-medical fs-4 text-muted\"></i> -->\n        <div class=\"col-8 ms-3 mr-auto d-flex flex-row gap-4 justify-content-start align-items-center cursor-pointer\"\n            routerLink=\"{{ form._id }}/view\">\n            <div class=\"ms-3 me-auto\">\n                <div class=\"fs-4 fw-3 text-muted\">{{ form.title }}</div>\n                <div class=\"fs-6 fw-lighter text-muted\">created {{ form.created | date: 'short' }}</div>\n                <div class=\"fs-6 fw-lighter text-muted\">modified {{ form.modified | date: 'short' }}</div>\n            </div>\n        </div>\n        <div class=\"col-2 form-actions d-flex flex-row  align-items-start gap-2 text-center ml-auto\">\n            <a routerLink=\"{{ form._id }}/edit\" class=\"btn btn-outline-secondary btn-icon btn-xs rounded-circle\">\n                <i class=\"bi bi-pencil fs-xs\"></i>\n            </a>\n            <a routerLink=\"{{ form._id }}/submission\"\n                class=\"btn btn-outline-secondary btn-icon btn-xs rounded-circle\">\n                <i class=\"bi bi-table fs-xs\"></i>\n            </a>\n        </div>\n        <div class=\"col-2 form-tags d-flex flex-row align-items-center\">\n            <span class=\"badge text-bg-secondary me-1\" *ngFor=\"let tag of form.tags\">{{tag}}</span>\n        </div>\n    </a>\n</ul>\n<div *ngIf=\"!service.formsLoading\" class=\"d-flex justify-content-center\">\n    <nav aria-label=\"Forms Navigation\">\n        <ul class=\"pagination\" *ngIf=\"!service.formsLoading\">\n            <li class=\"page-item\"><button class=\"page-link\" (click)=\"service.prevPage()\"><i class=\"bi bi-chevron-left\"></i></button></li>\n            <li class=\"page-item\" *ngFor=\"let i of pageNumbers;\">\n                <button class=\"page-link\" [attr.aria-current]=\"i===service.page\" [ngClass]=\"{active: (i === service.page)}\" (click)=\"service.goto(i)\">{{ i }}</button>\n            </li>\n            <li class=\"page-item\"><button class=\"page-link\" (click)=\"service.nextPage()\"><i class=\"bi bi-chevron-right\"></i></button></li>\n        </ul>\n    </nav>\n</div>\n", dependencies: [{ kind: "directive", type: i2$1.NgClass, selector: "[ngClass]", inputs: ["class", "ngClass"] }, { kind: "directive", type: i2$1.NgForOf, selector: "[ngFor][ngForOf]", inputs: ["ngForOf", "ngForTrackBy", "ngForTemplate"] }, { kind: "directive", type: i2$1.NgIf, selector: "[ngIf]", inputs: ["ngIf", "ngIfThen", "ngIfElse"] }, { kind: "component", type: i5.FormioComponent, selector: "formio", inputs: ["src", "form", "submission", "url", "options"], outputs: ["ready", "submit", "error", "change"] }, { kind: "component", type: EnterpriseBuilderLoaderComponent, selector: "loader" }, { kind: "directive", type: i2.RouterLink, selector: "[routerLink]", inputs: ["target", "queryParams", "fragment", "queryParamsHandling", "state", "info", "relativeTo", "preserveFragment", "skipLocationChange", "replaceUrl", "routerLink"] }, { kind: "pipe", type: i2$1.AsyncPipe, name: "async" }, { kind: "pipe", type: i2$1.DatePipe, name: "date" }] });
 }
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.0.5", ngImport: i0, type: FormsComponent, decorators: [{
             type: Component,
@@ -598,8 +658,8 @@ class FormSubmissionEditComponent {
             this.router.navigate(['..'], { relativeTo: this.route });
         });
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "18.2.13", ngImport: i0, type: FormSubmissionEditComponent, deps: [{ token: FormsService }, { token: i2.Router }, { token: i2.ActivatedRoute }, { token: EnterpriseBuilderAlerts }], target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "18.2.13", type: FormSubmissionEditComponent, selector: "form-submission-edit", ngImport: i0, template: "<formio [form]=\"service.form\" [submission]=\"service.submission\" (submit)=\"saveSubmission($event)\"></formio>", styles: [""], dependencies: [{ kind: "component", type: i5.FormioComponent, selector: "formio", inputs: ["src", "form", "submission", "url", "options"], outputs: ["ready", "submit", "error", "change"] }] });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.0.5", ngImport: i0, type: FormSubmissionEditComponent, deps: [{ token: FormsService }, { token: i2.Router }, { token: i2.ActivatedRoute }, { token: EnterpriseBuilderAlerts }], target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "19.0.5", type: FormSubmissionEditComponent, isStandalone: false, selector: "form-submission-edit", ngImport: i0, template: "<formio [form]=\"service.form\" [submission]=\"service.submission\" (submit)=\"saveSubmission($event)\"></formio>", styles: [""], dependencies: [{ kind: "component", type: i5.FormioComponent, selector: "formio", inputs: ["src", "form", "submission", "url", "options"], outputs: ["ready", "submit", "error", "change"] }] });
 }
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.0.5", ngImport: i0, type: FormSubmissionEditComponent, decorators: [{
             type: Component,
@@ -683,8 +743,8 @@ class FormSubmissionsComponent {
             this.router.navigate([row._id], { relativeTo: this.route });
         });
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "18.2.13", ngImport: i0, type: FormSubmissionsComponent, deps: [{ token: FormsService }, { token: i2.Router }, { token: i2.ActivatedRoute }], target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "18.2.13", type: FormSubmissionsComponent, selector: "form-submissions", ngImport: i0, template: "<div class=\"p-3\">\n    <formio [form]=\"submissionForm\" (ready)=\"onFormio($event)\"></formio>\n</div>\n", styles: [""], dependencies: [{ kind: "component", type: i5.FormioComponent, selector: "formio", inputs: ["src", "form", "submission", "url", "options"], outputs: ["ready", "submit", "error", "change"] }] });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.0.5", ngImport: i0, type: FormSubmissionsComponent, deps: [{ token: FormsService }, { token: i2.Router }, { token: i2.ActivatedRoute }], target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "19.0.5", type: FormSubmissionsComponent, isStandalone: false, selector: "form-submissions", ngImport: i0, template: "<div class=\"p-3\">\n    <formio [form]=\"submissionForm\" (ready)=\"onFormio($event)\"></formio>\n</div>\n", styles: [""], dependencies: [{ kind: "component", type: i5.FormioComponent, selector: "formio", inputs: ["src", "form", "submission", "url", "options"], outputs: ["ready", "submit", "error", "change"] }] });
 }
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.0.5", ngImport: i0, type: FormSubmissionsComponent, decorators: [{
             type: Component,
@@ -696,8 +756,8 @@ class FormSubmissionViewComponent {
     constructor(service) {
         this.service = service;
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "18.2.13", ngImport: i0, type: FormSubmissionViewComponent, deps: [{ token: FormsService }], target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "18.2.13", type: FormSubmissionViewComponent, selector: "form-submission-view", ngImport: i0, template: "<formio [form]=\"service.form\" [submission]=\"service.submission\" [options]=\"{readOnly: true}\"></formio>", styles: [""], dependencies: [{ kind: "component", type: i5.FormioComponent, selector: "formio", inputs: ["src", "form", "submission", "url", "options"], outputs: ["ready", "submit", "error", "change"] }] });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.0.5", ngImport: i0, type: FormSubmissionViewComponent, deps: [{ token: FormsService }], target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "19.0.5", type: FormSubmissionViewComponent, isStandalone: false, selector: "form-submission-view", ngImport: i0, template: "<formio [form]=\"service.form\" [submission]=\"service.submission\" [options]=\"{readOnly: true}\"></formio>", styles: [""], dependencies: [{ kind: "component", type: i5.FormioComponent, selector: "formio", inputs: ["src", "form", "submission", "url", "options"], outputs: ["ready", "submit", "error", "change"] }] });
 }
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.0.5", ngImport: i0, type: FormSubmissionViewComponent, decorators: [{
             type: Component,
@@ -809,8 +869,8 @@ class FormSettingsComponent extends FormEditComponent {
         }
         return super.saveForm();
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "18.2.13", ngImport: i0, type: FormSettingsComponent, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "18.2.13", type: FormSettingsComponent, selector: "form-settings", usesInheritance: true, ngImport: i0, template: "<div class=\"row\">\n    <div class=\"col col-8\">\n        <h4>Form Settings</h4>\n        <div class=\"bg-body rounded shadow-sm p-2\">\n            <formio [form]=\"settingsForm\" [submission]=\"settings\"></formio>\n        </div>\n    </div>\n    <div class=\"col col-4\">\n        <h4>Danger Zone</h4>\n        <div class=\"bg-body border border-danger rounded shadow-sm p-2\">\n            <a class=\"btn btn-danger\" routerLink=\"../delete\">Delete Form</a>\n        </div>\n    </div>\n</div>\n<div class=\"d-flex my-3\">\n    <a type=\"button\" class=\"btn btn-success align-self-end\" (click)=\"saveForm()\">Save Form</a>\n</div>", dependencies: [{ kind: "component", type: i5.FormioComponent, selector: "formio", inputs: ["src", "form", "submission", "url", "options"], outputs: ["ready", "submit", "error", "change"] }, { kind: "directive", type: i2.RouterLink, selector: "[routerLink]", inputs: ["target", "queryParams", "fragment", "queryParamsHandling", "state", "info", "relativeTo", "preserveFragment", "skipLocationChange", "replaceUrl", "routerLink"] }] });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.0.5", ngImport: i0, type: FormSettingsComponent, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "19.0.5", type: FormSettingsComponent, isStandalone: false, selector: "form-settings", usesInheritance: true, ngImport: i0, template: "<div class=\"row\">\n    <div class=\"col col-8\">\n        <h4>Form Settings</h4>\n        <div class=\"bg-body rounded shadow-sm p-2\">\n            <formio [form]=\"settingsForm\" [submission]=\"settings\"></formio>\n        </div>\n    </div>\n    <div class=\"col col-4\">\n        <h4>Danger Zone</h4>\n        <div class=\"bg-body border border-danger rounded shadow-sm p-2\">\n            <a class=\"btn btn-danger\" routerLink=\"../delete\">Delete Form</a>\n        </div>\n    </div>\n</div>\n<div class=\"d-flex my-3\">\n    <a type=\"button\" class=\"btn btn-success align-self-end\" (click)=\"saveForm()\">Save Form</a>\n</div>", dependencies: [{ kind: "component", type: i5.FormioComponent, selector: "formio", inputs: ["src", "form", "submission", "url", "options"], outputs: ["ready", "submit", "error", "change"] }, { kind: "directive", type: i2.RouterLink, selector: "[routerLink]", inputs: ["target", "queryParams", "fragment", "queryParamsHandling", "state", "info", "relativeTo", "preserveFragment", "skipLocationChange", "replaceUrl", "routerLink"] }] });
 }
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.0.5", ngImport: i0, type: FormSettingsComponent, decorators: [{
             type: Component,
@@ -885,11 +945,11 @@ class FormConflictComponent extends FormEditComponent {
         this.afterCancel();
     }
     static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.0.5", ngImport: i0, type: FormConflictComponent, deps: [{ token: FormsService }, { token: i2.Router }, { token: i2.ActivatedRoute }, { token: EnterpriseBuilderAlerts }], target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "19.0.5", type: FormConflictComponent, isStandalone: false, selector: "form-conflict", usesInheritance: true, ngImport: i0, template: "<div class=\"p-3\">\n    <h3>A newer version of this form has been saved to the server. The following changes will be merged with with this version.</h3>\n    <div class=\"btn-toolbar\">\n        <button type=\"button\" (click)=\"merge()\" class=\"btn btn-primary me-2\">Yes, save my changes</button>\n        <button type=\"button\" (click)=\"onCancel()\" class=\"btn btn-default\">No</button>\n    </div>\n</div>" });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "19.0.5", type: FormConflictComponent, isStandalone: false, selector: "form-conflict", usesInheritance: true, ngImport: i0, template: "<div class=\"p-3\">\n    <h3>A newer version of this form has been saved to the server. The following changes will be merged with this version.</h3>\n    <div class=\"btn-toolbar\">\n        <button type=\"button\" (click)=\"merge()\" class=\"btn btn-primary me-2\">Yes, save my changes</button>\n        <button type=\"button\" (click)=\"onCancel()\" class=\"btn btn-default\">No</button>\n    </div>\n</div>" });
 }
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.0.5", ngImport: i0, type: FormConflictComponent, decorators: [{
             type: Component,
-            args: [{ selector: 'form-conflict', standalone: false, template: "<div class=\"p-3\">\n    <h3>A newer version of this form has been saved to the server. The following changes will be merged with with this version.</h3>\n    <div class=\"btn-toolbar\">\n        <button type=\"button\" (click)=\"merge()\" class=\"btn btn-primary me-2\">Yes, save my changes</button>\n        <button type=\"button\" (click)=\"onCancel()\" class=\"btn btn-default\">No</button>\n    </div>\n</div>" }]
+            args: [{ selector: 'form-conflict', standalone: false, template: "<div class=\"p-3\">\n    <h3>A newer version of this form has been saved to the server. The following changes will be merged with this version.</h3>\n    <div class=\"btn-toolbar\">\n        <button type=\"button\" (click)=\"merge()\" class=\"btn btn-primary me-2\">Yes, save my changes</button>\n        <button type=\"button\" (click)=\"onCancel()\" class=\"btn btn-default\">No</button>\n    </div>\n</div>" }]
         }], ctorParameters: () => [{ type: FormsService }, { type: i2.Router }, { type: i2.ActivatedRoute }, { type: EnterpriseBuilderAlerts }] });
 
 function FormRoutes(config = {}) {
@@ -1064,7 +1124,7 @@ class EnterpriseBuilderAppConfig extends FormioAppConfig {
             appUrl: config.projectUrl,
             apiUrl: config.baseUrl
         });
-        Formio.license = config.license;
+        Formio$1.license = config.license;
         this.license = config.license;
         this.projectUrl = config.projectUrl;
         this.baseUrl = config.baseUrl;
@@ -1083,7 +1143,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.0.5", ngImpor
                     args: [ENTERPRISE_BUILDER_CONFIG]
                 }] }] });
 
-Formio$1.use(PremiumModule);
+Formio$2.use(PremiumModule);
 
 /**
  * Generated bundle index. Do not edit.

@@ -1,19 +1,22 @@
-import { OnInit } from '@angular/core';
+import { AfterViewInit, OnInit, ElementRef } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormsService } from '../forms.service';
 import { EnterpriseBuilderAlerts } from '../../enterprise-builder.alerts';
 import { FormioBuilder } from '@formio/angular/embed';
 import { Form } from '@formio/core/types';
 import * as i0 from "@angular/core";
-export declare class FormBuildComponent implements OnInit {
+export declare class FormBuildComponent implements OnInit, AfterViewInit {
     service: FormsService;
     router: Router;
     route: ActivatedRoute;
     alerts: EnterpriseBuilderAlerts;
     builder: FormioBuilder;
+    modalElement: ElementRef;
+    private modalInstance;
     formConfig: any;
     constructor(service: FormsService, router: Router, route: ActivatedRoute, alerts: EnterpriseBuilderAlerts);
     ngOnInit(): void;
+    ngAfterViewInit(): void;
     configChange(event: any): void;
     configForm(): {
         components: {
@@ -73,6 +76,8 @@ export declare class FormBuildComponent implements OnInit {
         id: string;
     };
     removePDF(): void;
+    canClearFields(): false;
+    clearFields(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<FormBuildComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<FormBuildComponent, "form-build", never, {}, {}, never, never, false, never>;
 }
