@@ -1645,15 +1645,15 @@
   resolved "https://registry.npmjs.org/@formio/deprecated-types/-/deprecated-types-0.1.0.tgz#e8db67b93a2eded12efd640a10c7ddf0cffa2441"
   integrity sha512-jNc3Nw55nc75KESg+KPxxdG9ktnERTYodScAx3eh/J2dlA06N2Korafhu9zmwcDis8lOqtEz3X89cVxpJM9MzQ==
 
-"@formio/enterprise-builder-core@1.0.2-rc.14":
-  version "1.0.2-rc.14"
-  resolved "https://registry.yarnpkg.com/@formio/enterprise-builder-core/-/enterprise-builder-core-1.0.2-rc.14.tgz#35c72131ca8936ba7f49f8e3a60fb3b3d909d641"
-  integrity sha512-4NRg8qKNpg/MWrBJL+Ga4sau6o5PggHgVJJ927jRbfWWNcSjWats4oL5IpIYpPNE8ntp+ZpkBUk7lXyODXbuOA==
+"@formio/enterprise-builder-core@1.0.2-rc.15":
+  version "1.0.2-rc.15"
+  resolved "https://registry.yarnpkg.com/@formio/enterprise-builder-core/-/enterprise-builder-core-1.0.2-rc.15.tgz#bec9e78176aa1071c30ba4ca9d6856e81422f44c"
+  integrity sha512-k4JoxzbGJYUcr8tM2FE6kkfJ25o6JKKpOsTuPz7RpI2wf+H+0i2n+8VTA32ZrRqrsHXOJZUFUzmVVq2GQZpj7Q==
 
-"@formio/js@5.2.1-rc.12":
-  version "5.2.1-rc.12"
-  resolved "https://registry.yarnpkg.com/@formio/js/-/js-5.2.1-rc.12.tgz#b1dc432bad7c12db66e24ac10529c45d6369bae8"
-  integrity sha512-NysQjELZvCnapkGrqB0SBW3FEjRzkNQ4oxmCQyNjbahq3M7eYNDZ8vTWR8eykvxQFCWdKMtC+sr9VRIaHRqhDQ==
+"@formio/js@5.2.1-rc.13":
+  version "5.2.1-rc.13"
+  resolved "https://registry.yarnpkg.com/@formio/js/-/js-5.2.1-rc.13.tgz#107c9a4f68ecb834a86baca8413f7adb2c3204c8"
+  integrity sha512-RaUQ2Eai0zVNodkIZbCYPPYy9rsZIkqOj+KMFusiQVerG3mdd/Oe2wLlZ3ksC1smDNMVqaFKz7E9P9X9Sk5Y6Q==
   dependencies:
     "@formio/bootstrap" "3.1.2-rc.3"
     "@formio/core" "2.5.1-rc.8"
