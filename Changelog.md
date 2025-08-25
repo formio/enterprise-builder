@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 1.0.2-rc.17
+### Changed
+ - Updated @formio/enterprise-builder-core@1.0.2-rc.17
+ - Updated @formio/js@5.2.1-rc.16
+
 ## 1.0.2-rc.16
 ### Changed
  - Updated @formio/enterprise-builder-core@1.0.2-rc.16
