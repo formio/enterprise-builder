@@ -31,15 +31,15 @@
     lodash "^4.17.21"
     moment "^2.29.4"
 
-"@formio/enterprise-builder-core@1.0.2-rc.17":
-  version "1.0.2-rc.17"
-  resolved "https://registry.yarnpkg.com/@formio/enterprise-builder-core/-/enterprise-builder-core-1.0.2-rc.17.tgz#72c3bb34f3546746aed4ed036b45b183bcdb4e92"
-  integrity sha512-HP+ZL1NRkK+j5zK10QJYfT6l7cYkgCrGhPYiK7YWgSexkbZ/ZYOWkea5H9SPZQXYSh4udsfBoNd6y3ULHw+JFg==
+"@formio/enterprise-builder-core@1.0.2-rc.18":
+  version "1.0.2-rc.18"
+  resolved "https://registry.yarnpkg.com/@formio/enterprise-builder-core/-/enterprise-builder-core-1.0.2-rc.18.tgz#7d06d085715a918d436137a2f80985a29575e9cd"
+  integrity sha512-LkSLAOhKkEj0vSN86tNx4sp4wglOrhw47dOgg65yLXQXYiMLMS6CnPkLNjELktDq6Umx8+q6WEO9wTYsZOunNg==
 
-"@formio/js@5.2.1-rc.16":
-  version "5.2.1-rc.16"
-  resolved "https://registry.yarnpkg.com/@formio/js/-/js-5.2.1-rc.16.tgz#334d2fa0144e45fd5904904ab215aab727cb6b95"
-  integrity sha512-8NelU1IQPfaG6+XKzp/psR9T1hY6rAraM9Mbj/5g37Is6LzyJ1qqQplILXefk97xsQWd1GnoQTRzqKKyeahZwQ==
+"@formio/js@5.2.1-rc.17":
+  version "5.2.1-rc.17"
+  resolved "https://registry.yarnpkg.com/@formio/js/-/js-5.2.1-rc.17.tgz#9087c17c8810dbc46c1ae3fa5600c1cf4e3017ca"
+  integrity sha512-B8ryjEZBcQa7iwmZWSvKSj8Lwqs1YxyDo02V9bujCB8/b3xRms1xhKnwGd2Ke4yar8ADZVLjjLmP6tZtCGGAXg==
   dependencies:
     "@formio/bootstrap" "3.1.2-rc.3"
     "@formio/core" "2.5.1-rc.9"
@@ -77,10 +77,10 @@
     uuid "^9.0.0"
     vanilla-picker "^2.12.3"
 
-"@formio/premium@3.0.7-rc.3":
-  version "3.0.7-rc.3"
-  resolved "https://registry.yarnpkg.com/@formio/premium/-/premium-3.0.7-rc.3.tgz#3897172567cc01404836676baa9aca02d5e72cea"
-  integrity sha512-reYjgQmj7vvDfxQD55bwYwk/BWm7NwhlM3U4tT+8rmxWoxSNiJWNZDPxLPyjHkzTDeeZqUOLZ4WjHzbsDmPamA==
+"@formio/premium@3.0.7-rc.4":
+  version "3.0.7-rc.4"
+  resolved "https://registry.yarnpkg.com/@formio/premium/-/premium-3.0.7-rc.4.tgz#5db0f45a7ad0e206b659e47d715811b8538b5b94"
+  integrity sha512-+vb4Ok18s7N/IIisa8VGC7J5bWKgUQjDMqjCbYlDLHYhszmOp/2I1rWVjMu2AQCZM/774OnJCxSd8cMrRIRhBw==
   dependencies:
     "@juggle/resize-observer" "^3.4.0"
     "@zxing/library" "^0.21.2"
