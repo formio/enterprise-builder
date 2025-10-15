@@ -1,3 +1,8 @@
 {
-    "mocha.subdirectory": "src/angular/projects/enterprise-builder/src/report"
+    "mocha.subdirectory": "src/angular/projects/enterprise-builder/src/report",
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#33157D",
+        "titleBar.activeBackground": "#481DAE",
+        "titleBar.activeForeground": "#FDFCFE"
+    }
 }
