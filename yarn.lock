@@ -9,20 +9,20 @@
   dependencies:
     tslib "^2.0.0"
 
-"@formio/bootstrap@3.1.2":
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/@formio/bootstrap/-/bootstrap-3.1.2.tgz#e6788a8a3cce3294d67213d39562e8c68f60557a"
-  integrity sha512-1t0IgfxDr9+bPulLRGmirwj2R2fTTtohy1F2A+9g+7LCMRoKs8U0N4alVSy7qSTrruEsOe1JXiCbSPrD/gyZ9A==
+"@formio/bootstrap@^3.1.3-rc.1":
+  version "3.1.3-rc.1"
+  resolved "https://npm.pkg.github.com/download/@formio/bootstrap/3.1.3-rc.1/cf9af46cfd6349748b8d1b7f6d7ecef12f953994#cf9af46cfd6349748b8d1b7f6d7ecef12f953994"
+  integrity sha512-ksmHsLZXouflknRx6U3UgwvDCLfZCn3ctPgYLL1+JhGhgCXtjEOE0+JixVn6runKvzrdIYqwXztremEqUR+0Bg==
 
-"@formio/core@2.5.1":
-  version "2.5.1"
-  resolved "https://registry.yarnpkg.com/@formio/core/-/core-2.5.1.tgz#91738be0c5738a595dbb0f890c5d0f7177c3bc91"
-  integrity sha512-J1lICbVQPdKtWvjNvO2aGYog3rv0r3lkpZmUjxgnCQFeausiqR+CnivRz2G/Rexkv9y5jV46BuDHFkNS01ssAg==
+"@formio/core@^2.5.2-rc.0":
+  version "2.5.2-rc.0"
+  resolved "https://npm.pkg.github.com/download/@formio/core/2.5.2-rc.0/3e609b38692efe0789b8b91036c26ae9b961053f#3e609b38692efe0789b8b91036c26ae9b961053f"
+  integrity sha512-HiR47hlAxMRUndfATn2JDx71lQ/1Xw6d92YelEtWI6zNlpU7+bkNEPEiYw9nTXmM3ueP8+3uMZ3ivrojZhMTQw==
   dependencies:
     browser-cookies "^1.2.0"
     core-js "^3.39.0"
     dayjs "^1.11.12"
-    dompurify "^3.2.4"
+    dompurify "3.2.4"
     eventemitter3 "^5.0.0"
     fast-json-patch "^3.1.1"
     fetch-ponyfill "^7.1.0"
@@ -36,13 +36,13 @@
   resolved "https://registry.yarnpkg.com/@formio/enterprise-builder-core/-/enterprise-builder-core-1.0.2.tgz#58f0a461a297778ad221372b696781e87a95ca53"
   integrity sha512-lkaPpvGACbqYn6Kj5zNSnMBeaNC07mUdMO/pzL+gGnaSNmiOaXtHj0J6hkz2cO5ARc6mEZF6oIuenTAh/nBJWQ==
 
-"@formio/js@5.2.1":
-  version "5.2.1"
-  resolved "https://registry.yarnpkg.com/@formio/js/-/js-5.2.1.tgz#be9ab416f63557010b1fdfd3916de13cb1a086cf"
-  integrity sha512-DdkqAdFV5emc/Lih7JafPWllGRpSAUpINv8i36Gggycsu4aPQyR4avcl1NTey3EZUkqsKHx4u5f6DCIIVjoaEQ==
+"@formio/js@5.2.3-rc.1":
+  version "5.2.3-rc.1"
+  resolved "https://npm.pkg.github.com/download/@formio/js/5.2.3-rc.1/f7f82a52acb700b4fb6dc1902c5fa4d205165e44#f7f82a52acb700b4fb6dc1902c5fa4d205165e44"
+  integrity sha512-6HQVwJvuE2+fsJSTrFgt+jXzu3jhLQgEsUen0rl7s28u/LsEZ4QG4SjYsfBmsWH6g6FlocWKgHlFjf4CkI668Q==
   dependencies:
-    "@formio/bootstrap" "3.1.2"
-    "@formio/core" "2.5.1"
+    "@formio/bootstrap" "^3.1.3-rc.1"
+    "@formio/core" "^2.5.2-rc.0"
     "@formio/text-mask-addons" "^3.8.0-formio.4"
     "@formio/vanilla-text-mask" "^5.1.1-formio.1"
     abortcontroller-polyfill "^1.7.5"
@@ -77,15 +77,17 @@
     uuid "^9.0.0"
     vanilla-picker "^2.12.3"
 
-"@formio/premium@3.0.7":
-  version "3.0.7"
-  resolved "https://registry.yarnpkg.com/@formio/premium/-/premium-3.0.7.tgz#66fb88304223195c3fe0daa95a41b199e0d65df0"
-  integrity sha512-7sBazNVhzIj35/bFVmJa69J5HdRNRuwjoNtd0ci/3erCoh1Qle+P+u+GSL9/kd0lIRauxsJtjB0bIflk49LLZw==
+"@formio/premium@3.0.8-rc.2":
+  version "3.0.8-rc.2"
+  resolved "https://npm.pkg.github.com/download/@formio/premium/3.0.8-rc.2/3cb0596662cda013a2dcae688a744d688178774b#3cb0596662cda013a2dcae688a744d688178774b"
+  integrity sha512-obr9LXtUyQWS1DKRrvJXFtyEc4dR3TZz3Wz6qT+gZnqsjl51QFWFK0yT2YLQWwcrZuwX7W6s11rRA8ZanX1BSg==
   dependencies:
     "@juggle/resize-observer" "^3.4.0"
     "@zxing/library" "^0.21.2"
     dayjs "^1.11.12"
     jose "^5.6.3"
+    jsdom-global "^3.0.2"
+    lodash "^4.17.21"
     papaparse "^5.3.1"
     tooltip.js "^1.3.3"
     two.js "^0.7.13"
@@ -277,7 +279,7 @@ dom-set@^1.0.1:
     is-array "^1.0.1"
     iselement "^1.1.4"
 
-dompurify@^3.2.4:
+dompurify@3.2.4, dompurify@^3.2.4:
   version "3.2.4"
   resolved "https://registry.yarnpkg.com/dompurify/-/dompurify-3.2.4.tgz#af5a5a11407524431456cf18836c55d13441cd8e"
   integrity sha512-ysFSFEDVduQpyhzAob/kkuJjf5zWkZD8/A9ywSp1byueyuCfHamrCBa14/Oc2iiB0e51B+NpxSl5gmzn+Ms/mg==
@@ -363,6 +365,11 @@ jose@^5.6.3:
   version "5.9.6"
   resolved "https://registry.npmjs.org/jose/-/jose-5.9.6.tgz#77f1f901d88ebdc405e57cce08d2a91f47521883"
   integrity sha512-AMlnetc9+CV9asI19zHmrgS/WYsWUwCn2R7RzlbJWD7F9eWYUTGyBmU9o6PxngtLGOiDGPRu+Uc4fhKzbpteZQ==
+
+jsdom-global@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/jsdom-global/-/jsdom-global-3.0.2.tgz#6bd299c13b0c4626b2da2c0393cd4385d606acb9"
+  integrity sha512-t1KMcBkz/pT5JrvcJbpUR2u/w1kO9jXctaaGJ0vZDzwFnIvGWw9IDSRciT83kIs8Bnw4qpOl8bQK08V01YgMPg==
 
 json-logic-js@^2.0.2, json-logic-js@^2.0.5:
   version "2.0.5"

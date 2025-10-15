@@ -1650,7 +1650,7 @@
   resolved "https://npm.pkg.github.com/download/@formio/enterprise-builder-core/1.0.2/58f0a461a297778ad221372b696781e87a95ca53#58f0a461a297778ad221372b696781e87a95ca53"
   integrity sha512-lkaPpvGACbqYn6Kj5zNSnMBeaNC07mUdMO/pzL+gGnaSNmiOaXtHj0J6hkz2cO5ARc6mEZF6oIuenTAh/nBJWQ==
 
-"@formio/js@5.2.1":
+"@formio/js@5.2.3-rc.1":
   version "5.2.3-rc.1"
   resolved "https://npm.pkg.github.com/download/@formio/js/5.2.3-rc.1/f7f82a52acb700b4fb6dc1902c5fa4d205165e44#f7f82a52acb700b4fb6dc1902c5fa4d205165e44"
   integrity sha512-6HQVwJvuE2+fsJSTrFgt+jXzu3jhLQgEsUen0rl7s28u/LsEZ4QG4SjYsfBmsWH6g6FlocWKgHlFjf4CkI668Q==
@@ -1702,7 +1702,7 @@
     jsonwebtoken "^9.0.0"
     node-cache "^5.1.2"
 
-"@formio/premium@3.0.7":
+"@formio/premium@3.0.8-rc.2":
   version "3.0.8-rc.2"
   resolved "https://npm.pkg.github.com/download/@formio/premium/3.0.8-rc.2/3cb0596662cda013a2dcae688a744d688178774b#3cb0596662cda013a2dcae688a744d688178774b"
   integrity sha512-obr9LXtUyQWS1DKRrvJXFtyEc4dR3TZz3Wz6qT+gZnqsjl51QFWFK0yT2YLQWwcrZuwX7W6s11rRA8ZanX1BSg==
