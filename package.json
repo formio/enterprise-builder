@@ -7,7 +7,7 @@
     "@formio/angular": "8.1.0",
     "@formio/enterprise-builder-core": "1.0.2",
     "@formio/js": "5.2.3-rc.1",
-    "@formio/premium": "3.0.7",
+    "@formio/premium": "3.0.8-rc.2",
     "@formio/reporting": "2.1.1"
   },
   "scripts": {
