@@ -1702,10 +1702,10 @@
     jsonwebtoken "^9.0.0"
     node-cache "^5.1.2"
 
-"@formio/premium@3.0.8-rc.2":
-  version "3.0.8-rc.2"
-  resolved "https://npm.pkg.github.com/download/@formio/premium/3.0.8-rc.2/3cb0596662cda013a2dcae688a744d688178774b#3cb0596662cda013a2dcae688a744d688178774b"
-  integrity sha512-obr9LXtUyQWS1DKRrvJXFtyEc4dR3TZz3Wz6qT+gZnqsjl51QFWFK0yT2YLQWwcrZuwX7W6s11rRA8ZanX1BSg==
+"@formio/premium@3.0.8-rc.3":
+  version "3.0.8-rc.3"
+  resolved "https://npm.pkg.github.com/download/@formio/premium/3.0.8-rc.3/3d7db419ca3442fd65f1d5188b6a5ed00b142067#3d7db419ca3442fd65f1d5188b6a5ed00b142067"
+  integrity sha512-vvYUs0gJRJ2oR+WKM+Z1NeXl1A9F86iY7TtsUjiFJt20G8FLoQCruYbOvrVAETOeqKBwasP10rX4pOc5bCyJMg==
   dependencies:
     "@juggle/resize-observer" "^3.4.0"
     "@zxing/library" "^0.21.2"

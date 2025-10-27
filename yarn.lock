@@ -77,10 +77,10 @@
     uuid "^9.0.0"
     vanilla-picker "^2.12.3"
 
-"@formio/premium@3.0.8-rc.2":
-  version "3.0.8-rc.2"
-  resolved "https://npm.pkg.github.com/download/@formio/premium/3.0.8-rc.2/3cb0596662cda013a2dcae688a744d688178774b#3cb0596662cda013a2dcae688a744d688178774b"
-  integrity sha512-obr9LXtUyQWS1DKRrvJXFtyEc4dR3TZz3Wz6qT+gZnqsjl51QFWFK0yT2YLQWwcrZuwX7W6s11rRA8ZanX1BSg==
+"@formio/premium@3.0.8-rc.3":
+  version "3.0.8-rc.3"
+  resolved "https://npm.pkg.github.com/download/@formio/premium/3.0.8-rc.3/3d7db419ca3442fd65f1d5188b6a5ed00b142067#3d7db419ca3442fd65f1d5188b6a5ed00b142067"
+  integrity sha512-vvYUs0gJRJ2oR+WKM+Z1NeXl1A9F86iY7TtsUjiFJt20G8FLoQCruYbOvrVAETOeqKBwasP10rX4pOc5bCyJMg==
   dependencies:
     "@juggle/resize-observer" "^3.4.0"
     "@zxing/library" "^0.21.2"
@@ -93,10 +93,10 @@
     two.js "^0.7.13"
     vanilla-picker "^2.12.3"
 
-"@formio/reporting@2.1.1":
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/@formio/reporting/-/reporting-2.1.1.tgz#ef45a0a598e954e13e6d3f530b44c653b449aff3"
-  integrity sha512-VBgrM7OanAX0NI/6xeolgQbLeZx+BbaLrH4Rq97bE1Uu1ebVPxAVLyc08rbSVgTr17wHq7GJEBK6pE+Qsg3TgQ==
+"@formio/reporting@2.1.2-rc.2":
+  version "2.1.2-rc.2"
+  resolved "https://npm.pkg.github.com/download/@formio/reporting/2.1.2-rc.2/a73784becd6a6b88803dadbee317a0f5c2b8e013#a73784becd6a6b88803dadbee317a0f5c2b8e013"
+  integrity sha512-EKCMBASmOhMaQqg2WXjNcd21XFPHIffRya9Dcdq3sNsvWlhWBPhOfYMRosZm4zMvjY245QNQi7iGeKYsF0ZKFA==
   dependencies:
     file-saver "^2.0.5"
     jose "^5.6.3"

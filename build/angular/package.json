@@ -1,6 +1,6 @@
 {
   "name": "@formio/enterprise-builder-angular",
-  "version": "1.0.3-rc.1",
+  "version": "1.0.3-rc.2",
   "dependencies": {
     "@formio/enterprise-builder-core": "1.0.2",
     "tslib": "^2.3.0"
@@ -9,8 +9,8 @@
     "@angular/common": "^18.2.1",
     "@angular/core": "^18.2.1",
     "@formio/js": "5.2.3-rc.1",
-    "@formio/premium": "3.0.8-rc.2",
-    "@formio/reporting": "2.1.1"
+    "@formio/premium": "3.0.8-rc.3",
+    "@formio/reporting": "2.1.2-rc.2"
   },
   "sideEffects": false,
   "module": "fesm2022/formio-enterprise-builder-angular.mjs",
