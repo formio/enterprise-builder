@@ -109,10 +109,10 @@
     uuid "^9.0.1"
     vanilla-picker "^2.12.3"
 
-"@formio/reporting@2.1.0-rc.5":
-  version "2.1.0-rc.5"
-  resolved "https://registry.yarnpkg.com/@formio/reporting/-/reporting-2.1.0-rc.5.tgz#17481cf2d40469261987f7ace12f36c766e963e4"
-  integrity sha512-pfYKYG0qwf8SqQxDfw0S/fEn4xxK13Ef4aFgv7SPFnIr596WW8ZzQ61DUrLz6qfoD5R7s5ZdOb9/8jY3uZBD9A==
+"@formio/reporting@2.1.2":
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/@formio/reporting/-/reporting-2.1.2.tgz#704877589f3fd97ac1510a5beefcd74b970f3afe"
+  integrity sha512-Qxf86wa6s7DD51Cs5SI8ybTuo37jzhTJojdPKj1rSCR+wddycm9jSYB4SQgrBums93W8XXgTS82gFgPdCYTbzg==
   dependencies:
     file-saver "^2.0.5"
     jose "^5.6.3"

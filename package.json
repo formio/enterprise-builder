@@ -8,7 +8,7 @@
     "@formio/enterprise-builder-core": "1.0.0-rc.12",
     "@formio/js": "^5.0.0",
     "@formio/premium": "3.0.2",
-    "@formio/reporting": "2.1.0-rc.5"
+    "@formio/reporting": "2.1.2"
   },
   "scripts": {
     "updatedeps": "node ./updatedeps.js",
