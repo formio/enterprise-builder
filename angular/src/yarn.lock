@@ -175,10 +175,10 @@
     symbol-observable "4.0.0"
     yargs "17.7.2"
 
-"@angular/common@^19.0.5":
-  version "19.0.5"
-  resolved "https://registry.npmjs.org/@angular/common/-/common-19.0.5.tgz#169c922112a9fcd07d6e8eae3a8ea2cb8a3e5fa3"
-  integrity sha512-fFK+euCj1AjBHBCpj9VnduMSeqoMRhZZHbhPYiND7tucRRJ8vwGU0sYK2KI/Ko+fsrNIXL/0O4F36jVPl09Smg==
+"@angular/common@^19.2.16":
+  version "19.2.16"
+  resolved "https://registry.yarnpkg.com/@angular/common/-/common-19.2.16.tgz#2ce9c21b7f2181e6d6ab85c346ad6280ef83e23b"
+  integrity sha512-sugztO7XIiLRoVjn0WJK9ooBm9zejsqlE5k4ZGvy1zFafM8LMjFHwD4KymN8JB3AOb7Ad4lJHVq1IvwWnpqeWw==
   dependencies:
     tslib "^2.3.0"
 
@@ -1484,10 +1484,10 @@
   resolved "https://registry.npmjs.org/@formio/deprecated-types/-/deprecated-types-0.1.0.tgz#e8db67b93a2eded12efd640a10c7ddf0cffa2441"
   integrity sha512-jNc3Nw55nc75KESg+KPxxdG9ktnERTYodScAx3eh/J2dlA06N2Korafhu9zmwcDis8lOqtEz3X89cVxpJM9MzQ==
 
-"@formio/enterprise-builder-core@1.0.0-rc.12":
-  version "1.0.0-rc.12"
-  resolved "https://registry.yarnpkg.com/@formio/enterprise-builder-core/-/enterprise-builder-core-1.0.0-rc.12.tgz#9d2aeeeb3e3c28757ba596c276d52a47f76be978"
-  integrity sha512-iD5ic9xjlPhc6q4oqzN1d1sKHtk6yF/evqL7udcPU9dKicCp/NO0P+P0nWnFCA0KMtNmH7AphN6pG9bNucRphg==
+"@formio/enterprise-builder-core@^1.0.0-rc.12":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@formio/enterprise-builder-core/-/enterprise-builder-core-1.0.3.tgz#a2ff65fffdd8bf6950e7070ae030559d08280c79"
+  integrity sha512-stgT5b/2JzuFRhbtJIDVCETqUeboBEU2MqegQ1n1gJbV+vyd3W8mkRR1Oukog8GSpKV9yff9WUByGeSqO/gbwQ==
 
 "@formio/js@^5.0.0":
   version "5.0.0"
