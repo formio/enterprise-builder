@@ -1,6 +1,6 @@
 {
   "name": "@formio/enterprise-builder",
-  "version": "1.1.0-rc.7",
+  "version": "1.1.0-rc.8",
   "repository": "git@github.com:formio/enterprise-builder.git",
   "license": "MIT",
   "exports": {
@@ -13,10 +13,10 @@
     }
   },
   "dependencies": {
-    "@formio/enterprise-builder-core": "1.1.0-rc.7"
+    "@formio/enterprise-builder-core": "1.1.0-rc.9"
   },
   "peerDependencies": {
-    "@formio/js": "^5.3.0-rc.2",
+    "@formio/js": "5.3.0-rc.5",
     "@formio/premium": "3.1.0-rc.6"
   }
 }
