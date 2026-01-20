@@ -93,10 +93,10 @@
     two.js "^0.7.13"
     vanilla-picker "^2.12.3"
 
-"@formio/reporting@2.1.1":
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/@formio/reporting/-/reporting-2.1.1.tgz#ef45a0a598e954e13e6d3f530b44c653b449aff3"
-  integrity sha512-VBgrM7OanAX0NI/6xeolgQbLeZx+BbaLrH4Rq97bE1Uu1ebVPxAVLyc08rbSVgTr17wHq7GJEBK6pE+Qsg3TgQ==
+"@formio/reporting@2.2.0-rc.6":
+  version "2.2.0-rc.6"
+  resolved "https://npm.pkg.github.com/download/@formio/reporting/2.2.0-rc.6/4cf09855e2ef21c30f6deb6c25845b6fa82317a5#4cf09855e2ef21c30f6deb6c25845b6fa82317a5"
+  integrity sha512-H2MLKSGOsps/WCN/ok1mm5kpq7ZsKnP6nYSk40bON7OzQ4gVdQ+ntYv1/OSMPQSnbTy3c4wMEE8mLT191InB+A==
   dependencies:
     file-saver "^2.0.5"
     jose "^5.6.3"
