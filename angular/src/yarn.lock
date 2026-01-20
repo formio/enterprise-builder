@@ -1447,15 +1447,15 @@
   dependencies:
     tslib "^2.0.0"
 
-"@formio/bootstrap@^3.2.0-rc.0":
-  version "3.2.0-rc.0"
-  resolved "https://npm.pkg.github.com/download/@formio/bootstrap/3.2.0-rc.0/507b43da7309d8162f3cd8f63476afa6b04f6e46#507b43da7309d8162f3cd8f63476afa6b04f6e46"
-  integrity sha512-E1xPtzuErT8kjuk5sROjoV3DBIndXABT4ytkpVSunmK5l03iUEirtxPS/8XBCa2+TFEM3MY44wwzlYdlStGU4Q==
+"@formio/bootstrap@^3.2.0-rc.1":
+  version "3.2.0-rc.1"
+  resolved "https://npm.pkg.github.com/download/@formio/bootstrap/3.2.0-rc.1/ae36ea4ee21dc0a6bfb3445bce7d41a2bdee0c14#ae36ea4ee21dc0a6bfb3445bce7d41a2bdee0c14"
+  integrity sha512-F5luXA8qlqkZcQ0wD//tiKKAxq1NQoP5KMUADtNT5enmR2vDaERtQRtc4okUXUhudSIkerz6N/aLZfhCY9KCEA==
 
-"@formio/core@^2.6.0-rc.3":
-  version "2.6.0-rc.3"
-  resolved "https://npm.pkg.github.com/download/@formio/core/2.6.0-rc.3/78f26f9ce5b150db2c992771e18a31959b23dda8#78f26f9ce5b150db2c992771e18a31959b23dda8"
-  integrity sha512-vldJbBKoF8p0F5ZNrTg5RoNhrE5McOGAF0NCDZaDwP+vgBQGAWs3gxDkxFYghIkp3y+/epQKmRs44y99D2V/LA==
+"@formio/core@^2.6.0-rc.4":
+  version "2.6.0-rc.4"
+  resolved "https://npm.pkg.github.com/download/@formio/core/2.6.0-rc.4/a5f2999d800ced0ad539f76a70e86262681baa2b#a5f2999d800ced0ad539f76a70e86262681baa2b"
+  integrity sha512-sjmrLW4Qi5yYWMglCiULeKmkHkMUVrMPQhOfSLEJD0igWJAeBswHMNyWkQsrJ8EeLbP4bfdIMAOnqkYQQ18Gsg==
   dependencies:
     browser-cookies "^1.2.0"
     core-js "^3.39.0"
@@ -1474,18 +1474,18 @@
   resolved "https://registry.npmjs.org/@formio/deprecated-types/-/deprecated-types-0.1.0.tgz#e8db67b93a2eded12efd640a10c7ddf0cffa2441"
   integrity sha512-jNc3Nw55nc75KESg+KPxxdG9ktnERTYodScAx3eh/J2dlA06N2Korafhu9zmwcDis8lOqtEz3X89cVxpJM9MzQ==
 
-"@formio/enterprise-builder-core@1.1.0-rc.9":
-  version "1.1.0-rc.9"
-  resolved "https://npm.pkg.github.com/download/@formio/enterprise-builder-core/1.1.0-rc.9/4cfd159caed004956e494f8bd2a945e0f134cc0c#4cfd159caed004956e494f8bd2a945e0f134cc0c"
-  integrity sha512-wGWqTg86DI0z+hfr7RoHguv8E2q2kCOuVDHr120QK05vCWRhsDqdqdx67oen2/9KViPaXpGLEiMxpBxO4CTkaQ==
+"@formio/enterprise-builder-core@1.1.0-rc.10":
+  version "1.1.0-rc.10"
+  resolved "https://npm.pkg.github.com/download/@formio/enterprise-builder-core/1.1.0-rc.10/fa8325e6c4c5bd1f8b158678874f26a09d63787e#fa8325e6c4c5bd1f8b158678874f26a09d63787e"
+  integrity sha512-Xq8VAtyfNOKUVVe6/IpAx9ZYhD0DM6hHTW8NeQkchJMdmy2YqFJNABHx7Cz4G27lrPnsoukrPbBnt40B7Wu/ZA==
 
-"@formio/js@5.3.0-rc.5":
-  version "5.3.0-rc.5"
-  resolved "https://npm.pkg.github.com/download/@formio/js/5.3.0-rc.5/faa575b4dc430027336eba8755b077cebf27c01c#faa575b4dc430027336eba8755b077cebf27c01c"
-  integrity sha512-XcaxrR6iQO39zRYmlaSIvixLC8IOjI8DqMr0ZqP5UCnNj1s6d3mPaYn33yNZ4UqGKpphvzVGNRoKVuY2JihK2Q==
+"@formio/js@5.3.0-rc.6":
+  version "5.3.0-rc.6"
+  resolved "https://npm.pkg.github.com/download/@formio/js/5.3.0-rc.6/14bc003eed43eefb078b3f5830da422fc589cc40#14bc003eed43eefb078b3f5830da422fc589cc40"
+  integrity sha512-UKpVTtrhQUbqmZAPvy/S2MEhINkyBTV40shYH/RG3H8WTbGxWi/xELraMAFqPfqiPyjv+WhhS9LQrN7pNRJ1JA==
   dependencies:
-    "@formio/bootstrap" "^3.2.0-rc.0"
-    "@formio/core" "^2.6.0-rc.3"
+    "@formio/bootstrap" "^3.2.0-rc.1"
+    "@formio/core" "^2.6.0-rc.4"
     "@formio/text-mask-addons" "^3.8.0-formio.4"
     "@formio/vanilla-text-mask" "^5.1.1-formio.1"
     abortcontroller-polyfill "^1.7.5"
@@ -1531,10 +1531,10 @@
     jsonwebtoken "^9.0.0"
     node-cache "^5.1.2"
 
-"@formio/premium@3.1.0-rc.6":
-  version "3.1.0-rc.6"
-  resolved "https://npm.pkg.github.com/download/@formio/premium/3.1.0-rc.6/ad1e4044da7cab5f69f1c76203860da88edbfb08#ad1e4044da7cab5f69f1c76203860da88edbfb08"
-  integrity sha512-x+Sz3VU42JQicRfSfasK2bCfnRXa66JkItnzZwwC/FzSv3kuQhry24QYgYb0Aacqfdm2kdhgREu4StsuM6hlQA==
+"@formio/premium@3.1.0-rc.7":
+  version "3.1.0-rc.7"
+  resolved "https://npm.pkg.github.com/download/@formio/premium/3.1.0-rc.7/45eb4e63b33778d8471f144af6b21a1216e3bc4b#45eb4e63b33778d8471f144af6b21a1216e3bc4b"
+  integrity sha512-cA9yb27XAUIBcegyQVnMeD2Z4giZltKaxfMXIVIM6BJRlbUhHvi5p77HC6NJmY6foigxztbAV2GQI0H4lj7k9g==
   dependencies:
     "@juggle/resize-observer" "^3.4.0"
     "@zxing/library" "^0.21.2"
