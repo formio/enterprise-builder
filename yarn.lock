@@ -9,15 +9,15 @@
   dependencies:
     tslib "^2.0.0"
 
-"@formio/bootstrap@^3.2.0-rc.1":
-  version "3.2.0-rc.1"
-  resolved "https://npm.pkg.github.com/download/@formio/bootstrap/3.2.0-rc.1/ae36ea4ee21dc0a6bfb3445bce7d41a2bdee0c14#ae36ea4ee21dc0a6bfb3445bce7d41a2bdee0c14"
-  integrity sha512-F5luXA8qlqkZcQ0wD//tiKKAxq1NQoP5KMUADtNT5enmR2vDaERtQRtc4okUXUhudSIkerz6N/aLZfhCY9KCEA==
+"@formio/bootstrap@^3.2.1-api97.3":
+  version "3.2.1-api97.3"
+  resolved "https://pkg.test-form.io/@formio/bootstrap/-/bootstrap-3.2.1-api97.3.tgz#e7b3bd88190bced726ce1237fc7729e95f304242"
+  integrity sha512-UCzmeGAyVo6Lfb6sClmhWfkZp9hL/ji06sHAj5JLkXE4los7ix+eaSjiIkD5ctcNayfk8i3dVazxP6TpAX9rZQ==
 
-"@formio/core@^2.6.0-rc.4":
-  version "2.6.0-rc.4"
-  resolved "https://npm.pkg.github.com/download/@formio/core/2.6.0-rc.4/a5f2999d800ced0ad539f76a70e86262681baa2b#a5f2999d800ced0ad539f76a70e86262681baa2b"
-  integrity sha512-sjmrLW4Qi5yYWMglCiULeKmkHkMUVrMPQhOfSLEJD0igWJAeBswHMNyWkQsrJ8EeLbP4bfdIMAOnqkYQQ18Gsg==
+"@formio/core@^2.6.1-api97.0":
+  version "2.6.1-api97.0"
+  resolved "https://pkg.test-form.io/@formio/core/-/core-2.6.1-api97.0.tgz#1850a4eabfcb82504b326ca216f155b8d4c08909"
+  integrity sha512-clsyJ7S7lah6jZFQm1p6/lRwXYKnmhDO41yj+7noNq9uxqtyppdZfK0hcrxHbJ+dDs86fdOruYeBUugPz07XfQ==
   dependencies:
     browser-cookies "^1.2.0"
     core-js "^3.39.0"
@@ -31,18 +31,21 @@
     lodash "^4.17.21"
     moment "^2.29.4"
 
-"@formio/enterprise-builder-core@1.1.0-rc.10":
-  version "1.1.0-rc.10"
-  resolved "https://npm.pkg.github.com/download/@formio/enterprise-builder-core/1.1.0-rc.10/fa8325e6c4c5bd1f8b158678874f26a09d63787e#fa8325e6c4c5bd1f8b158678874f26a09d63787e"
-  integrity sha512-Xq8VAtyfNOKUVVe6/IpAx9ZYhD0DM6hHTW8NeQkchJMdmy2YqFJNABHx7Cz4G27lrPnsoukrPbBnt40B7Wu/ZA==
-
-"@formio/js@5.3.0-rc.6":
-  version "5.3.0-rc.6"
-  resolved "https://npm.pkg.github.com/download/@formio/js/5.3.0-rc.6/14bc003eed43eefb078b3f5830da422fc589cc40#14bc003eed43eefb078b3f5830da422fc589cc40"
-  integrity sha512-UKpVTtrhQUbqmZAPvy/S2MEhINkyBTV40shYH/RG3H8WTbGxWi/xELraMAFqPfqiPyjv+WhhS9LQrN7pNRJ1JA==
+"@formio/enterprise-builder-core@1.1.1-api97.4":
+  version "1.1.1-api97.4"
+  resolved "https://pkg.test-form.io/@formio/enterprise-builder-core/-/enterprise-builder-core-1.1.1-api97.4.tgz#efc366e56280c518de47dcc7765196c02edf724f"
+  integrity sha512-WLtJixdWT0GF5PPWwqmOcI5JH4TN5waNAzaHKl9R0qKcWUqlW2CDPs7+rLc64GfyavkA3LEJy+zzpaIW2MioDg==
   dependencies:
-    "@formio/bootstrap" "^3.2.0-rc.1"
-    "@formio/core" "^2.6.0-rc.4"
+    "@formio/license" "^2.0.2"
+    lodash "^4.17.21"
+
+"@formio/js@5.3.1-api97.4":
+  version "5.3.1-api97.4"
+  resolved "https://pkg.test-form.io/@formio/js/-/js-5.3.1-api97.4.tgz#0b8b5e43611d5918b83d0f77ec1c52d45c714620"
+  integrity sha512-usK3GK78RjpP3+C2kF5KQ65tl3LpjzHzvw5tstwofgznQtL88ABxN2Tbdlq0vdiMDELr8tzIHiPtTvEBTMGcpw==
+  dependencies:
+    "@formio/bootstrap" "^3.2.1-api97.3"
+    "@formio/core" "^2.6.1-api97.0"
     "@formio/text-mask-addons" "^3.8.0-formio.4"
     "@formio/vanilla-text-mask" "^5.1.1-formio.1"
     abortcontroller-polyfill "^1.7.5"
@@ -77,10 +80,21 @@
     uuid "^9.0.0"
     vanilla-picker "^2.12.3"
 
-"@formio/premium@3.1.0-rc.7":
-  version "3.1.0-rc.7"
-  resolved "https://npm.pkg.github.com/download/@formio/premium/3.1.0-rc.7/45eb4e63b33778d8471f144af6b21a1216e3bc4b#45eb4e63b33778d8471f144af6b21a1216e3bc4b"
-  integrity sha512-cA9yb27XAUIBcegyQVnMeD2Z4giZltKaxfMXIVIM6BJRlbUhHvi5p77HC6NJmY6foigxztbAV2GQI0H4lj7k9g==
+"@formio/license@^2.0.2":
+  version "2.0.2"
+  resolved "https://pkg.test-form.io/@formio/license/-/license-2.0.2.tgz#d171a03f75b2df97fa9fefca501083cb017626b0"
+  integrity sha512-2lEVc3s5B+LpgF1B0Dpu6oJsQTsYvCEJD89Ig413iDEDLxKG/BsKcTzW3PJHFPQWS0tHzg4SGjfxZ56sz1ZPWQ==
+  dependencies:
+    "@types/lodash" "^4.17.7"
+    debug "^4.3.6"
+    jose "^5.6.3"
+    jsonwebtoken "^9.0.3"
+    node-cache "^5.1.2"
+
+"@formio/premium@3.1.1-api97.4":
+  version "3.1.1-api97.4"
+  resolved "https://pkg.test-form.io/@formio/premium/-/premium-3.1.1-api97.4.tgz#79306a4974e995f1e94dbff31c66c6de21839b27"
+  integrity sha512-2JxWeMjDZOvH/CBUrvMCk/3Od3c8PJCQvF20Iv5paqK6vGIo6UeE3O+DQC3WnCt6LfbTxCg4A1vunc547kZv/g==
   dependencies:
     "@juggle/resize-observer" "^3.4.0"
     "@zxing/library" "^0.21.2"
@@ -93,10 +107,10 @@
     two.js "^0.7.13"
     vanilla-picker "^2.12.3"
 
-"@formio/reporting@2.2.0-rc.6":
-  version "2.2.0-rc.6"
-  resolved "https://npm.pkg.github.com/download/@formio/reporting/2.2.0-rc.6/4cf09855e2ef21c30f6deb6c25845b6fa82317a5#4cf09855e2ef21c30f6deb6c25845b6fa82317a5"
-  integrity sha512-H2MLKSGOsps/WCN/ok1mm5kpq7ZsKnP6nYSk40bON7OzQ4gVdQ+ntYv1/OSMPQSnbTy3c4wMEE8mLT191InB+A==
+"@formio/reporting@2.2.1-api97.4":
+  version "2.2.1-api97.4"
+  resolved "https://pkg.test-form.io/@formio/reporting/-/reporting-2.2.1-api97.4.tgz#44c1a94afbfd4cb349c78d5e10c2ca8bbbdcc0c3"
+  integrity sha512-n7rzXUCVbyOIYyDHCLBFY2KKVyUkpjK9B7ZyR24L+atXch61hyQXpbkdm2wfwv+MXGexbtmZOyMJJDDkf+qIaw==
   dependencies:
     file-saver "^2.0.5"
     jose "^5.6.3"
@@ -125,6 +139,11 @@
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/@sphinxxxx/color-conversion/-/color-conversion-2.2.2.tgz#03ecc29279e3c0c832f6185a5bfa3497858ac8ca"
   integrity sha512-XExJS3cLqgrmNBIP3bBw6+1oQ1ksGjFh0+oClDKFYpCCqx/hlqwWO5KO/S63fzUo67SxI9dMrF0y5T/Ey7h8Zw==
+
+"@types/lodash@^4.17.7":
+  version "4.17.24"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.17.24.tgz#4ae334fc62c0e915ca8ed8e35dcc6d4eeb29215f"
+  integrity sha512-gIW7lQLZbue7lRSWEFql49QJJWThrTFFeIMJdp3eH4tKoxm1OvEPg02rm4wCCSHS0cL3/Fizimb35b7k8atwsQ==
 
 "@types/trusted-types@^2.0.7":
   version "2.0.7"
@@ -187,12 +206,22 @@ browser-md5-file@^1.1.1:
   dependencies:
     spark-md5 "^2.0.2"
 
+buffer-equal-constant-time@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/buffer-equal-constant-time/-/buffer-equal-constant-time-1.0.1.tgz#f8e71132f7ffe6e01a5c9697a4c6f3e48d5cc819"
+  integrity sha512-zRpUiDwd/xk6ADqPMATG8vc9VPrkck7T07OIx0gnjmJAnHnTVXNQG3vfvWNuiZIkwu9KrKdA1iJKfsfTVxE6NA==
+
 choices.js@^11.0.6:
   version "11.1.0"
   resolved "https://registry.yarnpkg.com/choices.js/-/choices.js-11.1.0.tgz#4fcfb5834fdf0c7d1959f0261d1bbe526a7c9222"
   integrity sha512-mIt0uLhedHg2ea/K2PACrVpt391vRGHuOoctPAiHcyemezwzNMxj7jOzNEk8e7EbjLh0S0sspDkSCADOKz9kcw==
   dependencies:
     fuse.js "^7.0.0"
+
+clone@2.x:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/clone/-/clone-2.1.2.tgz#1b7f4b9f591f1e8f83670401600345a02887435f"
+  integrity sha512-3Pe/CF1Nn94hyhIYpjtiLhdCoEoz0DqQ+988E9gmeEdQZlojxnOb74wctFyuwWQHzqyf9X7C7MG8juUpqBJT8w==
 
 compare-versions@^6.1.1:
   version "6.1.1"
@@ -240,6 +269,13 @@ dayjs@^1.11.12:
   version "1.11.13"
   resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.11.13.tgz#92430b0139055c3ebb60150aa13e860a4b5a366c"
   integrity sha512-oaMBel6gjolK862uaPQOVTA7q3TZhuSvuMQAAglQDOWYO9A91IrAOUJEyKVlqJlHE0vq5p5UXxzdPfMH/x6xNg==
+
+debug@^4.3.6:
+  version "4.4.3"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-4.4.3.tgz#c6ae432d9bd9662582fce08709b038c58e9e3d6a"
+  integrity sha512-RGwwWnwQvkVfavKVt22FGLw+xYSdzARwm0ru6DhTVA3umU5hZc28V3kO4stgYryrTlLpuvgI9GiijltAjNbcqA==
+  dependencies:
+    ms "^2.1.3"
 
 dialog-polyfill@^0.5.6:
   version "0.5.6"
@@ -305,6 +341,13 @@ dragula@^3.7.3:
   dependencies:
     contra "1.9.4"
     crossvent "1.5.5"
+
+ecdsa-sig-formatter@1.0.11:
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/ecdsa-sig-formatter/-/ecdsa-sig-formatter-1.0.11.tgz#ae0f0fa2d85045ef14a817daa3ce9acd0489e5bf"
+  integrity sha512-nagl3RYrbNv6kQkeJIpt6NJZy8twLB/2vtz6yN9Z4vRKHN4/QZJIEbqohALSgwKdnksuY3k5Addp5lg8sVoVcQ==
+  dependencies:
+    safe-buffer "^5.0.1"
 
 eventemitter3@^5.0.0, eventemitter3@^5.0.1:
   version "5.0.1"
@@ -383,10 +426,43 @@ json-logic-js@^2.0.2, json-logic-js@^2.0.5:
   resolved "https://registry.yarnpkg.com/json-logic-js/-/json-logic-js-2.0.5.tgz#55f0c687dd6f56b02ccdcfdd64171ed998ab5499"
   integrity sha512-rTT2+lqcuUmj4DgWfmzupZqQDA64AdmYqizzMPWj3DxGdfFNsxPpcNVSaTj4l8W2tG/+hg7/mQhxjU3aPacO6g==
 
+jsonwebtoken@^9.0.3:
+  version "9.0.3"
+  resolved "https://registry.yarnpkg.com/jsonwebtoken/-/jsonwebtoken-9.0.3.tgz#6cd57ab01e9b0ac07cb847d53d3c9b6ee31f7ae2"
+  integrity sha512-MT/xP0CrubFRNLNKvxJ2BYfy53Zkm++5bX9dtuPbqAeQpTVe0MQTFhao8+Cp//EmJp244xt6Drw/GVEGCUj40g==
+  dependencies:
+    jws "^4.0.1"
+    lodash.includes "^4.3.0"
+    lodash.isboolean "^3.0.3"
+    lodash.isinteger "^4.0.4"
+    lodash.isnumber "^3.0.3"
+    lodash.isplainobject "^4.0.6"
+    lodash.isstring "^4.0.1"
+    lodash.once "^4.0.0"
+    ms "^2.1.1"
+    semver "^7.5.4"
+
 jstimezonedetect@^1.0.7:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/jstimezonedetect/-/jstimezonedetect-1.0.7.tgz#54bc13ff9960a6510288665cc9596244e21bd29d"
   integrity sha512-ARADHortktl9IZ1tr4GHwGPIAzgz3mLNCbR/YjWtRtc/O0o634O3NeFlpLjv95EvuDA5dc8z6yfgbS8nUc4zcQ==
+
+jwa@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/jwa/-/jwa-2.0.1.tgz#bf8176d1ad0cd72e0f3f58338595a13e110bc804"
+  integrity sha512-hRF04fqJIP8Abbkq5NKGN0Bbr3JxlQ+qhZufXVr0DvujKy93ZCbXZMHDL4EOtodSbCWxOqR8MS1tXA5hwqCXDg==
+  dependencies:
+    buffer-equal-constant-time "^1.0.1"
+    ecdsa-sig-formatter "1.0.11"
+    safe-buffer "^5.0.1"
+
+jws@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/jws/-/jws-4.0.1.tgz#07edc1be8fac20e677b283ece261498bd38f0690"
+  integrity sha512-EKI/M/yqPncGUUh44xz0PxSidXFr/+r0pA70+gIYhjv+et7yxM+s29Y+VGDkovRofQem0fs7Uvf4+YmAdyRduA==
+  dependencies:
+    jwa "^2.0.1"
+    safe-buffer "^5.0.1"
 
 jwt-decode@^3.1.2:
   version "3.1.2"
@@ -403,10 +479,45 @@ lodash.clonedeep@^4.5.0:
   resolved "https://registry.yarnpkg.com/lodash.clonedeep/-/lodash.clonedeep-4.5.0.tgz#e23f3f9c4f8fbdde872529c1071857a086e5ccef"
   integrity sha512-H5ZhCF25riFd9uB5UCkVKo61m3S/xZk1x4wA6yp/L3RFP6Z/eHH1ymQcGLo7J3GMPfm0V/7m1tryHuGVxpqEBQ==
 
+lodash.includes@^4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/lodash.includes/-/lodash.includes-4.3.0.tgz#60bb98a87cb923c68ca1e51325483314849f553f"
+  integrity sha512-W3Bx6mdkRTGtlJISOvVD/lbqjTlPPUDTMnlXZFnVwi9NKJ6tiAk6LVdlhZMm17VZisqhKcgzpO5Wz91PCt5b0w==
+
+lodash.isboolean@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/lodash.isboolean/-/lodash.isboolean-3.0.3.tgz#6c2e171db2a257cd96802fd43b01b20d5f5870f6"
+  integrity sha512-Bz5mupy2SVbPHURB98VAcw+aHh4vRV5IPNhILUCsOzRmsTmSQ17jIuqopAentWoehktxGd9e/hbIXq980/1QJg==
+
 lodash.isequal@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.isequal/-/lodash.isequal-4.5.0.tgz#415c4478f2bcc30120c22ce10ed3226f7d3e18e0"
   integrity sha512-pDo3lu8Jhfjqls6GkMgpahsF9kCyayhgykjyLMNFTKWrpVdAQtYyB4muAMWozBB4ig/dtWAmsMxLEI8wuz+DYQ==
+
+lodash.isinteger@^4.0.4:
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/lodash.isinteger/-/lodash.isinteger-4.0.4.tgz#619c0af3d03f8b04c31f5882840b77b11cd68343"
+  integrity sha512-DBwtEWN2caHQ9/imiNeEA5ys1JoRtRfY3d7V9wkqtbycnAmTvRRmbHKDV4a0EYc678/dia0jrte4tjYwVBaZUA==
+
+lodash.isnumber@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/lodash.isnumber/-/lodash.isnumber-3.0.3.tgz#3ce76810c5928d03352301ac287317f11c0b1ffc"
+  integrity sha512-QYqzpfwO3/CWf3XP+Z+tkQsfaLL/EnUlXWVkIk5FUPc4sBdTehEqZONuyRt2P67PXAk+NXmTBcc97zw9t1FQrw==
+
+lodash.isplainobject@^4.0.6:
+  version "4.0.6"
+  resolved "https://registry.yarnpkg.com/lodash.isplainobject/-/lodash.isplainobject-4.0.6.tgz#7c526a52d89b45c45cc690b88163be0497f550cb"
+  integrity sha512-oSXzaWypCMHkPC3NvBEaPHf0KsA5mvPrOPgQWDsbg8n7orZ290M0BmC/jgRZ4vcJ6DTAhjrsSYgdsW/F+MFOBA==
+
+lodash.isstring@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/lodash.isstring/-/lodash.isstring-4.0.1.tgz#d527dfb5456eca7cc9bb95d5daeaf88ba54a5451"
+  integrity sha512-0wJxfxH1wgO3GrbuP+dTTk7op+6L41QCXbGINEmD+ny/G/eCqGzxyCsh7159S+mgDDcoarnBw6PC1PS5+wUGgw==
+
+lodash.once@^4.0.0:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/lodash.once/-/lodash.once-4.1.1.tgz#0dd3971213c7c56df880977d504c88fb471a97ac"
+  integrity sha512-Sb487aTOCr9drQVL8pIxOzVhafOjZN9UU54hiN8PU3uAiSV7lx1yYNpbNmex2PK6dSJoNTSJUUswT651yww3Mg==
 
 lodash@^4.17.21:
   version "4.17.21"
@@ -424,6 +535,18 @@ moment@^2.29.4:
   version "2.30.1"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.30.1.tgz#f8c91c07b7a786e30c59926df530b4eac96974ae"
   integrity sha512-uEmtNhbDOrWPFS+hdjFCBfy9f2YoyzRpwcl+DqpC6taX21FzsTLQVbMV/W7PzNSX6x/bhC1zA3c2UQ5NzH6how==
+
+ms@^2.1.1, ms@^2.1.3:
+  version "2.1.3"
+  resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.3.tgz#574c8138ce1d2b5861f0b44579dbadd60c6615b2"
+  integrity sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==
+
+node-cache@^5.1.2:
+  version "5.1.2"
+  resolved "https://registry.yarnpkg.com/node-cache/-/node-cache-5.1.2.tgz#f264dc2ccad0a780e76253a694e9fd0ed19c398d"
+  integrity sha512-t1QzWwnk4sjLWaQAS8CHgOJ+RAfmHpxFWmc36IWTiWHQfs0w5JDMBS1b1ZxQteo0vVVuWJvIUKHDkkeK7vIGCg==
+  dependencies:
+    clone "2.x"
 
 node-fetch@~2.6.1:
   version "2.6.13"
@@ -465,6 +588,16 @@ quill@^2.0.2:
     lodash-es "^4.17.21"
     parchment "^3.0.0"
     quill-delta "^5.1.0"
+
+safe-buffer@^5.0.1:
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.2.1.tgz#1eaf9fa9bdb1fdd4ec75f58f9cdb4e6b7827eec6"
+  integrity sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==
+
+semver@^7.5.4:
+  version "7.7.4"
+  resolved "https://registry.yarnpkg.com/semver/-/semver-7.7.4.tgz#28464e36060e991fa7a11d0279d2d3f3b57a7e8a"
+  integrity sha512-vFKC2IEtQnVhpT78h1Yp8wzwrf8CM+MzKMHGJZfBtzhZNycRFnXsHk6E5TxIkkMsgNS7mdX3AGB7x2QM2di4lA==
 
 signature_pad@^4.2.0:
   version "4.2.0"

@@ -1447,15 +1447,15 @@
   dependencies:
     tslib "^2.0.0"
 
-"@formio/bootstrap@^3.2.0-rc.1":
-  version "3.2.0-rc.1"
-  resolved "https://npm.pkg.github.com/download/@formio/bootstrap/3.2.0-rc.1/ae36ea4ee21dc0a6bfb3445bce7d41a2bdee0c14#ae36ea4ee21dc0a6bfb3445bce7d41a2bdee0c14"
-  integrity sha512-F5luXA8qlqkZcQ0wD//tiKKAxq1NQoP5KMUADtNT5enmR2vDaERtQRtc4okUXUhudSIkerz6N/aLZfhCY9KCEA==
+"@formio/bootstrap@^3.2.1-api97.3":
+  version "3.2.1-api97.3"
+  resolved "https://pkg.test-form.io/@formio/bootstrap/-/bootstrap-3.2.1-api97.3.tgz#e7b3bd88190bced726ce1237fc7729e95f304242"
+  integrity sha512-UCzmeGAyVo6Lfb6sClmhWfkZp9hL/ji06sHAj5JLkXE4los7ix+eaSjiIkD5ctcNayfk8i3dVazxP6TpAX9rZQ==
 
-"@formio/core@^2.6.0-rc.4":
-  version "2.6.0-rc.4"
-  resolved "https://npm.pkg.github.com/download/@formio/core/2.6.0-rc.4/a5f2999d800ced0ad539f76a70e86262681baa2b#a5f2999d800ced0ad539f76a70e86262681baa2b"
-  integrity sha512-sjmrLW4Qi5yYWMglCiULeKmkHkMUVrMPQhOfSLEJD0igWJAeBswHMNyWkQsrJ8EeLbP4bfdIMAOnqkYQQ18Gsg==
+"@formio/core@^2.6.1-api97.0":
+  version "2.6.1-api97.0"
+  resolved "https://pkg.test-form.io/@formio/core/-/core-2.6.1-api97.0.tgz#1850a4eabfcb82504b326ca216f155b8d4c08909"
+  integrity sha512-clsyJ7S7lah6jZFQm1p6/lRwXYKnmhDO41yj+7noNq9uxqtyppdZfK0hcrxHbJ+dDs86fdOruYeBUugPz07XfQ==
   dependencies:
     browser-cookies "^1.2.0"
     core-js "^3.39.0"
@@ -1474,18 +1474,21 @@
   resolved "https://registry.npmjs.org/@formio/deprecated-types/-/deprecated-types-0.1.0.tgz#e8db67b93a2eded12efd640a10c7ddf0cffa2441"
   integrity sha512-jNc3Nw55nc75KESg+KPxxdG9ktnERTYodScAx3eh/J2dlA06N2Korafhu9zmwcDis8lOqtEz3X89cVxpJM9MzQ==
 
-"@formio/enterprise-builder-core@1.1.0-rc.10":
-  version "1.1.0-rc.10"
-  resolved "https://npm.pkg.github.com/download/@formio/enterprise-builder-core/1.1.0-rc.10/fa8325e6c4c5bd1f8b158678874f26a09d63787e#fa8325e6c4c5bd1f8b158678874f26a09d63787e"
-  integrity sha512-Xq8VAtyfNOKUVVe6/IpAx9ZYhD0DM6hHTW8NeQkchJMdmy2YqFJNABHx7Cz4G27lrPnsoukrPbBnt40B7Wu/ZA==
-
-"@formio/js@5.3.0-rc.6":
-  version "5.3.0-rc.6"
-  resolved "https://npm.pkg.github.com/download/@formio/js/5.3.0-rc.6/14bc003eed43eefb078b3f5830da422fc589cc40#14bc003eed43eefb078b3f5830da422fc589cc40"
-  integrity sha512-UKpVTtrhQUbqmZAPvy/S2MEhINkyBTV40shYH/RG3H8WTbGxWi/xELraMAFqPfqiPyjv+WhhS9LQrN7pNRJ1JA==
+"@formio/enterprise-builder-core@1.1.1-api97.4":
+  version "1.1.1-api97.4"
+  resolved "https://pkg.test-form.io/@formio/enterprise-builder-core/-/enterprise-builder-core-1.1.1-api97.4.tgz#efc366e56280c518de47dcc7765196c02edf724f"
+  integrity sha512-WLtJixdWT0GF5PPWwqmOcI5JH4TN5waNAzaHKl9R0qKcWUqlW2CDPs7+rLc64GfyavkA3LEJy+zzpaIW2MioDg==
   dependencies:
-    "@formio/bootstrap" "^3.2.0-rc.1"
-    "@formio/core" "^2.6.0-rc.4"
+    "@formio/license" "^2.0.2"
+    lodash "^4.17.21"
+
+"@formio/js@5.3.1-api97.4":
+  version "5.3.1-api97.4"
+  resolved "https://pkg.test-form.io/@formio/js/-/js-5.3.1-api97.4.tgz#0b8b5e43611d5918b83d0f77ec1c52d45c714620"
+  integrity sha512-usK3GK78RjpP3+C2kF5KQ65tl3LpjzHzvw5tstwofgznQtL88ABxN2Tbdlq0vdiMDELr8tzIHiPtTvEBTMGcpw==
+  dependencies:
+    "@formio/bootstrap" "^3.2.1-api97.3"
+    "@formio/core" "^2.6.1-api97.0"
     "@formio/text-mask-addons" "^3.8.0-formio.4"
     "@formio/vanilla-text-mask" "^5.1.1-formio.1"
     abortcontroller-polyfill "^1.7.5"
@@ -1531,10 +1534,21 @@
     jsonwebtoken "^9.0.0"
     node-cache "^5.1.2"
 
-"@formio/premium@3.1.0-rc.7":
-  version "3.1.0-rc.7"
-  resolved "https://npm.pkg.github.com/download/@formio/premium/3.1.0-rc.7/45eb4e63b33778d8471f144af6b21a1216e3bc4b#45eb4e63b33778d8471f144af6b21a1216e3bc4b"
-  integrity sha512-cA9yb27XAUIBcegyQVnMeD2Z4giZltKaxfMXIVIM6BJRlbUhHvi5p77HC6NJmY6foigxztbAV2GQI0H4lj7k9g==
+"@formio/license@^2.0.2":
+  version "2.0.2"
+  resolved "https://pkg.test-form.io/@formio/license/-/license-2.0.2.tgz#d171a03f75b2df97fa9fefca501083cb017626b0"
+  integrity sha512-2lEVc3s5B+LpgF1B0Dpu6oJsQTsYvCEJD89Ig413iDEDLxKG/BsKcTzW3PJHFPQWS0tHzg4SGjfxZ56sz1ZPWQ==
+  dependencies:
+    "@types/lodash" "^4.17.7"
+    debug "^4.3.6"
+    jose "^5.6.3"
+    jsonwebtoken "^9.0.3"
+    node-cache "^5.1.2"
+
+"@formio/premium@3.1.1-api97.4":
+  version "3.1.1-api97.4"
+  resolved "https://pkg.test-form.io/@formio/premium/-/premium-3.1.1-api97.4.tgz#79306a4974e995f1e94dbff31c66c6de21839b27"
+  integrity sha512-2JxWeMjDZOvH/CBUrvMCk/3Od3c8PJCQvF20Iv5paqK6vGIo6UeE3O+DQC3WnCt6LfbTxCg4A1vunc547kZv/g==
   dependencies:
     "@juggle/resize-observer" "^3.4.0"
     "@zxing/library" "^0.21.2"
@@ -3526,9 +3540,9 @@ browserstack@^1.5.1:
   dependencies:
     https-proxy-agent "^2.2.1"
 
-buffer-equal-constant-time@1.0.1:
+buffer-equal-constant-time@1.0.1, buffer-equal-constant-time@^1.0.1:
   version "1.0.1"
-  resolved "https://registry.npmjs.org/buffer-equal-constant-time/-/buffer-equal-constant-time-1.0.1.tgz#f8e71132f7ffe6e01a5c9697a4c6f3e48d5cc819"
+  resolved "https://registry.yarnpkg.com/buffer-equal-constant-time/-/buffer-equal-constant-time-1.0.1.tgz#f8e71132f7ffe6e01a5c9697a4c6f3e48d5cc819"
   integrity sha512-zRpUiDwd/xk6ADqPMATG8vc9VPrkck7T07OIx0gnjmJAnHnTVXNQG3vfvWNuiZIkwu9KrKdA1iJKfsfTVxE6NA==
 
 buffer-from@^1.0.0:
@@ -5867,6 +5881,22 @@ jsonwebtoken@^9.0.0:
     ms "^2.1.1"
     semver "^7.5.4"
 
+jsonwebtoken@^9.0.3:
+  version "9.0.3"
+  resolved "https://registry.yarnpkg.com/jsonwebtoken/-/jsonwebtoken-9.0.3.tgz#6cd57ab01e9b0ac07cb847d53d3c9b6ee31f7ae2"
+  integrity sha512-MT/xP0CrubFRNLNKvxJ2BYfy53Zkm++5bX9dtuPbqAeQpTVe0MQTFhao8+Cp//EmJp244xt6Drw/GVEGCUj40g==
+  dependencies:
+    jws "^4.0.1"
+    lodash.includes "^4.3.0"
+    lodash.isboolean "^3.0.3"
+    lodash.isinteger "^4.0.4"
+    lodash.isnumber "^3.0.3"
+    lodash.isplainobject "^4.0.6"
+    lodash.isstring "^4.0.1"
+    lodash.once "^4.0.0"
+    ms "^2.1.1"
+    semver "^7.5.4"
+
 jsprim@^1.2.2:
   version "1.4.2"
   resolved "https://registry.npmjs.org/jsprim/-/jsprim-1.4.2.tgz#712c65533a15c878ba59e9ed5f0e26d5b77c5feb"
@@ -5901,12 +5931,29 @@ jwa@^1.4.1:
     ecdsa-sig-formatter "1.0.11"
     safe-buffer "^5.0.1"
 
+jwa@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/jwa/-/jwa-2.0.1.tgz#bf8176d1ad0cd72e0f3f58338595a13e110bc804"
+  integrity sha512-hRF04fqJIP8Abbkq5NKGN0Bbr3JxlQ+qhZufXVr0DvujKy93ZCbXZMHDL4EOtodSbCWxOqR8MS1tXA5hwqCXDg==
+  dependencies:
+    buffer-equal-constant-time "^1.0.1"
+    ecdsa-sig-formatter "1.0.11"
+    safe-buffer "^5.0.1"
+
 jws@^3.2.2:
   version "3.2.2"
   resolved "https://registry.npmjs.org/jws/-/jws-3.2.2.tgz#001099f3639468c9414000e99995fa52fb478304"
   integrity sha512-YHlZCB6lMTllWDtSPHz/ZXTsi8S00usEV6v1tjq8tOUZzw7DpSDWVXjXDre6ed1w/pd495ODpHZYSdkRTsa0HA==
   dependencies:
     jwa "^1.4.1"
+    safe-buffer "^5.0.1"
+
+jws@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/jws/-/jws-4.0.1.tgz#07edc1be8fac20e677b283ece261498bd38f0690"
+  integrity sha512-EKI/M/yqPncGUUh44xz0PxSidXFr/+r0pA70+gIYhjv+et7yxM+s29Y+VGDkovRofQem0fs7Uvf4+YmAdyRduA==
+  dependencies:
+    jwa "^2.0.1"
     safe-buffer "^5.0.1"
 
 jwt-decode@^3.1.2:
