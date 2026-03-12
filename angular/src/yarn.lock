@@ -1447,15 +1447,15 @@
   dependencies:
     tslib "^2.0.0"
 
-"@formio/bootstrap@^3.2.1-api97.3":
-  version "3.2.1-api97.3"
-  resolved "https://pkg.test-form.io/@formio/bootstrap/-/bootstrap-3.2.1-api97.3.tgz#e7b3bd88190bced726ce1237fc7729e95f304242"
-  integrity sha512-UCzmeGAyVo6Lfb6sClmhWfkZp9hL/ji06sHAj5JLkXE4los7ix+eaSjiIkD5ctcNayfk8i3dVazxP6TpAX9rZQ==
+"@formio/bootstrap@^3.2.1":
+  version "3.2.1"
+  resolved "https://pkg.test-form.io/@formio/bootstrap/-/bootstrap-3.2.1.tgz#29caa93282059449cc6f2a3119af3cfb596ea578"
+  integrity sha512-6B0mQolATnic9P7YWVBqDuFO3hloiD9mUsz//nuwirqT25WKvgC+lbKboa9IVz36f96xW1J99FvGdtYmEd6kvA==
 
-"@formio/core@^2.6.1-api97.0":
-  version "2.6.1-api97.0"
-  resolved "https://pkg.test-form.io/@formio/core/-/core-2.6.1-api97.0.tgz#1850a4eabfcb82504b326ca216f155b8d4c08909"
-  integrity sha512-clsyJ7S7lah6jZFQm1p6/lRwXYKnmhDO41yj+7noNq9uxqtyppdZfK0hcrxHbJ+dDs86fdOruYeBUugPz07XfQ==
+"@formio/core@^2.6.1":
+  version "2.6.1"
+  resolved "https://pkg.test-form.io/@formio/core/-/core-2.6.1.tgz#38dac9f4e7eb26f46f9ecd2bf5c79cada62a28c2"
+  integrity sha512-WfFZCreXJYviXnWbLWoF67Oxi0pQDZ+1bXNEFORODPt/lXSuYenfUDbrFFY9eCIB9Mxqt4UY4P8X+8Eg1eRVrg==
   dependencies:
     browser-cookies "^1.2.0"
     core-js "^3.39.0"
@@ -1474,21 +1474,21 @@
   resolved "https://registry.npmjs.org/@formio/deprecated-types/-/deprecated-types-0.1.0.tgz#e8db67b93a2eded12efd640a10c7ddf0cffa2441"
   integrity sha512-jNc3Nw55nc75KESg+KPxxdG9ktnERTYodScAx3eh/J2dlA06N2Korafhu9zmwcDis8lOqtEz3X89cVxpJM9MzQ==
 
-"@formio/enterprise-builder-core@1.1.1-api97.4":
-  version "1.1.1-api97.4"
-  resolved "https://pkg.test-form.io/@formio/enterprise-builder-core/-/enterprise-builder-core-1.1.1-api97.4.tgz#efc366e56280c518de47dcc7765196c02edf724f"
-  integrity sha512-WLtJixdWT0GF5PPWwqmOcI5JH4TN5waNAzaHKl9R0qKcWUqlW2CDPs7+rLc64GfyavkA3LEJy+zzpaIW2MioDg==
+"@formio/enterprise-builder-core@1.1.1":
+  version "1.1.1"
+  resolved "https://pkg.test-form.io/@formio/enterprise-builder-core/-/enterprise-builder-core-1.1.1.tgz#2c65cf19408594b6ed26c39bfecaa8128e461cde"
+  integrity sha512-f/pHKHMnrX3jwwpoC4JAHKFpHQGzF2AVtFrBI77PtN3MB+zde6dotoPWnklO1PKdlEBQG5jsORLKZ26x0YviEg==
   dependencies:
     "@formio/license" "^2.0.2"
     lodash "^4.17.21"
 
-"@formio/js@5.3.1-api97.4":
-  version "5.3.1-api97.4"
-  resolved "https://pkg.test-form.io/@formio/js/-/js-5.3.1-api97.4.tgz#0b8b5e43611d5918b83d0f77ec1c52d45c714620"
-  integrity sha512-usK3GK78RjpP3+C2kF5KQ65tl3LpjzHzvw5tstwofgznQtL88ABxN2Tbdlq0vdiMDELr8tzIHiPtTvEBTMGcpw==
+"@formio/js@5.3.1":
+  version "5.3.1"
+  resolved "https://pkg.test-form.io/@formio/js/-/js-5.3.1.tgz#8993b3b4f08d43fa3e5ad717dc0ef54c5d22beee"
+  integrity sha512-7ylXakhpgH4hz4+xUZp35tmb1jDUZQChVHhWi0xqPan7xRLREcooIX5S5CKRNxHrDOUrunirUbIgnGO/8Qr3CA==
   dependencies:
-    "@formio/bootstrap" "^3.2.1-api97.3"
-    "@formio/core" "^2.6.1-api97.0"
+    "@formio/bootstrap" "^3.2.1"
+    "@formio/core" "^2.6.1"
     "@formio/text-mask-addons" "^3.8.0-formio.4"
     "@formio/vanilla-text-mask" "^5.1.1-formio.1"
     abortcontroller-polyfill "^1.7.5"
@@ -1545,10 +1545,10 @@
     jsonwebtoken "^9.0.3"
     node-cache "^5.1.2"
 
-"@formio/premium@3.1.1-api97.4":
-  version "3.1.1-api97.4"
-  resolved "https://pkg.test-form.io/@formio/premium/-/premium-3.1.1-api97.4.tgz#79306a4974e995f1e94dbff31c66c6de21839b27"
-  integrity sha512-2JxWeMjDZOvH/CBUrvMCk/3Od3c8PJCQvF20Iv5paqK6vGIo6UeE3O+DQC3WnCt6LfbTxCg4A1vunc547kZv/g==
+"@formio/premium@3.1.1":
+  version "3.1.1"
+  resolved "https://pkg.test-form.io/@formio/premium/-/premium-3.1.1.tgz#5ef7678a2ecd2fe29bd9be4a7b8038e4d92cc14d"
+  integrity sha512-GffAcvmfpyPOrR8V0JaAv06ZGDnnDio593mtUJ56rFhrwTphkeSg8K4z489RNGWrz4T5eSLF5KJMtmu0lkVx+g==
   dependencies:
     "@juggle/resize-observer" "^3.4.0"
     "@zxing/library" "^0.21.2"
