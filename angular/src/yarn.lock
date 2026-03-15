@@ -330,10 +330,10 @@
   resolved "https://registry.yarnpkg.com/@angular/compiler/-/compiler-9.0.0.tgz#87e0bef4c369b6cadae07e3a4295778fc93799d5"
   integrity sha512-ctjwuntPfZZT2mNj2NDIVu51t9cvbhl/16epc5xEwyzyDt76pX9UgwvY+MbXrf/C/FWwdtmNtfP698BKI+9leQ==
 
-"@angular/compiler@^21.0.6":
-  version "21.0.6"
-  resolved "https://registry.yarnpkg.com/@angular/compiler/-/compiler-21.0.6.tgz#305e1934e0636d9f3819a0897fe0091973f68584"
-  integrity sha512-rBMzG7WnQMouFfDST+daNSAOVYdtw560645PhlxyVeIeHMlCm0j1jjBgVPGTBNpVgKRdT/sqbi6W6JYkY9mERA==
+"@angular/compiler@^21.2.4":
+  version "21.2.4"
+  resolved "https://registry.yarnpkg.com/@angular/compiler/-/compiler-21.2.4.tgz#ddc3a317b7e1be36278ff82379da357bfc857c52"
+  integrity sha512-9+ulVK3idIo/Tu4X2ic7/V0+Uj7pqrOAbOuIirYe6Ymm3AjexuFRiGBbfcH0VJhQ5cf8TvIJ1fuh+MI4JiRIxA==
   dependencies:
     tslib "^2.3.0"
 
@@ -342,10 +342,10 @@
   resolved "https://registry.yarnpkg.com/@angular/core/-/core-9.0.0.tgz#227dc53e1ac81824f998c6e76000b7efc522641e"
   integrity sha512-6Pxgsrf0qF9iFFqmIcWmjJGkkCaCm6V5QNnxMy2KloO3SDq6QuMVRbN9RtC8Urmo25LP+eZ6ZgYqFYpdD8Hd9w==
 
-"@angular/core@^21.0.6":
-  version "21.0.6"
-  resolved "https://registry.yarnpkg.com/@angular/core/-/core-21.0.6.tgz#2988f699e2aa478186cd73c715e57a9201a35fd0"
-  integrity sha512-SvWbOkkrsqprYJSBmzQEWkWjfZB/jkRYyFp2ClMJBPqOLxP1a+i3Om2rolcNQjZPz87bs9FszwgRlXUy7sw5cQ==
+"@angular/core@^21.2.3":
+  version "21.2.4"
+  resolved "https://registry.yarnpkg.com/@angular/core/-/core-21.2.4.tgz#d5037a54ed08d3dc2303f5d63f92c2d67aa0b937"
+  integrity sha512-2+gd67ZuXHpGOqeb2o7XZPueEWEP81eJza2tSHkT5QMV8lnYllDEmaNnkPxnIjSLGP1O3PmiXxo4z8ibHkLZwg==
   dependencies:
     tslib "^2.3.0"
 
