@@ -139,7 +139,6 @@ export class FormEditComponent implements OnInit {
 
   removePDF() {
     delete (this.service.builderForm as Form).settings.pdf;
-    this.service.builderForm = {...this.service.builderForm};
     this.builder.builder.setDisplay('pdf');
   }
 }
