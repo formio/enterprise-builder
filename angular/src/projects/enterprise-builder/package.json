@@ -1,21 +1,21 @@
 {
   "name": "@formio/enterprise-builder-angular",
-  "version": "1.1.1-rc.1",
+  "version": "1.1.1-rc.2",
   "dependencies": {
-    "@formio/enterprise-builder-core": "1.1.2-api98.0"
+    "@formio/enterprise-builder-core": "1.1.2-api98.4"
   },
   "peerDependencies": {
     "@angular/common": "^18.0.0 || ^19.0.0",
     "@angular/core": "^18.0.0 || ^19.0.0",
-    "@formio/js": "5.4.0-api98.2",
-    "@formio/premium": "3.2.0-api98.2",
-    "@formio/reporting": "2.2.2-api98.0"
+    "@formio/js": "5.4.0-api98.6",
+    "@formio/premium": "3.2.0-api98.6",
+    "@formio/reporting": "2.2.2-api98.4"
   },
   "devDependencies": {
     "tslib": "^2.3.0",
-    "@formio/js": "5.4.0-api98.2",
-    "@formio/premium": "3.2.0-api98.2",
-    "@formio/reporting": "2.2.2-api98.0"
+    "@formio/js": "5.4.0-api98.6",
+    "@formio/premium": "3.2.0-api98.6",
+    "@formio/reporting": "2.2.2-api98.4"
   },
   "sideEffects": false
 }

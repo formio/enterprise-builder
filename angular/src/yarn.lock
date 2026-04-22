@@ -1452,15 +1452,32 @@
   resolved "https://pkg.test-form.io/@formio/bootstrap/-/bootstrap-4.0.0-api98.2.tgz#30f747d01b2acee9b4ce1ae70c42c17dd82e21d9"
   integrity sha512-gUYMxS5TuGV1PAeMyDGd+I0T1pXG3ooGrVvke7OlYSUH7EuUGMzMPoMN4H5CrymGvY9RjQmOnkdgx2wUd+X0Ew==
 
-"@formio/core@^2.7.0-api98.1":
-  version "2.7.0-api98.1"
-  resolved "https://pkg.test-form.io/@formio/core/-/core-2.7.0-api98.1.tgz#5c29a4d6b63f3b06bb541e134e8203072120285c"
-  integrity sha512-tkYIfdPoYxNS3CBEy/kkk09Hai9lZJ0hwqWyESRwCfEPqS4jDRNIA7JCXXiexG+/5O/yLiHmPGdT/DxKMdxK2g==
+"@formio/core@^2.6.3":
+  version "2.6.3"
+  resolved "https://pkg.test-form.io/@formio/core/-/core-2.6.3.tgz#764420a2efe86d7b9168142cde6407b147cdf031"
+  integrity sha512-Fe5DCtfUFcrTlkRZkNLfuE94MYV/lksCza+hErOgRfKzGpZW38/THWSvlbeJHsONeWOHJYKsVfLG5j0FoHHMKg==
   dependencies:
     browser-cookies "^1.2.0"
     core-js "^3.39.0"
     dayjs "^1.11.12"
-    dompurify "3.2.4"
+    dompurify "^3.3.3"
+    eventemitter3 "^5.0.0"
+    fast-json-patch "^3.1.1"
+    fetch-ponyfill "^7.1.0"
+    inputmask "5.0.9"
+    json-logic-js "^2.0.5"
+    lodash "^4.17.21"
+    moment "^2.29.4"
+
+"@formio/core@^2.7.0-api98.2":
+  version "2.7.0-api98.2"
+  resolved "https://pkg.test-form.io/@formio/core/-/core-2.7.0-api98.2.tgz#72fd39d271905a1a89243111355029c07fbfd422"
+  integrity sha512-QSS5l/WzN9QZZxWKiLORsE5dJC7Xa0kVhLbsZ77aMQ1NldkkVktivKRHj1b1IwCO6XJ4Qg9jZbbxbf9DALFojw==
+  dependencies:
+    browser-cookies "^1.2.0"
+    core-js "^3.39.0"
+    dayjs "^1.11.12"
+    dompurify "^3.3.3"
     eventemitter3 "^5.0.0"
     fast-json-patch "^3.1.1"
     fetch-ponyfill "^7.1.0"
@@ -1474,29 +1491,29 @@
   resolved "https://registry.npmjs.org/@formio/deprecated-types/-/deprecated-types-0.1.0.tgz#e8db67b93a2eded12efd640a10c7ddf0cffa2441"
   integrity sha512-jNc3Nw55nc75KESg+KPxxdG9ktnERTYodScAx3eh/J2dlA06N2Korafhu9zmwcDis8lOqtEz3X89cVxpJM9MzQ==
 
-"@formio/enterprise-builder-core@1.1.2-api98.0":
-  version "1.1.2-api98.0"
-  resolved "https://pkg.test-form.io/@formio/enterprise-builder-core/-/enterprise-builder-core-1.1.2-api98.0.tgz#0d0e3ceaa5ff51a5ae1d94ba4807cc8ae818c048"
-  integrity sha512-rv8NDv4UcnFIGYzGyHpwDwXGVbZSMNItlSCt0DdQl4SMmcUpsdnGY60xo6HMr7f0YSjS35hD7LIwbSFxDJWAwg==
+"@formio/enterprise-builder-core@1.1.2-api98.4":
+  version "1.1.2-api98.4"
+  resolved "https://pkg.test-form.io/@formio/enterprise-builder-core/-/enterprise-builder-core-1.1.2-api98.4.tgz#1f20dbeca885e26406ff4a217365c53991880db7"
+  integrity sha512-QyDdFElWZ2eeMUVttZLGMJo5lswZil5ZmuYbQLFkEYz9chw4JHbqlld8mehpp9/41jgAu8yDdgB503/kr5V14A==
   dependencies:
     "@formio/license" "^2.1.0-api98.0"
     lodash "^4.17.23"
 
-"@formio/grid@^2.2.2-api98.0":
-  version "2.2.2-api98.0"
-  resolved "https://pkg.test-form.io/@formio/grid/-/grid-2.2.2-api98.0.tgz#5226c52f25db365207517eb778630cd14efa7650"
-  integrity sha512-oZPwb8Roa+p73143R7REKEwfV6iF3EY33scR+WfIWSAtqnnXcoOtBkDgIR8a65IqTaIQGH/D2Vwz9C6YBqz/4A==
+"@formio/grid@^2.2.2-api98.1":
+  version "2.2.3"
+  resolved "https://pkg.test-form.io/@formio/grid/-/grid-2.2.3.tgz#42ff1a7d36310f6904759b0d5e40e95f47f7dbf4"
+  integrity sha512-3T9cv9thlrZ2l1qH/PN5fjPgcF6NpGZP+78o+5okPG89aMEghctBFCggY9KKF6gHqN5L49V2Btoe22Ze8TgUGA==
   dependencies:
-    "@formio/core" "^2.7.0-api98.1"
-    lodash "^4.17.23"
+    "@formio/core" "^2.6.3"
+    lodash "^4.17.21"
 
-"@formio/js@5.4.0-api98.2":
-  version "5.4.0-api98.2"
-  resolved "https://pkg.test-form.io/@formio/js/-/js-5.4.0-api98.2.tgz#a368620ad7af97ea05c8d0f22c13deaf7a3f902b"
-  integrity sha512-VSYoDkoy9BOW4EZ0o/Qn6KRNshI3J3fXFRT+nQiLpqq8cdxrJIn8JSz+PL8nVRVwqxiJjJMuhddTjKzhIvUF8A==
+"@formio/js@5.4.0-api98.6":
+  version "5.4.0-api98.6"
+  resolved "https://pkg.test-form.io/@formio/js/-/js-5.4.0-api98.6.tgz#0e6538c288f351abd477ff9ead81170a0cad2648"
+  integrity sha512-wupQ+Gd+visHTzrFacfaaJKMO98NfVQfTaAKfi6D9c4jb5S+6PZuciUsgFsSjY2wD4VJUsmniJnrFm1YVE5lgQ==
   dependencies:
     "@formio/bootstrap" "^4.0.0-api98.2"
-    "@formio/core" "^2.7.0-api98.1"
+    "@formio/core" "^2.7.0-api98.2"
     "@formio/text-mask-addons" "^3.8.0-formio.4"
     "@formio/vanilla-text-mask" "^5.1.1-formio.1"
     abortcontroller-polyfill "^1.7.5"
@@ -1509,7 +1526,7 @@
     core-js "^3.37.1"
     dialog-polyfill "^0.5.6"
     dom-autoscroller "^2.3.4"
-    dompurify "^3.2.4"
+    dompurify "^3.3.3"
     downloadjs "^1.4.7"
     dragula "^3.7.3"
     eventemitter3 "^5.0.1"
@@ -1553,12 +1570,12 @@
     jsonwebtoken "^9.0.3"
     node-cache "^5.1.2"
 
-"@formio/premium@3.2.0-api98.2":
-  version "3.2.0-api98.2"
-  resolved "https://pkg.test-form.io/@formio/premium/-/premium-3.2.0-api98.2.tgz#74f57077e11f59e959fbedccc9364e2fd546e97d"
-  integrity sha512-KeDLuo/M+cXQQDh8G/Ov5Mk3nuZG8M9hVCejL3C+Y2a2qFoFufqIfv/FGR+zZDsN3Za5WUfWYwG+yekZqYUoMg==
+"@formio/premium@3.2.0-api98.6":
+  version "3.2.0-api98.6"
+  resolved "https://pkg.test-form.io/@formio/premium/-/premium-3.2.0-api98.6.tgz#36333483007dcdabcbff2a2cf2b5c1b1685925ec"
+  integrity sha512-Y32+zaGfD8/jRwEH8I84oQ1ICilQeo9DvTfSfaopETdgJGlaLmahJz384xPn01ewzAJvxyJKQPgGtSW+Jwf9ug==
   dependencies:
-    "@formio/grid" "^2.2.2-api98.0"
+    "@formio/grid" "^2.2.2-api98.1"
     "@juggle/resize-observer" "^3.4.0"
     "@zxing/library" "^0.21.2"
     dayjs "^1.11.12"
@@ -4337,17 +4354,10 @@ domhandler@^5.0.2, domhandler@^5.0.3:
   dependencies:
     domelementtype "^2.3.0"
 
-dompurify@3.2.4:
-  version "3.2.4"
-  resolved "https://registry.yarnpkg.com/dompurify/-/dompurify-3.2.4.tgz#af5a5a11407524431456cf18836c55d13441cd8e"
-  integrity sha512-ysFSFEDVduQpyhzAob/kkuJjf5zWkZD8/A9ywSp1byueyuCfHamrCBa14/Oc2iiB0e51B+NpxSl5gmzn+Ms/mg==
-  optionalDependencies:
-    "@types/trusted-types" "^2.0.7"
-
-dompurify@^3.2.4:
-  version "3.2.6"
-  resolved "https://registry.yarnpkg.com/dompurify/-/dompurify-3.2.6.tgz#ca040a6ad2b88e2a92dc45f38c79f84a714a1cad"
-  integrity sha512-/2GogDQlohXPZe6D6NOgQvXLPSYBqIWMnZ8zzOhn09REE4eyAzb+Hed3jhoM9OkuaJ8P6ZGTTVWQKAi8ieIzfQ==
+dompurify@^3.3.3:
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/dompurify/-/dompurify-3.4.1.tgz#521d04483ac12631b2aedf434a5f5390933b8789"
+  integrity sha512-JahakDAIg1gyOm7dlgWSDjV4n7Ip2PKR55NIT6jrMfIgLFgWo81vdr1/QGqWtFNRqXP9UV71oVePtjqS2ebnPw==
   optionalDependencies:
     "@types/trusted-types" "^2.0.7"
 
