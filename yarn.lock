@@ -9,15 +9,15 @@
   dependencies:
     tslib "^2.0.0"
 
-"@formio/bootstrap@^4.0.0-api98.5":
-  version "4.0.0-api98.5"
-  resolved "https://pkg.test-form.io/@formio/bootstrap/-/bootstrap-4.0.0-api98.5.tgz#f389bd20093e0739f49f511e3e1a45bc0b06ed23"
-  integrity sha512-uGsL75Aj02RabQH8EwsUwuTmGtz0QZFIUJyWEXEAxwN+Aeb3JnQCi5E1nnDvdiHP2ZiiPg1/1gBrvC4t4QwLJg==
+"@formio/bootstrap@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@formio/bootstrap/-/bootstrap-4.0.0.tgz#8ef807361d00b0e4603b93ebdc6c1971c04ab9ca"
+  integrity sha512-MBiphKw7JONN1QWBOpK+eAIVpbSUKAYLTq2HNROJSsb2l1ng5GNP56DVbuxRiSzCvAuB1PORAe27HL93Dn8m4g==
 
-"@formio/core@^2.7.0-api98.6":
-  version "2.7.0-api98.6"
-  resolved "https://pkg.test-form.io/@formio/core/-/core-2.7.0-api98.6.tgz#ebdc0fbf0db123dd0b605fb9f7427b29e7b50d33"
-  integrity sha512-DhlIyp8V1NAmB6aPXBbaik6CvoHuPXwhIfnjxr8hqZzwOe78gszK5KFXLuNmJRUouY7Kqm5iiAs0Uju+JZc85A==
+"@formio/core@^2.7.0":
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/@formio/core/-/core-2.7.0.tgz#c8ac73e63ec584156edcbfb6261b4460665b6059"
+  integrity sha512-3SzDIZNEMfE5zDmCtpYjAanqxc/HaedeOKSx7593vbwZ/zK8M6AEnFqspOJLdaU4vR8Bsl8JcqAML9OBzGjzBA==
   dependencies:
     browser-cookies "^1.2.0"
     core-js "^3.39.0"
@@ -31,29 +31,29 @@
     lodash "^4.17.23"
     moment "^2.29.4"
 
-"@formio/enterprise-builder-core@1.1.2-api98.9":
-  version "1.1.2-api98.9"
-  resolved "https://pkg.test-form.io/@formio/enterprise-builder-core/-/enterprise-builder-core-1.1.2-api98.9.tgz#4e626a644f5700a306d28e857b5a81bd3b5c9773"
-  integrity sha512-p5mY0C2DfNJlbpje0mhNbD3yvvJekmCcjw/TnSOYCPsJiFukPMuxFgh3go5BL6Tbq0EvG0RmKolOJWq6x72JbQ==
+"@formio/enterprise-builder-core@1.1.2":
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@formio/enterprise-builder-core/-/enterprise-builder-core-1.1.2.tgz#cd9aeacc1ea3f33eaf3c2063166b5fe179de32c3"
+  integrity sha512-WizParm04R9XUTyog9wXvq75DOycJNRW+v2X4ig6lBZMU2BBf20EeKu1eOmZX4tj0IsgLktNZr0Dr7CnWYwUBA==
   dependencies:
-    "@formio/license" "^2.1.0-api98.0"
+    "@formio/license" "^2.0.2"
+    lodash "^4.17.21"
+
+"@formio/grid@^2.3.0":
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/@formio/grid/-/grid-2.3.0.tgz#83fa27a5e115d77b7991232ea7bb753f88004621"
+  integrity sha512-TBq32q/Sth/tWWvMT/RW74I1IyywbLL4t8g0xhEOqTQifBFVdw8DHXD6j6byowz3Mq0i07hZWFH6qoOPv7Pj4g==
+  dependencies:
+    "@formio/core" "^2.7.0"
     lodash "^4.17.23"
 
-"@formio/grid@^2.2.2-api98.5":
-  version "2.2.2-api98.5"
-  resolved "https://pkg.test-form.io/@formio/grid/-/grid-2.2.2-api98.5.tgz#1acfa5b3d499bced0653a95b9ba9ead5f7f06d69"
-  integrity sha512-H1kA+K3oaFUPbW7zdCMc5OkH11O6fTtMCX7UiWIED/4uyrO8zYtRso1ANMWqL3FQKYpIT0pF7oKdeqb8KBrChg==
+"@formio/js@5.4.0":
+  version "5.4.0"
+  resolved "https://registry.yarnpkg.com/@formio/js/-/js-5.4.0.tgz#fd8aab92e14b91b3d8b45d055608c98d990df6f4"
+  integrity sha512-i+rd7vmOmfYeuTTIRQy7wTbwaSMpB83SIZN9opmgTFuwTx+raM0CSPWl1qZRAc9zGdosx3+uBM0qCilqUh5k7A==
   dependencies:
-    "@formio/core" "^2.7.0-api98.6"
-    lodash "^4.17.23"
-
-"@formio/js@5.4.0-api98.11":
-  version "5.4.0-api98.11"
-  resolved "https://pkg.test-form.io/@formio/js/-/js-5.4.0-api98.11.tgz#262051a5c07468b8a7e13677590fdf95528e9f63"
-  integrity sha512-pIxSlexEGNiQKZEkBD4pNZVEjXAEVzTQYR6Ibuuyib8wuh5p3lZ01NyId22PAQbhI36QDE0wXAZCINngVG55jQ==
-  dependencies:
-    "@formio/bootstrap" "^4.0.0-api98.5"
-    "@formio/core" "^2.7.0-api98.6"
+    "@formio/bootstrap" "^4.0.0"
+    "@formio/core" "^2.7.0"
     "@formio/text-mask-addons" "^3.8.0-formio.4"
     "@formio/vanilla-text-mask" "^5.1.1-formio.1"
     abortcontroller-polyfill "^1.7.5"
@@ -88,10 +88,10 @@
     uuid "^9.0.0"
     vanilla-picker "^2.12.3"
 
-"@formio/license@^2.1.0-api98.0":
-  version "2.1.0-api98.0"
-  resolved "https://pkg.test-form.io/@formio/license/-/license-2.1.0-api98.0.tgz#922c2ba91c3c28f3c52760296f6f48d8202976ea"
-  integrity sha512-yWXLN99+VgGZFp1Aop6ng2cP68VrQNBe+ejVD1mJdHwRZ8Ldri+N+xQa0jCGq7ybDy2HsVfIrBGHcQmWWRmo/A==
+"@formio/license@^2.0.2":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@formio/license/-/license-2.1.0.tgz#25e2b2e7f51805cfe72322cc8a6ec5000b884fee"
+  integrity sha512-hHMKFhNWgb2R1PsmyMN4F7GjvHFTpDaqPg/NilGy8lgsXGa1og28pJGY926Jy+zDcH2I6wIbouEd2kwz3/1veg==
   dependencies:
     "@types/lodash" "^4.17.7"
     debug "^4.3.6"
@@ -99,12 +99,12 @@
     jsonwebtoken "^9.0.3"
     node-cache "^5.1.2"
 
-"@formio/premium@3.2.0-api98.11":
-  version "3.2.0-api98.11"
-  resolved "https://pkg.test-form.io/@formio/premium/-/premium-3.2.0-api98.11.tgz#ae31010c82069ea9ac2118e080a7ee9efe4075a0"
-  integrity sha512-GZ9D7TQYopCHBwVjGkJknyCjAS7JAgDeBav4P/nrim0in7k3DqehFldqr6DORQ5I+cYfsIDPyAxR9+7Iu6cavQ==
+"@formio/premium@3.2.0":
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/@formio/premium/-/premium-3.2.0.tgz#39ab8b8df210faecf37bbd9e7abdfebc805a7e3a"
+  integrity sha512-w2OWiuu6otfJOi932oI9rhi9FpwlAh3+Q/OTIqim6ihH5nc5DSBbepMo3jRiUIw+VgkX6kUA2nMpupJdU/pp8g==
   dependencies:
-    "@formio/grid" "^2.2.2-api98.5"
+    "@formio/grid" "^2.3.0"
     "@juggle/resize-observer" "^3.4.0"
     "@zxing/library" "^0.21.2"
     dayjs "^1.11.12"
@@ -116,10 +116,10 @@
     two.js "^0.7.13"
     vanilla-picker "^2.12.3"
 
-"@formio/reporting@2.2.2-api98.9":
-  version "2.2.2-api98.9"
-  resolved "https://pkg.test-form.io/@formio/reporting/-/reporting-2.2.2-api98.9.tgz#5850f4ee472a843c254afefb390cfad23b20d166"
-  integrity sha512-UCAoHUfTmJ7TBOhTZG7W1M7pF9sapvAW09ZfDaQo557dW14Cz/r3/+BSc/Vtab916l1Lnwc1kJzij3aI1kkVpQ==
+"@formio/reporting@2.2.2":
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/@formio/reporting/-/reporting-2.2.2.tgz#ca6fa89f908f505bc74502eaf0669eb1305ce343"
+  integrity sha512-WBUjo2tFxSzjikYb0/rzikXVtc+moqNgjbyQX8wF23IktCTBgL64Lv2vJQY3Vef7paTnbMcOspPeqZtTpKvm4Q==
   dependencies:
     file-saver "^2.0.5"
     jose "^5.6.3"
@@ -520,6 +520,11 @@ lodash.once@^4.0.0:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/lodash.once/-/lodash.once-4.1.1.tgz#0dd3971213c7c56df880977d504c88fb471a97ac"
   integrity sha512-Sb487aTOCr9drQVL8pIxOzVhafOjZN9UU54hiN8PU3uAiSV7lx1yYNpbNmex2PK6dSJoNTSJUUswT651yww3Mg==
+
+lodash@^4.17.21:
+  version "4.18.1"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.18.1.tgz#ff2b66c1f6326d59513de2407bf881439812771c"
+  integrity sha512-dMInicTPVE8d1e5otfwmmjlxkZoUpiVLwyeTdUsi/Caj/gfzzblBcCE5sRHV/AsjuCmxWrte2TNGSYuCeCq+0Q==
 
 lodash@^4.17.23:
   version "4.17.23"
