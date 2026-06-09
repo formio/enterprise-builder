@@ -5,7 +5,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
-## [Unreleased: 1.2.0-rc.0]
+## 1.2.0-rc.0
+### Changed
+ - Updated @formio/reporting@2.3.1-api99.0
+ - Updated @formio/premium@3.2.1-api99.0
+ - Updated @formio/enterprise-builder-core@1.2.1-api99.0
+ - Updated @formio/js@5.4.1-api99.0
+
 
 ## 1.1.1
 ### Changed
