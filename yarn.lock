@@ -9,15 +9,15 @@
   dependencies:
     tslib "^2.0.0"
 
-"@formio/bootstrap@^4.0.1-api99.0":
-  version "4.0.1-api99.0"
-  resolved "https://pkg.test-form.io/@formio/bootstrap/-/bootstrap-4.0.1-api99.0.tgz#f8842ad8e1e4b68a0a6cfa248c408d571a269a13"
-  integrity sha512-NsHOK7j58YEezFDvRmtgJaes8Cp7WvMKinOqYqbaHHhDA0BNKuoD9E5OE1fYV8/KbgNAdQU5UdTU/3mGj6DKSg==
+"@formio/bootstrap@^4.0.2-api99.0":
+  version "4.0.2-api99.0"
+  resolved "https://pkg.test-form.io/@formio/bootstrap/-/bootstrap-4.0.2-api99.0.tgz#eec791ed95f00ff4f80c3ed333a07cc0b6ad2c2b"
+  integrity sha512-U1Gi52P/Ih0aZxBMxWVuLYpEgyPasnHbvmAsyBSyYj/kXwtW+b02Wgb8Hp5AZfh5UUE5x968r6I3f/nMnhZBWA==
 
-"@formio/core@^2.7.1-api99.0":
-  version "2.7.1-api99.0"
-  resolved "https://pkg.test-form.io/@formio/core/-/core-2.7.1-api99.0.tgz#f866c0234d9b2975e32ec9f02c1ff670e29ba8da"
-  integrity sha512-FPrEPVuB7mAqog8boDkX7rU8hDGQnvITxk1iRotxagrLd5ke5Wn4EMjx7Gh46pj/ZRrlR3Kv/f/GkDIdNFmE3g==
+"@formio/core@^2.7.1":
+  version "2.7.1"
+  resolved "https://pkg.test-form.io/@formio/core/-/core-2.7.1.tgz#42668860758fc935661aad7398bc1d1faa67828d"
+  integrity sha512-QcnCl54T0y8yjHsMBVvEIHsMe8bFRYYvT44LHHwwA9G8bpm608Lv3dBTyCBBULu+fufN9tsxC0ax4+EaK3fo7g==
   dependencies:
     browser-cookies "^1.2.0"
     core-js "^3.39.0"
@@ -31,29 +31,29 @@
     lodash "^4.17.23"
     moment "^2.29.4"
 
-"@formio/enterprise-builder-core@1.2.1-api99.0":
-  version "1.2.1-api99.0"
-  resolved "https://pkg.test-form.io/@formio/enterprise-builder-core/-/enterprise-builder-core-1.2.1-api99.0.tgz#d052bd8fdc1c2ce37906760aa93761db7ffe4c79"
-  integrity sha512-HK6pZL81U93x7HZi5g0/2WvcFEuLtl7WsoDGfOYqSq9xukIscRfjdlf4W5bdoXAC43nnVoIkMLof6tKP71E6YQ==
+"@formio/enterprise-builder-core@1.2.2-api99.0":
+  version "1.2.2-api99.0"
+  resolved "https://pkg.test-form.io/@formio/enterprise-builder-core/-/enterprise-builder-core-1.2.2-api99.0.tgz#d0bfae076c4fb467ca2b779a257c35d9def6637b"
+  integrity sha512-IVuPq2YLZkZSJduITT3QPwmT8boO+ptRjLUgQOKuPpBWwbtDPapQTRtu/qkPCHOsYJL6hjL9u4jXOrxMa4LkPA==
   dependencies:
     "@formio/license" "^2.1.0"
     lodash "^4.18.1"
 
-"@formio/grid@^2.3.1-api99.0":
-  version "2.3.1-api99.0"
-  resolved "https://pkg.test-form.io/@formio/grid/-/grid-2.3.1-api99.0.tgz#9c835d2500141db1e97bf77d78f1092f62a5f413"
-  integrity sha512-Y0w0Rj8m3pKJ+2+4FTFrlBVtYFGRclPKKMCU4lRHdrFI+F7hxU8Y+LsWsv1nWMGalytRd1kJhGXcCyLruduofw==
+"@formio/grid@^2.3.2-api99.0":
+  version "2.3.2-api99.0"
+  resolved "https://pkg.test-form.io/@formio/grid/-/grid-2.3.2-api99.0.tgz#278820f60a8800691d0ebf86f3d46cabd7775317"
+  integrity sha512-8ojIRKjGLWrDq7dbv/i7Iag2TcQMlpflR27+j3RYyFumSmljVt43CPEPfflLLTgvA0EzM5d1iI0FCL0VAJ5ZfA==
   dependencies:
-    "@formio/core" "^2.7.1-api99.0"
+    "@formio/core" "^2.7.1"
     lodash "^4.17.23"
 
-"@formio/js@5.4.1-api99.0":
-  version "5.4.1-api99.0"
-  resolved "https://pkg.test-form.io/@formio/js/-/js-5.4.1-api99.0.tgz#4674631f1ad9919f2a916cd8af6ce7a1d5d90077"
-  integrity sha512-V5BkOmGaLljJCK5V4eMDmJRbhg9OGMMrMlFEyXI/FBZ1sh69V1Lu6p/0reWu4Fs7JZikfRD3H/oKG5yuW1mzRw==
+"@formio/js@5.4.2-api99.0":
+  version "5.4.2-api99.0"
+  resolved "https://pkg.test-form.io/@formio/js/-/js-5.4.2-api99.0.tgz#e391382e3b1d9258728ce4a479ed34fa2a186304"
+  integrity sha512-VrEWCZmBbf52J5e3SxhanLC9dvSv22OWDJHOiaRpfHYfVdX4ISKFBPjCBWxzU3w3N4vFCGtHdpHCrx+knQUxmA==
   dependencies:
-    "@formio/bootstrap" "^4.0.1-api99.0"
-    "@formio/core" "^2.7.1-api99.0"
+    "@formio/bootstrap" "^4.0.2-api99.0"
+    "@formio/core" "^2.7.1"
     "@formio/text-mask-addons" "^3.8.0-formio.4"
     "@formio/vanilla-text-mask" "^5.1.1-formio.1"
     abortcontroller-polyfill "^1.7.5"
@@ -99,12 +99,12 @@
     jsonwebtoken "^9.0.3"
     node-cache "^5.1.2"
 
-"@formio/premium@3.2.1-api99.0":
-  version "3.2.1-api99.0"
-  resolved "https://pkg.test-form.io/@formio/premium/-/premium-3.2.1-api99.0.tgz#bb805821495783d7da95c066508b20198b62792e"
-  integrity sha512-1P3StOqing7vDStFpegzLHfQ1ipc3RPbmttEVK2CHGCksUVtF8VkqEfvabFmhwP0siJ41PhUyplLZaEbzpR27A==
+"@formio/premium@3.2.2-api99.0":
+  version "3.2.2-api99.0"
+  resolved "https://pkg.test-form.io/@formio/premium/-/premium-3.2.2-api99.0.tgz#bc4be31aa4ebd40c909692a41796702f78db1a6f"
+  integrity sha512-Rx5UokiFLQ2g/nZWtJlEcPTv6vS1AcdBTpC7sLbWQm3g7uflPA0uZHn1GvKeeZ+1UuuLAYk9RF+VdfkTR0RHig==
   dependencies:
-    "@formio/grid" "^2.3.1-api99.0"
+    "@formio/grid" "^2.3.2-api99.0"
     "@juggle/resize-observer" "^3.4.0"
     "@zxing/library" "^0.21.2"
     dayjs "^1.11.12"
@@ -116,17 +116,17 @@
     two.js "^0.8.14"
     vanilla-picker "^2.12.3"
 
-"@formio/reporting@2.3.1-api99.0":
-  version "2.3.1-api99.0"
-  resolved "https://pkg.test-form.io/@formio/reporting/-/reporting-2.3.1-api99.0.tgz#916b4aacb520ad2a16116338a371cface515d074"
-  integrity sha512-K+XfZ1X/jq5hOHnzaf6WQmzUCinpeatMo5NTnoTAti1LHL4fwt90RbQTih7Mbe9YKEBzyNjEZO7em/vWBVrTtQ==
+"@formio/reporting@2.3.2-api99.0":
+  version "2.3.2-api99.0"
+  resolved "https://pkg.test-form.io/@formio/reporting/-/reporting-2.3.2-api99.0.tgz#83e380da7dd57b7fff2632286a5a62601891e91e"
+  integrity sha512-OSUI363pCgkpUwibHZmU7epKF7ACZoqIENZBo5WIMJHB/vKD3K1fu9ePmFqyUhJOkGnMF2bFpW47Y+D4qQByqQ==
   dependencies:
     file-saver "^2.0.5"
     jose "^5.6.3"
 
 "@formio/text-mask-addons@^3.8.0-formio.4":
   version "3.8.0-formio.4"
-  resolved "https://npm.pkg.github.com/download/@formio/text-mask-addons/3.8.0-formio.4/f3ce4bf978c6c5e8f671641d96f6fd116f7c92a3#f3ce4bf978c6c5e8f671641d96f6fd116f7c92a3"
+  resolved "https://pkg.test-form.io/@formio/text-mask-addons/-/text-mask-addons-3.8.0-formio.4.tgz#f3ce4bf978c6c5e8f671641d96f6fd116f7c92a3"
   integrity sha512-vhkeIyuL+1rtC9S4IW8O3JCwroPtvJrkrcMO4wyELNqMIgQRKbiyBAitZfUP4tY04xdB5lxAinbzdwb+NMdX6w==
 
 "@formio/vanilla-text-mask@^5.1.1-formio.1":
