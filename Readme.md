@@ -8,5 +8,8 @@ The Enterprise Form Builder Module is an embeddable form building and form manag
  - Custom Form Builder configurations
  - Fully customizable components and route resolvers.
 
-## Installation & Full Documentation
-The full documentation for the Enterprise Builder module can be found @ https://help.form.io/userguide/enterprise-builder-module
+Official Documentation
+--------------------------
+For the latest documentation, release information, and guides, always refer to the official Form.io Help Documentation available here:
+
+**[https://help.form.io](https://help.form.io/dev/enterprise-form-builder-module)**
